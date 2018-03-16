@@ -1,0 +1,55 @@
+/*DU Web Dev Bootcamp 2018 
+    Natalya Garusova, Sarah Gilbert,Mark Rubesyle, Diana Schiele
+    Project 1
+*/
+
+
+body{
+    background-image: url(../images/christmas-colour.png);
+}
+
+.jumbotron {
+    background-color: rgb(219, 95, 95);
+    margin-top: 30px;
+}
+
+#header{
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    font-size: 90px;
+    /* background-color: rgb(219, 95, 95); */
+    color: rgb(31, 97, 75); 
+}
+h4 {
+    /* background-color: rgb(219, 95, 95); */
+    color: rgb(31, 97, 75); 
+    /* font-size: 50px; */
+}
+
+.jumbotron,
+.panel-body {
+    border: 10px solid rgb(151, 190, 151);
+    border-style: dashed;
+}
+.panel-heading {
+    border-top: 10px solid rgb(163, 218, 163);
+    border-style: dashed;
+}
+
+.form-group,
+th {
+    color: rgb(231, 117, 117)
+    
+}
+/* form {
+    background-color: rgb(216, 238, 226);
+} */
+
+
+
+#tree {
+    color:  rgb(31, 97, 75); 
+    margin-left: 50%;
+    margin-top: 5px;
+}
+

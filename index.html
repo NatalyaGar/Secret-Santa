@@ -1,0 +1,168 @@
+
+<!--DU Web Dev Bootcamp 2018 
+    Natalya Garusova, Sarah Gilbert,Mark Rubesyle, Diana Schiele
+    Project 1
+-->
+
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Secret Santa!</title>
+
+     <!-- Added Moment JS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+      <!-- Firebase Reference -->
+      <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+ 
+      <!--Linking CSS-->
+      <link rel="stylesheet"  href="assets/css/style.css">
+     
+      <!-- JQuery -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+ 
+      <!--Java Script-->
+      <script type= "text/javascript" src="assets/javascript/app.js"></script>
+
+      <!--Fonts link-->
+      <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
+
+
+     
+   </head
+>
+<body>
+   
+<div class="container">
+
+
+     
+   
+   <div id = "start-container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+                <h1 class="text-center" id= "header">Secret Santa!</h1>
+                <h4 class="text-center">What will be your gift?</h4>
+               <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
+               
+        </div>
+             
+        
+        <!-- Add User  -->
+        <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Add User</strong></h3>
+            </div>
+            <div class="panel-body">
+
+                 <!-- Entry Form -->
+              <form>
+                    <div class="form-group">
+                      <label for="user-name-input">Name</label>
+                      <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group">
+                      <label for="password-input">Password</label>
+                      <input class="form-control" id="password-input" type="text">
+                    </div>
+                    <div class="form-group">
+                      <label for="item-input">Wishlist item one</label>
+                      <input class="form-control" id="wishlist-input-one" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-input">Wishlist item two</label>
+                        <input class="form-control" id="wishlist-input-two" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-input">Wishlist item three</label>
+                         <input class="form-control" id="wishlist-input-three" type="text">
+                     </div>
+
+                    
+                   
+                    <button class="btn btn-danger" id="add-user-btn" type="submit">Submit</button>
+                  </form>
+    
+    </div><!--start container-->
+ </div> <!-- container -->
+
+  <!-- Current Users Container-->
+<div id = "current-user-container"> 
+
+      <!-- Jumbotron -->
+          <div class="jumbotron">
+            <h1 class="text-center" id= "header">Secret Santa!</h1>
+            <h4 class="text-center">What will be your gift?</h4>
+            <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
+          </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+        <!-- Current Users-->
+            <div class="panel panel-success">
+                    <div class="panel-heading">
+                       <h3 class="panel-title"><strong>Current Users</strong></h3>
+                    </div>
+                <div class="panel-body">
+                    <table class="table table-hover" id='users-table'>
+                        <thead>
+                        <tr>
+                            <th> Name</th>
+                            <th> Wish item one</th>
+                            <th>Wish item two</th>
+                            <th>Wish item three</th>
+                            <th>Wish list Submitted on</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                 </div>  <!--panel-dody -->
+            </div><!--panel-danger-->
+        </div><!--col-->
+    </div><!-- row-->
+ </div> <!--current-user-container -->
+
+
+  <!-- Modal -->
+ <div class="modal fade" id="myModal" role="dialog">
+        <!-- <div id="myModal" role="dialog"> -->
+     <div class="modal-dialog">
+        
+          <!-- Modal content-->
+        <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Error message</h4>
+             </div>
+                    <div class="modal-body">
+                      <p>Please fill all of the filds.</p>
+                    </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" id = "modalBtn" data-dismiss="modal">Close</button>
+              </div>
+          
+          
+        </div>
+    </div>
+      
+</div>
+
+</body>
