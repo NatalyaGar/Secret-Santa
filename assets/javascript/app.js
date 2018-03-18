@@ -28,10 +28,14 @@ $(document).ready(function(){
 //   $("#current-user-container").hide();
 
 $("#verifyP").hide();
+$("#new-password").hide();
 //   $("#pNotUser").on ("click",function(event){
     $(".linkNotUser").on ("click",function(event){
     $(".linkNotUser").hide();
+    $("#password").hide();
     $("#verifyP").show();
+    $("#new-password").show();
+
     // $("#verifyP").toggle();
    
   })
