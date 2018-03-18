@@ -6,6 +6,7 @@
 
 body{
     background-image: url(../images/christmas-colour.png);
+   
 }
 
 .jumbotron {
@@ -17,29 +18,42 @@ body{
     font-family: 'Tangerine', cursive;
     font-weight: bold;
     font-size: 90px;
-    /* background-color: rgb(219, 95, 95); */
+   
     color: rgb(31, 97, 75); 
 }
 h4 {
-    /* background-color: rgb(219, 95, 95); */
     color: rgb(31, 97, 75); 
-    /* font-size: 50px; */
-}
+}  
 
 .jumbotron,
 .panel-body {
     border: 10px solid rgb(151, 190, 151);
     border-style: dashed;
 }
+
+.container{
+    border: 15px solid rgb(151, 190, 151);
+    border-style: dashed; 
+}
 .panel-heading {
     border-top: 10px solid rgb(163, 218, 163);
     border-style: dashed;
 }
+#text-aboutGame {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+
 
 .form-group,
 th {
     color: rgb(231, 117, 117)
     
+}
+
+#text-aboutGame{
+    margin-bottom: 30px;
 }
 
 
@@ -54,3 +68,30 @@ th {
     font-size: 18px;
     color: rgb(180, 72, 72);
 }
+
+
+                  /* Sticky footer styles
+              -------------------------------------------------- */
+              html {
+                position: relative;
+                min-height: 100%;
+                }
+                body {
+                /* Margin bottom by footer height */
+                margin-bottom: 0px;
+                
+                }
+                .footer {
+                position: absolute;
+                bottom: 0;
+                width: 94.7%;
+                padding-top: 11px;
+               
+                /* Set the fixed height of the footer here */
+                height: 65px;
+                background-color: rgb(219, 95, 95);
+                color: rgb(31, 97, 75); 
+                margin-left: 16px;
+               
+                }
+              

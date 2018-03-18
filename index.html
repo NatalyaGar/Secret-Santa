@@ -45,7 +45,7 @@
    </head>
 <body>
 
-<div class="container" width="100%">
+<!-- <div class="container" width="100%"> -->
 
 <div class="container">
 
@@ -99,12 +99,18 @@
                       <input class="form-control" id="name-input" type="text">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" id="password">
                       <label for="password-input">Password</label>
                       <input class="form-control" id="password-input" type="text">
                     </div>
 
                    <p id="pNotUser"><a class="linkNotUser" > Not a user?</a></p>
+
+                   <div class="form-group" id="new-password">
+                      <label for="password-input">New Password</label>
+                      <input class="form-control" id="password-input" type="text">
+                    </div>
+
 
                     <div class="form-group" id="verifyP">
                       <label for="item-input">Verify Password</label>
@@ -118,7 +124,7 @@
       </div>
 
       <!--Right Colomn-->
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-sm-12 col-md-6 col-lg-6" id="text-aboutGame-container">
 
         <!--Body Panel Right-->
         <div class="panel panel-success">
@@ -128,16 +134,28 @@
             <h4 class="text-center" class="panel-title"><strong>About Secret  Santa Game </strong></h4>
           </div>
 
-          <div class="panel-body">
+          <div class="panel-body" id="text-aboutGame">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget risus bibendum risus hendrerit elementum sed vitae ligula. Nunc eu massa id magna ullamcorper maximus. In id facilisis massa. Maecenas bibendum mattis interdum. Quisque elementum sodales lorem vel gravida. Vivamus elit magna, dapibus sit amet semper vitae, malesuada eget odio. Quisque venenatis neque ligula, a hendrerit dui vulputate ut. Cras mollis tincidunt neque, vel sollicitudin ante blandit sed.
+                Secret Santa is a fun way to exchange gifts. Sign up and enter a wish list of items that you would like to receive as gifts. The Magical Christmas Cheer Processor will then randomly assign gift givers (Santas) and receivers. When you sign in again, you’ll see who you have been assigned to play Santa for, and what items are on his or her wish list. Someone else, another Santa, will have been assigned your name and wish list and will be shopping as well! You can either hand-craft your gifts in your workshop at the North Pole, or, if you don’t have one of those, you can follow our convenient lint to Amazon to simplify things. When gift-giving day arrives, follow the Secret Santa Map to the party! Gifts will be exchanged, and secret Santas revealed! Have fun, and spread Christmas Cheer!
+
             </p>
-            <p>
-                Mauris vel dictum urna, nec imperdiet tortor. Donec rhoncus, tellus a vehicula rutrum, nunc dolor facilisis purus, a faucibus ante nisi in leo. Mauris non pellentesque sapien, sed porta metus. Vivamus tristique ipsum nec purus pellentesque blandit. Etiam vitae dignissim ex. Cras iaculis orci vel vehicula placerat. Donec eu elit faucibus, imperdiet nunc ac, accumsan sem. Quisque consequat feugiat est, vitae viverra justo placerat sit amet. Aliquam ullamcorper, lorem ut hendrerit lacinia, massa nulla sodales est, at fringilla tortor leo in turpis. Curabitur quis nibh eu mi aliquam rutrum. Phasellus eu condimentum diam, ut ultricies leo. Duis odio ipsum, congue eget consequat ut, tristique quis diam. Aliquam sed libero pharetra, imperdiet massa ac, consectetur sem. Pellentesque fringilla dapibus elit non fermentum.
-            </p>
+
+            </div>
           </div>
         </div>
       </div>
+
+        <!-- Sticky Footer -->
+
+        <footer>
+            <div class="footer">
+
+              <div class="container-fluid">
+              <h5 class="text-center" > DDS team 2018 </h5>
+              </div>
+
+            </div>
+         </footer>
 
 
 
@@ -175,8 +193,10 @@
                     <!-- <button class="btn btn-danger" id="add-user-btn" type="submit">Submit</button>
                   </form> -->
 
-    </div><!--start container-->
- </div> <!-- container -->
+    <!-- </div> -->
+    <!--start container-->
+ <!-- </div> -->
+  <!-- container -->
 
   <!-- Current Users Container-->
 <!-- <div id = "current-user-container"> -->
