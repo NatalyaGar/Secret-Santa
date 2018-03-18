@@ -41,9 +41,6 @@ th {
     color: rgb(231, 117, 117)
     
 }
-/* form {
-    background-color: rgb(216, 238, 226);
-} */
 
 
 
@@ -53,3 +50,7 @@ th {
     margin-top: 5px;
 }
 
+.linkNotUser{
+    font-size: 18px;
+    color: rgb(180, 72, 72);
+}
