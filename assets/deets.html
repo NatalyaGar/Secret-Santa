@@ -48,45 +48,70 @@
       </section>
       <section class="deets row col-lg-7 col-md-7 col-xs-7">
         <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
-        <div class="partyDeets">
+        <form class="partyDeets">
           <header id="deetsHead">
             Tell us about yourself so we can help find you the perfect gift!
           </header>
-          <section id="enterDeets" class="form-group">
-            <div class="name">
+          <!-- <section id="nameDeet" class="form-group"> -->
+            <div class="nameDeets">
               <span id="nameId">
                 Name:
-                <input type="text" id="nameDeet"></input>
               </span>
+              <div>
+                <input type="text" id="name"></input>
+              </div>
             </div>
-            <div class="gifts">
+            <div class="giftDeets">
               <span id="desires">
                 Gift ideas, please enter three choices:
               </span>
-              <section class="gifts">
+              <div class="gifts">
                 <input type="text" id="giftDeet" class="gifts"></input>
                 <input type="text" id="giftDeet" class="gifts"></input>
                 <input type="text" id="giftDeet" class="gifts"></input>
                 <!-- OPTIONAL we could have 2 more input fields but only require 3 inputs, 2 are extra -->
                 <!-- <input type="text" id="giftDeet" class="gifts"></input> -->
                 <!-- <input type="text" id="giftDeet" class="gifts"></input> -->
-              </section>
+              </div>
             </div>
-            <div type="text" id="amtDeet" class="amt">
-              <span id="minAmt" class="col-lg-4 col-md-4 col-xs-4">
-                Minimum Amount:
-                <input type="text" id="min" class="col-lg-4 col-md-4 col-xs-4"></input>
+            <div class="amtDeets">
+              <span>
+                Tell us about your budget:
               </span>
-              <span id="maxAmt" class="col-lg-4 col-md-4 col-xs-4">
-                Maximum Amount:
-                <input type="text" id="max" class="col-lg-4 col-md-4 col-xs-4"></input>
-              </span>
+              <div>
+                <div id="mini" class="col-lg-4 col-md-4 col-xs-4">
+                  <!-- <span id="minAmt"> -->
+                    Minimum Amount:
+                  <!-- </span> -->
+                  <!-- <div> -->
+                    <input type="text" id="min" ></input>
+                  <!-- </div> -->
+                </div>
+                <div id="maxi" class="col-lg-4 col-md-4 col-xs-4">
+                  <!-- <span id="maxAmt"> -->
+                    Maximum Amount:
+                  <!-- </span> -->
+                  <!-- <div> -->
+                    <input type="text" id="max" ></input>
+                  <!-- </div> -->
+                </div>
+              </div>
             </div>
-            <input type="text" id="dateDeet" class="dates">
-              <!-- OPTIONAL we could have users pick 3 party dates, most chosen date becomes party date -->
-            </input>
-          </section>
-        </div>
+            <div class="datesDeets">
+
+              <!-- <div class="dates"> -->
+                <!-- OPTIONAL keep this span to prompt user to select dates off of calendar instead of using input field -->
+                <span class="dateMssg">
+                Submit a good party date!
+                </span>
+                <input type="text" id="dateDeet" class="dates"></input>
+                <!-- OPTIONAL we could have users pick 3 party dates from <details> dropdown, most chosen date becomes party date -->
+              <!-- </div> -->
+            </div>
+          <!-- </section> -->
+        </form>
+      </section>
+      
         <div class="santaDeets">
           <header id="santaHead">
             <h2><i>You are <span id="userName"></span>'s Secret Santa!</i><h2>
@@ -95,7 +120,7 @@
             <p class="letter">Dear Santa,</p>
             <p class="letter">I have been good this year. Please bring me </p>
             <div id="wishes" class="letter">
-              <h7><p id="shopA">Need help building these toys? Let Amazon elves help!</p><h7>
+              <h7><p id="shopA" class="col-lg-4 col-md-4 col-xs-4">Need help building these toys? Let Amazon elves help!</p><h7>
               <p>1. <span id="wish1"></span><button id="amazon"></button></p>
               <p>2. <span id="wish2"></span><button id="amazon"></button></p>
               <p>3. <span id="wish3"></span><button id="amazon"></button></p>
@@ -108,7 +133,6 @@
             <p class="letter"><span id="userName"></span></p>
           </section>
         </div>
-      </section>
       <aside id="sidebar" class="row col-lg-3 col-md-3 col-xs-3">
         <!-- this is where pics & trivia will go -->
       </aside>
