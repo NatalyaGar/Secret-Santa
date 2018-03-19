@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet"  href="assets/css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet"  href="css/deets.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- <script type= "text/javascript" src="assets/javascript/app.js"></script> -->
 
   </head>
   <body>
-    <div class="deetsContainer col-lg-12 col-md-12 col-xs-12">
-      <input type="button" onclick="location.href='index.html';" value="Go to Google" />
+    <div id="home" class="col-lg-11 col-md-11 col-xs-11">
+      <input type="button" id="logOut" onclick="location.href='index.html';" value="Log Out" />
+    </div>
+    <div class="deetsContainer col-lg-11 col-md-11 col-xs-11">
       <div class="jumbotron">
         <div id="countDown" class="row col-lg-12 col-md-12 col-xs-12">
-          <h2>ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
+          <h2 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
         </div>
         <div class="row col-lg-12 col-md-8 col-xs-12">
           <section id="calendar">
@@ -30,27 +32,25 @@
       </div>
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
-        <p class="updates">
-          <p class="alterInfo">
-            <h5>You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
-          </p>
-          <p class="budget">
-            <span id="budgetAmt"></span>
-            <!-- OPTIONAL -->
-            <!-- this button could be a verification of the averaged budget -->
-            <button id="amtOK">√</button><span>Please verify the amount of the chosen gift budget by checking here. </span>
-          </p>
-          <p class="location">
-            The party will be held at <span id="houseNum"></span>
-            <!-- OPTIONAL -->
-            <!-- we could append a 'this is a business or house' mssg/btn here -->
-          </p>
+        <p id="alerts">
+          <h5>You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
+        </p>
+        <p id="budget">
+          <span id="budgetAmt"></span>
+          <!-- OPTIONAL -->
+          <!-- this checkbox could be a verification of accepting the averaged budget -->
+          <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
+        </p>
+        <p id="whereAt">
+          The party will be held at <span id="location"></span>!
+          <!-- OPTIONAL -->
+          <!-- we could append a 'this is a business or house' mssg/btn here -->
         </p>
       </section>
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
       <section id="deets" class="row col-lg-8 col-md-8 col-xs-8">
-        <!-- this is where partyDeets params link to -->
+        <!-- this is where to enter partyDeets -->
         <form class="partyDeets">
           <header id="deetsHead">
             Tell us about yourself so we can help find you the perfect gift!
@@ -80,7 +80,7 @@
             <div>
               Tell us about your budget:
             </div>
-              <div class="col-lg-3 col-md-3 col-xs-3">
+              <div id="minMax" class="col-lg-4 col-md-4 col-xs-4">
                 <p>Minimum Amount:</p>
                 <p>Maximum Amount:</p>
               </div>
@@ -90,19 +90,19 @@
               </div>
               <br>
               <div id="currency" class="row col-lg-12 col-md-12 col-xs-12">
-                  <p class="col-lg-4 col-md-4 col-xs-4">
+                  <p id="convert" class="col-lg-4 col-md-4 col-xs-4">
                     Currency Converter:
                     Gift giving to international friends can be stylish (and in budget!) Check current exchange rates here!
                   </p>
-                  <div id="usd" class="col-lg-3 col-md-3 col-xs-3">
-                    <span>Enter amount in $USD:
+                  <div id="usd" class="col-lg-4 col-md-4 col-xs-4">
+                    <span id="dollars">Enter amount in $USD:
                       <input type="text" id="convert"></input>
                     </span>
                   </div>
               </div>
             </div>
-            <div class="row col-lg-7 col-md-7 col-xs-7">
-              <div class="dates">
+            <div id="dates" class="row col-lg-10 col-md-10 col-xs-10">
+              <div>
                 <!-- OPTIONAL keep this span to prompt user to select dates off of calendar instead of using input field -->
                 <span id="dateMssg">
                   Submit a good party date!
@@ -114,9 +114,11 @@
               </div>
             </div>
         </form>
+        <!-- this button sends input values to firebase -->
+        <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3" type="submit" value="Submit your Wishlist"></input>
       </section>
-      <!-- this is where santaDeets links to -->
-      <section class="deets row col-lg-7 col-md-7 col-xs-7">
+      <!-- this is where to view santaDeets -->
+      <section class="deets row col-lg-7 col-md-7 col-xs-7" display=>
         <header id="santaHead" class="col-lg-6 col-md-6 col-xs-6">
           <i>You are <span id="userName"></span>'s Secret Santa!</i>
         </header>
