@@ -25,8 +25,10 @@
 
     // Button for adding Users
 $(document).ready(function(){
+    $("#eventLocator").hide();
 //   $("#current-user-container").hide();
-
+$("#options-container").hide();
+$("#data-container").hide();
 $("#verifyP").hide();
 $("#new-password").hide();
 //   $("#pNotUser").on ("click",function(event){
@@ -35,18 +37,22 @@ $("#new-password").hide();
     $("#password").hide();
     $("#verifyP").show();
     $("#new-password").show();
+   
 
     // $("#verifyP").toggle();
    
   })
 
-    $('#add-user-btn').on("click", function(event) {
+    $('#submit-user-btn').on("click", function(event) {
        
          //Hide start container
-        //  $("#start-container").hide();
+         $("#start-container").hide();
 
-        //Show current user container
-        // $("#current-user-container").show();
+        //Show options container
+        $("#options-container").show();
+        // $("#keycode").hide();
+        $("#viewPartyDeets").hide();
+        $("#newSecretSantaDeets").hide();
 
         
             console.log("button");
@@ -149,9 +155,134 @@ $("#new-password").hide();
     
     //  },  
      },
-   
+     
 
      function(errorObject) {
         console.log("Errors handled: " + errorObject.code);
     });
-}) //Document ready function close
+
+    $('#keycode-submit-btn').on("click", function(event) {
+        event.preventDefault();
+        $("#eventLocator").show();
+         //Hide start container
+         $("#start-container").hide();
+
+        //Hide options containers
+        $("#options-container").hide();
+        $("#data-container").show();
+        $("#headingTextStart").hide();
+        // $(".container").hide();
+
+
+
+    });
+    $('#wishListSubmit-btn').on("click", function(event) {
+        console.log("button");
+        event.preventDefault();
+
+          // Grabs user unput
+          var userName = $("#name-input").val().trim();
+         
+          var wishlistOne =$('#wishlist-input-one').val().trim();
+          var wishlistTwo =$('#wishlist-input-two').val().trim();
+          var wishlistThree =$('#wishlist-input-three').val().trim();
+          var wishlistFour = $('#wishlist-input-four').val().trim();
+         
+          // Creating local "temporary" object for holding user data
+  
+          var newUser ={
+              name: userName,
+             
+              wishLOne: wishlistOne,
+              wishLTwo: wishlistTwo,
+              wishLThree: wishlistThree,
+              wishLFour: wishlistFour,
+              
+          };
+  
+              //Upload user data to the database
+              database.ref().push(newUser);
+  
+              console.log(newUser.name);
+             
+              console.log(newUser.wishLOne);
+              console.log(newUser.wishLThree);
+  
+              //Clears all of the text-boxes
+             
+              $("#name-input").val("");
+            
+              $('#wishlist-input-one').val("");
+              $('#wishlist-input-two').val("");
+              $('#wishlist-input-three').val("");
+              $('#wishlist-input-four').val("");
+             
+     
+  
+          //  if (!(userName == '' || password == '' || wishlistOne == '' || wishlistTwo == '' || wishlistThree == '')){
+          //         $('#users-table').empty();
+          //         $('#users-table > tbody')
+          //         .append(`<tr>
+          //                     <td>${userName}</td>
+          //                     <td>${wishlistOne}</td>
+          //                     <td>${wishlistTwo}</td>
+          //                     <td>${wishlistThree}</td>
+                              
+          //                 </tr>`)
+          // }
+          //   else{
+          //     $('#myModal').show();
+  
+          //     $("#modalBtn").click(function(){
+          //     $("#myModal").hide();
+           
+          //  })
+          // }       
+          //   }),
+          
+  
+  
+      }); //on click function close
+      
+       // Create Firebase event for adding train to the database and a row
+       database.ref().on("child_added", function(childSnapshot, prevChildKey){
+          console.log(childSnapshot.val());
+  
+          //Store everything into a variable.
+          var userName = childSnapshot.val().name;
+         
+          var wishlistOne = childSnapshot.val().wishLOne;
+          var wishlistTwo = childSnapshot.val().wishLTwo;
+          var wishlistThree = childSnapshot.val().wishLThree;
+          var wishlistFour = childSnapshot.val().wishLFour;
+          
+          
+          console.log(userName);
+         
+          console.log(wishlistOne);
+          console.log(wishlistThree);
+  
+          
+           // Current Time
+          //  var currentTime = moment().format("MMM Do YYYY hh:mm A");
+          //  console.log("CURRENT TIME: " + currentTime);
+          //Add data into the table
+      //     $('#users-table > tbody')
+      //     .append(`<tr>
+      //                 <td>${userName}</td>
+      //                  <td>${wishlistOne}</td>
+      //                  <td>${wishlistTwo}</td>
+      //                  <td>${wishlistThree}</td>
+      //                  <td>${currentTime}</td>
+      //             </tr>`)
+      
+      //  },  
+       })
+       
+  
+         
+    });  //Document ready function close
+
+  
+
+ 
