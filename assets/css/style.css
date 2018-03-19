@@ -29,6 +29,7 @@ h4 {
 .panel-body {
     border: 10px solid rgb(151, 190, 151);
     border-style: dashed;
+    padding-bottom: 10px;
 }
 
 .container{
@@ -40,10 +41,20 @@ h4 {
     border-style: dashed;
 }
 #text-aboutGame {
-    height: 300px;
+    height:300px;
     overflow-y: scroll;
 }
 
+#user-container {
+    border: 10px solid rgb(163, 218, 163);
+    border-style: dashed;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+/* #wishListSubmit-bt {
+    padding-bottom: 30px;
+} */
 
 
 .form-group,
@@ -51,8 +62,11 @@ th {
     color: rgb(231, 117, 117)
     
 }
+p{
+    color:  rgb(31, 97, 75);
+}
 
-#text-aboutGame{
+ #text-aboutGame{ 
     margin-bottom: 30px;
 }
 
@@ -67,6 +81,37 @@ th {
 .linkNotUser{
     font-size: 18px;
     color: rgb(180, 72, 72);
+}
+
+#options-container {
+    margin-bottom: 70px;
+     /* height: 320px; */
+     width: 90%; 
+    background-color:white;
+    margin-left: 5%;
+    /* margin-bottom: 30px; */
+    border: 10px solid rgb(151, 190, 151);
+    border-style: dashed;
+    padding: 20px;
+    
+}
+.newGrRadio{
+    margin-left: 10px;
+}
+
+#keycode-submit-btn {
+    margin: 10px;
+}
+
+#data-container {
+    height: 1000px;
+    /* width: 1000px; */
+    background-color: white;
+    /* border: 10px solid rgb(151, 190, 151);
+    border-style: dashed; */
+    padding: 20px;
+    /* margin-left: 3%; */
+    
 }
 
 
@@ -85,8 +130,9 @@ th {
                 position: absolute;
                 bottom: 0;
                 width: 94.7%;
+                
                 padding-top: 11px;
-               
+                /* margin-top: 30px; */
                 /* Set the fixed height of the footer here */
                 height: 65px;
                 background-color: rgb(219, 95, 95);
