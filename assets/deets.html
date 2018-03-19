@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shhhh..it's a secret!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet"  href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script type= "text/javascript" src="assets/javascript/app.js"></script> -->
+
+  </head>
+  <body>
+    <div class="deetsContainer col-lg-12 col-md-12 col-xs-12">
+      <input type="button" onclick="location.href='index.html';" value="Go to Google" />
+      <div class="jumbotron">
+        <div id="countDown" class="row col-lg-12 col-md-12 col-xs-12">
+          <h2>ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
+        </div>
+        <div class="row col-lg-12 col-md-8 col-xs-12">
+          <section id="calendar">
+            <!-- this is where the calendar should go -->
+          </section>
+        </div>
+      </div>
+
+      <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
+        <p class="updates">
+          <p class="alterInfo">
+            <h5>You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
+          </p>
+          <p class="budget">
+            <span id="budgetAmt"></span>
+            <!-- OPTIONAL -->
+            <!-- this button could be a verification of the averaged budget -->
+            <button id="amtOK">√</button><span>Please verify the amount of the chosen gift budget by checking here. </span>
+          </p>
+          <p class="location">
+            The party will be held at <span id="houseNum"></span>
+            <!-- OPTIONAL -->
+            <!-- we could append a 'this is a business or house' mssg/btn here -->
+          </p>
+        </p>
+      </section>
+
+      <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
+      <section id="deets" class="row col-lg-8 col-md-8 col-xs-8">
+        <!-- this is where partyDeets params link to -->
+        <form class="partyDeets">
+          <header id="deetsHead">
+            Tell us about yourself so we can help find you the perfect gift!
+          </header>
+          <div class="nameDeets">
+            <span id="nameId">
+              Name:
+            </span>
+            <div>
+              <input type="text" id="name"></input>
+            </div>
+          </div>
+          <div class="giftDeets">
+            <span id="desires">
+              Gift ideas, please enter three choices:
+            </span>
+            <div class="gifts">
+              <input type="text" id="giftDeet" class="gifts"></input>
+              <input type="text" id="giftDeet" class="gifts"></input>
+              <input type="text" id="giftDeet" class="gifts"></input>
+              <!-- OPTIONAL we could have 2 more input fields but only require 3 inputs, 2 are extra -->
+              <!-- <input type="text" id="giftDeet" class="gifts"></input> -->
+              <!-- <input type="text" id="giftDeet" class="gifts"></input> -->
+            </div>
+          </div>
+          <div id="budget" class="row col-lg-12 col-md-12 col-xs-12">
+            <div>
+              Tell us about your budget:
+            </div>
+              <div class="col-lg-3 col-md-3 col-xs-3">
+                <p>Minimum Amount:</p>
+                <p>Maximum Amount:</p>
+              </div>
+              <div id="userBudget" class="col-lg-3 col-md-3 col-xs-3">
+                <input type="text" id="min"></input>
+                <input type="text" id="max"></input>
+              </div>
+              <br>
+              <div id="currency" class="row col-lg-12 col-md-12 col-xs-12">
+                  <p class="col-lg-4 col-md-4 col-xs-4">
+                    Currency Converter:
+                    Gift giving to international friends can be stylish (and in budget!) Check current exchange rates here!
+                  </p>
+                  <div id="usd" class="col-lg-3 col-md-3 col-xs-3">
+                    <span>Enter amount in $USD:
+                      <input type="text" id="convert"></input>
+                    </span>
+                  </div>
+              </div>
+            </div>
+            <div class="row col-lg-7 col-md-7 col-xs-7">
+              <div class="dates">
+                <!-- OPTIONAL keep this span to prompt user to select dates off of calendar instead of using input field -->
+                <span id="dateMssg">
+                  Submit a good party date!
+                </span>
+                <div>
+                  <input type="text" id="dateDeet" class="pickDate"></input>
+                </div>
+                <!-- OPTIONAL we could have users pick 3 party dates from <details> dropdown, most chosen date becomes party date -->
+              </div>
+            </div>
+        </form>
+      </section>
+      <!-- this is where santaDeets links to -->
+      <section class="deets row col-lg-7 col-md-7 col-xs-7">
+        <header id="santaHead" class="col-lg-6 col-md-6 col-xs-6">
+          <i>You are <span id="userName"></span>'s Secret Santa!</i>
+        </header>
+        <br>
+        <div id="santaLtr" class="col-lg-6 col-md-6 col-xs-6">
+          <p class="letter">Dear Santa,</p>
+          <p class="letter">I have been good this year. Please bring me </p>
+          <div id="wishes" class="letter">
+            <p>1. <span id="wish1"></span></p>
+            <p>2. <span id="wish2"></span></p>
+            <p>3. <span id="wish3"></span></p>
+            <!-- OPTIONAL if we decide to use 5 possible gifts -->
+            <!-- <p>4. <span id="wish4"></span><button id="amazon"></button></p> -->
+            <!-- <p>5. <span id="wish5"></span><button id="amazon"></button></p> -->
+          </div>
+          <p class="letter">this year for Christmas.</p>
+          <p class="letter">Love,</p>
+          <p class="letter">
+            <span id="userName"></span>
+          </p>
+        </div>
+        <aside class="col-lg-4 col-md-4 col-xs-4">
+          <p id="shopA">Need help building these toys?<br>(Let Amazon elves help!)</p>
+          <button id="buy1" class="amazon">Take me to Amazon!</button>
+          <button id="buy2" class="amazon">Take me to Amazon!</button>
+          <button id="buy3" class="amazon">Take me to Amazon!</button>
+        </aside>
+      </section>
+
+      <aside id="sidebar" class="row col-lg-3 col-md-3 col-xs-3">
+        <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
+          Random holiday trivia!
+          <!-- this is where pics & trivia will go -->
+        </div>
+        <div id="map" class="row col-lg-12 col-md-12 col-xs-12">
+          Party location!
+          <!-- this is where the map will go -->
+        </div>
+      </aside>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
