@@ -35,8 +35,9 @@
             console.log(response.results[0].geometry.location.lng);
             lat = response.results[0].geometry.location.lat;
             long = response.results[0].geometry.location.lng;
+            initMap();
         });
-        initMap();
+        
 
 
         function initMap() {
