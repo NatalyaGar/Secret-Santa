@@ -53,7 +53,7 @@ $('#submit-user-btn').on("click", function(event) {
     $("#options-container").show();
     // $("#keycode").hide();
     $("#viewPartyDeets").hide();
-    $("#newSecretSantaDeets").hide();
+    $("#viewSecretSantaDeets").hide();
 
     
         console.log("button");
