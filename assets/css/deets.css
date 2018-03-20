@@ -4,6 +4,10 @@
   padding: 5px 15px;
 }
 
+body {
+  background-color: #000099;
+}
+
 .deetsContainer, #home {
   margin: 0 4%;
 }
@@ -32,8 +36,9 @@
 }
 
 #sendIt {
-  padding: 10px 0;
-  margin-top: 10px;
+  padding: 15px 0;
+  margin: 10px 0;
+  font-size: 20px;
 }
 
 #deetsHead {
@@ -44,10 +49,51 @@ aside {
   font-size: 18px;
 }
 
+#sidebar {
+  position: fixed;
+  padding: 20px;
+  right: 110px;
+  top: 312px;
+}
+
 #trivia, #map {
   margin-top: 10px;
 }
 
 #santaLtr {
   font-size: 22px;
+}
+
+#mssgs, #deets, #sidebar {
+  border: 3px dashed red;
+  background-color: #ffcccc;
+  margin: 10px 5px 10px 0;
+}
+
+#updates {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+#alerts {
+  color: red;
+}
+
+.amazon {
+  margin: 2px 0;
+
+}
+
+#footer {
+  text-align: center;
+  font-size: 22px;
+  padding: 20px 0;
+  bottom: 0;
+}
+
+.jumbotron {
+  margin-left: -15px;
+  background-color: #d9f2d9;
+  border: 4px dashed green;
+  color: red;
 }
