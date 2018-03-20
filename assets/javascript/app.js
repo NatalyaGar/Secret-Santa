@@ -65,6 +65,8 @@ $('#submit-user-btn').on("click", function(event) {
     // Grabs user unput
     var userName = $("#name-input").val().trim();
     var password = $("#password-input").val().trim();
+    var newPassword =$("#newPassword-input").val().trim();
+    var varifyPassword=$("#verifyPassword-input").val().trim();                                  
     // var wishlistOne =$('#wishlist-input-one').val().trim();
     // var wishlistTwo =$('#wishlist-input-two').val().trim();
     // var wishlistThree =$('#wishlist-input-three').val().trim();
@@ -74,6 +76,8 @@ $('#submit-user-btn').on("click", function(event) {
     var newUser ={
         name: userName,
         passw: password,
+        newPassw: newPassword,
+        varifPassw: varifyPassword,
         // wishLOne: wishlistOne,
         // wishLTwo: wishlistTwo,
         // wishLThree: wishlistThree,
@@ -86,6 +90,8 @@ $('#submit-user-btn').on("click", function(event) {
 
         console.log(newUser.name);
         console.log(newUser.passw);
+        console.log(newUser.newPassw);
+        console.log(newUser.verifPassw);
         // console.log(newUser.wishLOne);
         // console.log(newUser.wishLThree);
 
@@ -93,6 +99,8 @@ $('#submit-user-btn').on("click", function(event) {
        
         $("#name-input").val("");
         $("#password-input").val("");
+        $("#newPassword-input").val("");
+        $("#verifyPassword-input").val("");
         // $('#wishlist-input-one').val("");
         // $('#wishlist-input-two').val("");
         // $('#wishlist-input-three').val("");
@@ -131,6 +139,9 @@ $('#submit-user-btn').on("click", function(event) {
     //Store everything into a variable.
     var userName = childSnapshot.val().name;
     var password = childSnapshot.val().passw;
+    var newPassword = childSnapshot.val().newPassw;
+    var varifyPassword = childSnapshot.val().varifPassw;
+
     // var wishlistOne = childSnapshot.val().wishLOne;
     // var wishlistTwo = childSnapshot.val().wishLTwo;
     // var wishlistThree = childSnapshot.val().wishLThree;
