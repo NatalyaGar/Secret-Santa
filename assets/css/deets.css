@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #000099;
+  background-color: #d9f2d9;
 }
 
 .deetsContainer, #home {
@@ -14,8 +14,14 @@ body {
 
 #days {
   text-align: center;
-  font-size: 32px;
-  margin: inherit;
+  font-size: 34px;
+  margin-top: -20px;
+  font-family: 'Tangerine', 'Aclonica', cursive;
+  font-weight: bold;
+}
+
+#daysToGo {
+  font-size: 40px;
 }
 
 #minMax {
@@ -52,8 +58,8 @@ aside {
 #sidebar {
   position: fixed;
   padding: 20px;
-  right: 110px;
-  top: 312px;
+  right: 70px;
+  top: 315px;
 }
 
 #trivia, #map {
@@ -65,7 +71,7 @@ aside {
 }
 
 #mssgs, #deets, #sidebar {
-  border: 3px dashed red;
+  border: 3px dashed green;
   background-color: #ffcccc;
   margin: 10px 5px 10px 0;
 }
@@ -93,7 +99,7 @@ aside {
 
 .jumbotron {
   margin-left: -15px;
-  background-color: #d9f2d9;
-  border: 4px dashed green;
-  color: red;
+  background-color: #ffcccc;
+  border: 6px dotted red;
+  color: green;
 }

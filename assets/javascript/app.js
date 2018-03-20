@@ -1,16 +1,8 @@
 
 
-  /*DU Web Dev Bootcamp 2018 
-    Natalya Garusova, Sarah Gilbert,Mark Rubesyle, Diana Schiele
-    Project 1*/
+if name === #name-input from logIn page, display deets
 
 
-/* global moment firebase */
-// Initialize Firebase
-
-
-    
-  
 var config = {
     apiKey: "AIzaSyCM6gXwrnT1NUttrDF8qw1dAjI6qd0JpXE",
     authDomain: "secret-santa-efc15.firebaseapp.com",
@@ -23,21 +15,21 @@ firebase.initializeApp(config);
 
 // Create a variable to reference the database
 var database = firebase.database();
-
 // Button for adding Users
 $(document).ready(function(){
-$("#eventLocator").hide();
-//   $("#current-user-container").hide();
-$("#options-container").hide();
-$("#data-container").hide();
-$("#verifyP").hide();
-$("#new-password").hide();
-//   $("#pNotUser").on ("click",function(event){
-$(".linkNotUser").on ("click",function(event){
-$(".linkNotUser").hide();
-$("#password").hide();
-$("#verifyP").show();
-$("#new-password").show();
+  $("#eventLocator").hide();
+  //   $("#current-user-container").hide();
+  $("#options-container").hide();
+  $("#data-container").hide();
+  $("#verifyP").hide();
+  $("#new-password").hide();
+  //   $("#pNotUser").on ("click",function(event){
+  $(".linkNotUser").on ("click",function(event){
+    $(".linkNotUser").hide();
+    $("#password").hide();
+    $("#verifyP").show();
+    $("#new-password").show();
+
 
 
 // $("#verifyP").toggle();
@@ -45,7 +37,7 @@ $("#new-password").show();
 })
 
 $('#submit-user-btn').on("click", function(event) {
-   
+
      //Hide start container
      $("#start-container").hide();
 
@@ -55,22 +47,14 @@ $('#submit-user-btn').on("click", function(event) {
     $("#viewPartyDeets").hide();
     $("#viewSecretSantaDeets").hide();
 
-    
+
         console.log("button");
     event.preventDefault();
 
-   
+
     // return;
 
-    // Grabs user unput
-    var userName = $("#name-input").val().trim();
-    var password = $("#password-input").val().trim();
-    var newPassword =$("#newPassword-input").val().trim();
-    var varifyPassword=$("#verifyPassword-input").val().trim();                                  
-    // var wishlistOne =$('#wishlist-input-one').val().trim();
-    // var wishlistTwo =$('#wishlist-input-two').val().trim();
-    // var wishlistThree =$('#wishlist-input-three').val().trim();
-   
+
     // Creating local "temporary" object for holding user data
 
     var newUser ={
@@ -81,8 +65,8 @@ $('#submit-user-btn').on("click", function(event) {
         // wishLOne: wishlistOne,
         // wishLTwo: wishlistTwo,
         // wishLThree: wishlistThree,
-       
-        
+
+
     };
 
         //Upload user data to the database
@@ -96,7 +80,7 @@ $('#submit-user-btn').on("click", function(event) {
         // console.log(newUser.wishLThree);
 
         //Clears all of the text-boxes
-       
+
         $("#name-input").val("");
         $("#password-input").val("");
         $("#newPassword-input").val("");
@@ -104,7 +88,7 @@ $('#submit-user-btn').on("click", function(event) {
         // $('#wishlist-input-one').val("");
         // $('#wishlist-input-two').val("");
         // $('#wishlist-input-three').val("");
-       
+
 
 
     //  if (!(userName == '' || password == '' || wishlistOne == '' || wishlistTwo == '' || wishlistThree == '')){
@@ -115,7 +99,7 @@ $('#submit-user-btn').on("click", function(event) {
     //                     <td>${wishlistOne}</td>
     //                     <td>${wishlistTwo}</td>
     //                     <td>${wishlistThree}</td>
-                        
+
     //                 </tr>`)
     // }
     //   else{
@@ -123,11 +107,11 @@ $('#submit-user-btn').on("click", function(event) {
 
     //     $("#modalBtn").click(function(){
     //     $("#myModal").hide();
-     
+
     //  })
-    // }       
+    // }
     //   }),
-    
+
 
 
 }); //on click function close
@@ -145,13 +129,13 @@ $('#submit-user-btn').on("click", function(event) {
     // var wishlistOne = childSnapshot.val().wishLOne;
     // var wishlistTwo = childSnapshot.val().wishLTwo;
     // var wishlistThree = childSnapshot.val().wishLThree;
-    
+
     console.log(userName);
     console.log(password);
     // console.log(wishlistOne);
     // console.log(wishlistThree);
 
-    
+
      // Current Time
     //  var currentTime = moment().format("MMM Do YYYY hh:mm A");
     //  console.log("CURRENT TIME: " + currentTime);
@@ -165,9 +149,9 @@ $('#submit-user-btn').on("click", function(event) {
 //                  <td>${currentTime}</td>
 //             </tr>`)
 
-//  },  
+//  },
  },
- 
+
 
  function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
@@ -194,42 +178,42 @@ $('#wishListSubmit-btn').on("click", function(event) {
 
       // Grabs user unput
       var userName = $("#name-input").val().trim();
-     
+
       var wishlistOne =$('#wishlist-input-one').val().trim();
       var wishlistTwo =$('#wishlist-input-two').val().trim();
       var wishlistThree =$('#wishlist-input-three').val().trim();
       var wishlistFour = $('#wishlist-input-four').val().trim();
-     
+
       // Creating local "temporary" object for holding user data
 
       var newUser ={
           name: userName,
-         
+
           wishLOne: wishlistOne,
           wishLTwo: wishlistTwo,
           wishLThree: wishlistThree,
           wishLFour: wishlistFour,
-          
+
       };
 
           //Upload user data to the database
           database.ref().push(newUser);
 
           console.log(newUser.name);
-         
+
           console.log(newUser.wishLOne);
           console.log(newUser.wishLThree);
 
           //Clears all of the text-boxes
-         
+
           $("#name-input").val("");
-        
+
           $('#wishlist-input-one').val("");
           $('#wishlist-input-two').val("");
           $('#wishlist-input-three').val("");
           $('#wishlist-input-four').val("");
-         
- 
+
+
 
       //  if (!(userName == '' || password == '' || wishlistOne == '' || wishlistTwo == '' || wishlistThree == '')){
       //         $('#users-table').empty();
@@ -239,7 +223,7 @@ $('#wishListSubmit-btn').on("click", function(event) {
       //                     <td>${wishlistOne}</td>
       //                     <td>${wishlistTwo}</td>
       //                     <td>${wishlistThree}</td>
-                          
+
       //                 </tr>`)
       // }
       //   else{
@@ -247,34 +231,34 @@ $('#wishListSubmit-btn').on("click", function(event) {
 
       //     $("#modalBtn").click(function(){
       //     $("#myModal").hide();
-       
+
       //  })
-      // }       
+      // }
       //   }),
-      
+
 
 
   }); //on click function close
-  
+
    // Create Firebase event for adding a wish to the database and a row
    database.ref().on("child_added", function(childSnapshot, prevChildKey){
       console.log(childSnapshot.val());
 
       //Store everything into a variable.
       var userName = childSnapshot.val().name;
-     
+
       var wishlistOne = childSnapshot.val().wishLOne;
       var wishlistTwo = childSnapshot.val().wishLTwo;
       var wishlistThree = childSnapshot.val().wishLThree;
       var wishlistFour = childSnapshot.val().wishLFour;
-      
-      
+
+
       console.log(userName);
-     
+
       console.log(wishlistOne);
       console.log(wishlistThree);
 
-      
+
        // Current Time
       //  var currentTime = moment().format("MMM Do YYYY hh:mm A");
       //  console.log("CURRENT TIME: " + currentTime);
@@ -287,14 +271,10 @@ $('#wishListSubmit-btn').on("click", function(event) {
   //                  <td>${wishlistThree}</td>
   //                  <td>${currentTime}</td>
   //             </tr>`)
-  
-  //  },  
+
+  //  },
    })
-   
 
-     
+
+
 });  //Document ready function close
-
-
-
-
