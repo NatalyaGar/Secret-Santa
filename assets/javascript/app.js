@@ -256,7 +256,7 @@ $('#wishListSubmit-btn').on("click", function(event) {
 
   }); //on click function close
   
-   // Create Firebase event for adding train to the database and a row
+   // Create Firebase event for adding a wish to the database and a row
    database.ref().on("child_added", function(childSnapshot, prevChildKey){
       console.log(childSnapshot.val());
 
