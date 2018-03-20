@@ -70,8 +70,14 @@ aside {
   font-size: 22px;
 }
 
-#mssgs, #deets, #sidebar {
+#deets, #sidebar {
   border: 3px dashed green;
+  background-color: #ffcccc;
+  margin: 10px 5px 10px 0;
+}
+
+#mssgs {
+  border: 3px solid red;
   background-color: #ffcccc;
   margin: 10px 5px 10px 0;
 }
@@ -79,6 +85,7 @@ aside {
 #updates {
   font-size: 20px;
   margin: 5px 0;
+  color: red;
 }
 
 #alerts {
@@ -87,7 +94,6 @@ aside {
 
 .amazon {
   margin: 2px 0;
-
 }
 
 #footer {
@@ -100,6 +106,6 @@ aside {
 .jumbotron {
   margin-left: -15px;
   background-color: #ffcccc;
-  border: 6px dotted red;
+  border: 6px dashed white;
   color: green;
 }
