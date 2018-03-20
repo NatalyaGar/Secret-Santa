@@ -46,7 +46,8 @@ h4 {
 }
 
 #user-container {
-    border: 10px solid rgb(163, 218, 163);
+    border: 10px solid rgb(151, 190, 151);
+    /* border: 10px solid rgb(163, 218, 163); */
     border-style: dashed;
     margin-bottom: 40px;
     padding: 20px;
