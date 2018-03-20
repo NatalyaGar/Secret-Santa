@@ -15,7 +15,7 @@
     <!-- <script type= "text/javascript" src="assets/javascript/app.js"></script> -->
 
   </head>
-  <body>
+  <body style="background-image: url(images/snow.jpg)">
     <div id="home" class="col-lg-11 col-md-11 col-xs-11">
       <input type="button" id="logOut" onclick="location.href='index.html';" value="Log Out" />
     </div>
@@ -24,7 +24,7 @@
         <div id="countDown" class="row col-lg-12 col-md-12 col-xs-12">
           <h2 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
         </div>
-        <div class="row col-lg-12 col-md-8 col-xs-12">
+        <div class="row col-lg-12 col-md-12 col-xs-12">
           <section id="calendar">
             <!-- this is where the calendar should go -->
           </section>
@@ -32,11 +32,16 @@
       </div>
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
+        <p id="updates">Party Updates:</p>
         <p id="alerts">
           <h5>You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
         </p>
         <p id="budget">
-          <span id="budgetAmt"></span>
+          <div>
+            <!-- this x needs to be populated with chosen budget -->
+            The budget for gift giving is $
+            <span id="budgetAmt"></span>.
+          </div>
           <!-- OPTIONAL -->
           <!-- this checkbox could be a verification of accepting the averaged budget -->
           <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
@@ -49,7 +54,7 @@
       </section>
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
-      <section id="deets" class="row col-lg-8 col-md-8 col-xs-8">
+      <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
         <!-- this is where to enter partyDeets -->
         <form class="partyDeets">
           <header id="deetsHead">
@@ -118,7 +123,7 @@
         <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3" type="submit" value="Submit your Wishlist"></input>
       </section>
       <!-- this is where to view santaDeets -->
-      <section class="deets row col-lg-7 col-md-7 col-xs-7" display=>
+      <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
         <header id="santaHead" class="col-lg-6 col-md-6 col-xs-6">
           <i>You are <span id="userName"></span>'s Secret Santa!</i>
         </header>
@@ -148,7 +153,7 @@
         </aside>
       </section>
 
-      <aside id="sidebar" class="row col-lg-3 col-md-3 col-xs-3">
+      <aside id="sidebar" class="row col-lg-4 col-md-4 col-xs-4">
         <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
           Random holiday trivia!
           <!-- this is where pics & trivia will go -->
@@ -159,6 +164,8 @@
         </div>
       </aside>
     </div>
+
+    <footer id="footer" >Group Project 1, March 2018</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
