@@ -11,13 +11,11 @@
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet"  href="css/deets.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- <script type= "text/javascript" src="assets/javascript/app.js"></script> -->
 
   </head>
   <body style="background-image: url(images/snow.jpg)">
     <div id="home" class="col-lg-11 col-md-11 col-xs-11">
-      <input type="button" id="logOut" onclick="location.href='index.html';" value="Log Out" />
+      <input type="button" id="logOut" onclick="location.href='assets/index.html';" value="Log Out" />
     </div>
     <div class="deetsContainer col-lg-11 col-md-11 col-xs-11">
       <div class="jumbotron">
@@ -73,12 +71,10 @@
               Gift ideas, please enter three choices:
             </span>
             <div class="gifts">
-              <input type="text" id="giftDeet" class="gifts"></input>
-              <input type="text" id="giftDeet" class="gifts"></input>
-              <input type="text" id="giftDeet" class="gifts"></input>
+              <input type="text" id="gift1" class="gifts"></input>
+              <input type="text" id="gift2" class="gifts"></input>
+              <input type="text" id="gift3" class="gifts"></input>
               <!-- OPTIONAL we could have 2 more input fields but only require 3 inputs, 2 are extra -->
-              <!-- <input type="text" id="giftDeet" class="gifts"></input> -->
-              <!-- <input type="text" id="giftDeet" class="gifts"></input> -->
             </div>
           </div>
           <div id="budget" class="row col-lg-12 col-md-12 col-xs-12">
@@ -120,7 +116,7 @@
             </div>
         </form>
         <!-- this button sends input values to firebase -->
-        <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3" type="submit" value="Submit your Wishlist"></input>
+        <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input>
       </section>
       <!-- this is where to view santaDeets -->
       <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
@@ -168,6 +164,7 @@
     <footer id="footer" >Group Project 1, March 2018</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type= "text/javaScript" src="javascript/deets.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
