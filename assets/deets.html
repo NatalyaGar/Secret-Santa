@@ -12,37 +12,61 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet"  href="css/deets.css">
 
+      <!--Fonts link-->
+      <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
+
+   
   </head>
-  <body style="background-image: url(images/snow.jpg)">
-    <div id="home" class="col-lg-11 col-md-11 col-xs-11">
-      <input type="button" id="logOut" onclick="location.href='assets/index.html';" value="Log Out" />
-    </div>
-    <div class="deetsContainer col-lg-11 col-md-11 col-xs-11">
+  <!-- <body style="background-image: url(images/snow.jpg)"> -->
+  <body> 
+
+   <div class="container">
+
+   
+
+    <!-- <div class="deetsContainer col-lg-11 col-md-11 col-xs-11">
       <div class="jumbotron">
         <div id="countDown" class="row col-lg-12 col-md-12 col-xs-12">
           <h2 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
+        </div> -->
+
+        <div class="jumbotron">
+          <div id="countDown">
+              <h1 class="text-center" id= "header">Secret Santa!</h1>
+             <h3 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h3>
+          
+             <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
+
+               <div id="home" class="col-lg-11 col-md-11 col-xs-11">
+                <input type="button" id="logOut" onclick="location.href='assets/index.html';" value="Log Out" />
+              </div>
+          </div>
         </div>
+
         <div class="row col-lg-12 col-md-12 col-xs-12">
           <section id="calendar">
             <!-- this is where the calendar should go -->
           </section>
         </div>
-      </div>
+      <!-- </div> -->
+     
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
         <p id="updates">Party Updates:</p>
         <p id="alerts">
-          <h5>You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
+          <h5 class="notChangeDays">You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
         </p>
         <p id="budget">
           <div>
             <!-- this x needs to be populated with chosen budget -->
-            The budget for gift giving is $
-            <span id="budgetAmt"></span>.
+          <p class="budgetP" >The budget for gift giving is $
+            <span id="budgetAmt"></span> </p>
           </div>
           <!-- OPTIONAL -->
           <!-- this checkbox could be a verification of accepting the averaged budget -->
-          <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
+            <p class="checkboxAmounVer">
+            <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
+            </p>
         </p>
         <p id="whereAt">
           The party will be held at <span id="location"></span>!
@@ -161,7 +185,21 @@
       </aside>
     </div>
 
-    <footer id="footer" >Group Project 1, March 2018</footer>
+    <!-- <footer id="footer" >Group Project 1, March 2018</footer> -->
+
+    <footer> 
+      <div class="footer">
+
+        <div class="container-fluid">
+        <h5 class="text-center" > DDS team 2018 </h5> 
+        </div> 
+
+      </div>   
+   </footer> 
+
+  
+  </div> 
+  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type= "text/javaScript" src="javascript/deets.js"></script>

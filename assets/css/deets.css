@@ -1,23 +1,49 @@
 #logOut {
-  float: right;
-  margin: 5px 0;
+ 
+  margin-left: 51%;
   padding: 5px 15px;
+  background-color:  rgb(151, 190, 151);
 }
+
+/* body {
+  background-color: #d9f2d9;
+} */
 
 body {
-  background-color: #d9f2d9;
+  background-image: url(../images/christmas-colour.png)
 }
 
-.deetsContainer, #home {
+.container{
+  border: 15px solid rgb(151, 190, 151);
+  border-style: dashed; 
+}
+
+/* .deetsContainer, #home {
   margin: 0 4%;
+} */
+
+#header{
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+  font-size: 90px;
+ 
+  color: rgb(31, 97, 75); 
 }
 
 #days {
   text-align: center;
-  font-size: 34px;
-  margin-top: -20px;
-  font-family: 'Tangerine', 'Aclonica', cursive;
-  font-weight: bold;
+  font-size: 25px;
+  /* margin-top: -20px; */
+  /* font-family: 'Tangerine', 'Aclonica', cursive; */
+  /* font-family: 'Tangerine', cursive; */
+  /* font-weight: bold; */
+  color: rgb(31, 97, 75); 
+}
+
+#tree {
+  color:  rgb(31, 97, 75); 
+  margin-left: 50%;
+  margin-top: 5px;
 }
 
 #daysToGo {
@@ -37,9 +63,21 @@ body {
   margin-top: 10px;
 }
 
-#budget, #whereAt {
-  margin-top: 8px;
+ #whereAt {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
+
+.budgetP,
+.checkboxAmounVer {
+  margin-top: 20px;
+
+  text-align: center;
+ 
+}
+
+
 
 #sendIt {
   padding: 15px 0;
@@ -48,7 +86,9 @@ body {
 }
 
 #deetsHead {
-  font-size: 20px;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 aside {
@@ -70,19 +110,40 @@ aside {
   font-size: 22px;
 }
 
-#mssgs, #deets, #sidebar {
+ #deets, #sidebar {
   border: 3px dashed green;
-  background-color: #ffcccc;
-  margin: 10px 5px 10px 0;
+  background-color: white;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  color:  rgb(31, 97, 75);
+  margin: 20px 20px 20px 10px;
+  font-size: 20px;
+}
+
+#mssgs {
+  border: 3px dashed green;
+  background-color: white;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  color:  rgb(31, 97, 75);
+  margin: 10px 20px 20px 0px;
+  font-size: 20px;
 }
 
 #updates {
-  font-size: 20px;
-  margin: 5px 0;
+  font-size: 29px;
+  margin-left:45%;
+  margin-top: 20px;
 }
 
 #alerts {
   color: red;
+}
+
+.notChangeDays{
+  margin-left: 30%;
+  margin-top: 10px;
+  color:rgb(219, 95, 95);
 }
 
 .amazon {
@@ -98,8 +159,39 @@ aside {
 }
 
 .jumbotron {
-  margin-left: -15px;
-  background-color: #ffcccc;
-  border: 6px dotted red;
-  color: green;
+  
+  margin-top: 30px;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  background-color: rgb(219, 95, 95);
 }
+
+
+                  /* Sticky footer styles
+              -------------------------------------------------- */
+              html {
+                position: relative;
+                min-height: 100%;
+                }
+                body {
+                /* Margin bottom by footer height */
+                margin-bottom: 0px;
+                
+                }
+                .footer {
+                position: absolute;
+                bottom: 0;
+                /* width: 94.7%; */
+                width: 87.5%; 
+
+                
+                padding-top: 11px;
+                /* margin-top: 30px; */
+                /* Set the fixed height of the footer here */
+                height: 65px;
+                background-color: rgb(219, 95, 95);
+                color: rgb(31, 97, 75); 
+                margin-left: 14px;
+               
+                }
+              

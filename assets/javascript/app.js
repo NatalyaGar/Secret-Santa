@@ -1,6 +1,6 @@
 
 
-if name === #name-input from logIn page, display deets
+// if name === #name-input from logIn page, display deets
 
 
 var config = {
