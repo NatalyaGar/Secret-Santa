@@ -6,9 +6,9 @@
 }
 
 
+
 body {
   background-image: url(../images/christmas-colour.png)
-
 }
 
 .container{
@@ -16,9 +16,7 @@ body {
   border-style: dashed; 
 }
 
-/* .deetsContainer, #home {
-  margin: 0 4%;
-} */
+
 
 #header{
   font-family: 'Tangerine', cursive;
@@ -30,7 +28,6 @@ body {
 
 #days {
   text-align: center;
-
   font-size: 25px;
   color: rgb(31, 97, 75); 
 }
@@ -129,8 +126,8 @@ aside {
 #sidebar {
   position: fixed;
   padding: 20px;
-  right: 110px;
-  top: 312px;
+  right: 70px;
+  top: 315px;
 }
 
 #trivia, #map {
@@ -141,7 +138,6 @@ aside {
   font-size: 22px;
 }
 
-
  #deets, #sidebar {
   border: 3px dashed green;
   background-color: white;
@@ -150,7 +146,7 @@ aside {
   color:  rgb(31, 97, 75);
   margin: 20px 20px 20px 10px;
   font-size: 20px;
-
+}
 
 #mssgs {
   border: 3px dashed green;
@@ -233,4 +229,3 @@ aside {
                
                 }
               
-
