@@ -52,7 +52,11 @@
      
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
-        <p id="updates">Party Updates:</p>
+          <div class="panel panel-success">
+              <div class="panel-heading">
+                <p id="updates">Party Updates:</p>
+              </div>
+          </div>      
         <p id="alerts">
           <h5 class="notChangeDays">You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
         </p>
@@ -76,12 +80,19 @@
       </section>
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
-      <section id="deets" class="row col-lg-6 col-md-6 col-sm-6">
+      <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
+          <!-- <section id="deets" class="row col-lg-5 col-md-5 col-sm-5"> -->
         <!-- this is where to enter partyDeets -->
+  
         <form class="partyDeets">
-          <header id="deetsHead">
-            Tell us about yourself so we can help find you the perfect gift!
-          </header>
+
+         <div class="panel panel-success">
+           <div class="panel-heading">
+              <header id="deetsHead">
+              <h4 class="panel-title">Tell us about yourself so we can help find you the perfect gift!</h4>
+             </header>
+          </div>
+         </div>
 
           <div class="nameDeets">
             <span id="nameId">
@@ -93,7 +104,7 @@
           </div>
           <div class="giftDeets">
             <span id="desires">
-              Gift ideas, please enter three choices:
+            <p class= "desiresI">  Gift ideas, please enter three choices: </p>
             </span>
             <div class="gifts">
               <input type="text" id="gift1" class="gifts"></input>
@@ -108,7 +119,7 @@
             </div>
               <div id="minMax" class="col-lg-4 col-md-4 col-xs-4">
                 <p>Minimum Amount:</p>
-                <p>Maximum Amount:</p>
+                <p class="maxAm">Maximum Amount:</p>
               </div>
               <div id="userBudget" class="col-lg-3 col-md-3 col-xs-3">
                 <input type="text" id="min"></input>

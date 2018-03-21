@@ -47,8 +47,11 @@ body {
 }
 
 #minMax {
-  font-size: 22px;
-  margin: 2px 0;
+  font-size: 18px;
+  margin-top: 8px ;
+}
+.maxAm {
+  margin-top: 8px;
 }
 
 #dollars {
@@ -58,6 +61,39 @@ body {
 #currency, #budget, #dates, .nameDeets, .giftDeets, .partyDeets {
   margin-top: 20px;
 }
+
+#name {
+  margin-top: 7px;
+}
+
+.desiresI {
+  margin-bottom: 8px;
+}
+#gift3 {
+  margin-top: 7px;
+}
+
+#min {
+  margin-top: 10px;
+}
+
+#max {
+  margin-top: 10px;
+  /* margin-bottom: 50px; */
+}
+
+#usd {
+  margin-top: 8px;
+}
+
+#dateDeet{
+  margin-top: 10px;
+}
+
+#convert {
+  margin-top: 8px;
+}
+
 
  #whereAt {
   margin-top: 20px;
@@ -81,10 +117,10 @@ body {
   font-size: 20px;
 }
 
-#deetsHead {
+.panel-title {
   font-size: 22px;
   text-align: center;
-  margin-top: 20px;
+  
 }
 
 aside {
