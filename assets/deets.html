@@ -14,37 +14,65 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- <script type= "text/javascript" src="assets/javascript/app.js"></script> -->
 
+      <!--Fonts link-->
+      <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
+
+   
   </head>
-  <body style="background-image: url(images/snow.jpg)">
-    <div id="home" class="col-lg-11 col-md-11 col-xs-11">
-      <input type="button" id="logOut" onclick="location.href='index.html';" value="Log Out" />
-    </div>
-    <div class="deetsContainer col-lg-11 col-md-11 col-xs-11">
+  <!-- <body style="background-image: url(images/snow.jpg)"> -->
+  <body> 
+
+   <div class="container">
+
+   
+
+
       <div class="jumbotron">
         <div id="countDown" class="row col-lg-12 col-md-12 col-xs-12">
           <h2 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
+        </div> -->
+
+        <div class="jumbotron">
+          <div id="countDown">
+              <h1 class="text-center" id= "header">Secret Santa!</h1>
+             <h3 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h3>
+          
+             <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
+
+               <div id="home" class="col-lg-11 col-md-11 col-xs-11">
+                <input type="button" id="logOut" onclick="location.href='assets/index.html';" value="Log Out" />
+              </div>
+          </div>
         </div>
+
         <div class="row col-lg-12 col-md-12 col-xs-12">
           <section id="calendar">
             <!-- this is where the calendar should go -->
           </section>
         </div>
-      </div>
+      <!-- </div> -->
+     
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
-        <p id="updates">Party Updates:</p>
+          <div class="panel panel-success">
+              <div class="panel-heading">
+                <p id="updates">Party Updates:</p>
+              </div>
+          </div>      
         <p id="alerts">
-          <h5>You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
+          <h5 class="notChangeDays">You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
         </p>
         <p id="budget">
           <div>
             <!-- this x needs to be populated with chosen budget -->
-            The budget for gift giving is $
-            <span id="budgetAmt"></span>.
+          <p class="budgetP" >The budget for gift giving is $
+            <span id="budgetAmt"></span> </p>
           </div>
           <!-- OPTIONAL -->
           <!-- this checkbox could be a verification of accepting the averaged budget -->
-          <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
+            <p class="checkboxAmounVer">
+            <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
+            </p>
         </p>
         <p id="whereAt">
           The party will be held at <span id="location"></span>!
@@ -54,12 +82,20 @@
       </section>
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
-      <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
+      <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
+          <!-- <section id="deets" class="row col-lg-5 col-md-5 col-sm-5"> -->
         <!-- this is where to enter partyDeets -->
+  
         <form class="partyDeets">
-          <header id="deetsHead">
-            Tell us about yourself so we can help find you the perfect gift!
-          </header>
+
+         <div class="panel panel-success">
+           <div class="panel-heading">
+              <header id="deetsHead">
+              <h4 class="panel-title">Tell us about yourself so we can help find you the perfect gift!</h4>
+             </header>
+          </div>
+         </div>
+
           <div class="nameDeets">
             <span id="nameId">
               Name:
@@ -70,7 +106,7 @@
           </div>
           <div class="giftDeets">
             <span id="desires">
-              Gift ideas, please enter three choices:
+            <p class= "desiresI">  Gift ideas, please enter three choices: </p>
             </span>
             <div class="gifts">
               <input type="text" id="giftDeet" class="gifts"></input>
@@ -87,7 +123,7 @@
             </div>
               <div id="minMax" class="col-lg-4 col-md-4 col-xs-4">
                 <p>Minimum Amount:</p>
-                <p>Maximum Amount:</p>
+                <p class="maxAm">Maximum Amount:</p>
               </div>
               <div id="userBudget" class="col-lg-3 col-md-3 col-xs-3">
                 <input type="text" id="min"></input>
@@ -117,10 +153,14 @@
                 </div>
                 <!-- OPTIONAL we could have users pick 3 party dates from <details> dropdown, most chosen date becomes party date -->
               </div>
+              <!-- this button sends input values to firebase -->
+              <!-- <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input> -->
+              <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button>
             </div>
+           
         </form>
-        <!-- this button sends input values to firebase -->
-        <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3" type="submit" value="Submit your Wishlist"></input>
+
+       
       </section>
       <!-- this is where to view santaDeets -->
       <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
@@ -153,19 +193,37 @@
         </aside>
       </section>
 
-      <aside id="sidebar" class="row col-lg-4 col-md-4 col-xs-4">
+      <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
         <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
+            <!-- <div id="trivia" class="row col-lg-6 col-md-6 col-xs-6"> -->
           Random holiday trivia!
           <!-- this is where pics & trivia will go -->
         </div>
         <div id="map" class="row col-lg-12 col-md-12 col-xs-12">
+            <!-- <div id="map" class="row col-lg-6 col-md-6 col-xs-6"> -->
           Party location!
           <!-- this is where the map will go -->
         </div>
       </aside>
     </div>
 
-    <footer id="footer" >Group Project 1, March 2018</footer>
+    <!-- <footer id="footer" >Group Project 1, March 2018</footer> -->
+
+    <footer> 
+      <div class="footer">
+
+        <div class="container-fluid">
+        <h5 class="text-center" > DDS team 2018 </h5> 
+        </div> 
+
+      </div>   
+   </footer> 
+
+  
+  <!-- </div>  -->
+</div>
+  
+  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

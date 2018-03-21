@@ -1,26 +1,56 @@
 #logOut {
-  float: right;
-  margin: 5px 0;
+ 
+  margin-left: 51%;
   padding: 5px 15px;
+  background-color:  rgb(151, 190, 151);
 }
+
 
 body {
-  background-color: #000099;
+  background-image: url(../images/christmas-colour.png)
+
 }
 
-.deetsContainer, #home {
+.container{
+  border: 15px solid rgb(151, 190, 151);
+  border-style: dashed; 
+}
+
+/* .deetsContainer, #home {
   margin: 0 4%;
+} */
+
+#header{
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+  font-size: 90px;
+ 
+  color: rgb(31, 97, 75); 
 }
 
 #days {
   text-align: center;
-  font-size: 32px;
-  margin: inherit;
+
+  font-size: 25px;
+  color: rgb(31, 97, 75); 
+}
+
+#tree {
+  color:  rgb(31, 97, 75); 
+  margin-left: 50%;
+  margin-top: 5px;
+}
+
+#daysToGo {
+  font-size: 40px;
 }
 
 #minMax {
-  font-size: 22px;
-  margin: 2px 0;
+  font-size: 18px;
+  margin-top: 8px ;
+}
+.maxAm {
+  margin-top: 8px;
 }
 
 #dollars {
@@ -28,12 +58,57 @@ body {
 }
 
 #currency, #budget, #dates, .nameDeets, .giftDeets, .partyDeets {
+  margin-top: 20px;
+}
+
+#name {
+  margin-top: 7px;
+}
+
+.desiresI {
+  margin-bottom: 8px;
+}
+#gift3 {
+  margin-top: 7px;
+}
+
+#min {
   margin-top: 10px;
 }
 
-#budget, #whereAt {
+#max {
+  margin-top: 10px;
+  /* margin-bottom: 50px; */
+}
+
+#usd {
   margin-top: 8px;
 }
+
+#dateDeet{
+  margin-top: 10px;
+}
+
+#convert {
+  margin-top: 8px;
+}
+
+
+ #whereAt {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.budgetP,
+.checkboxAmounVer {
+  margin-top: 20px;
+
+  text-align: center;
+ 
+}
+
+
 
 #sendIt {
   padding: 15px 0;
@@ -41,8 +116,10 @@ body {
   font-size: 20px;
 }
 
-#deetsHead {
-  font-size: 20px;
+.panel-title {
+  font-size: 22px;
+  text-align: center;
+  
 }
 
 aside {
@@ -64,19 +141,41 @@ aside {
   font-size: 22px;
 }
 
-#mssgs, #deets, #sidebar {
-  border: 3px dashed red;
-  background-color: #ffcccc;
-  margin: 10px 5px 10px 0;
+
+ #deets, #sidebar {
+  border: 3px dashed green;
+  background-color: white;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  color:  rgb(31, 97, 75);
+  margin: 20px 20px 20px 10px;
+  font-size: 20px;
+
+
+#mssgs {
+  border: 3px dashed green;
+  background-color: white;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  color:  rgb(31, 97, 75);
+  margin: 10px 20px 20px 0px;
+  font-size: 20px;
 }
 
 #updates {
-  font-size: 20px;
-  margin: 5px 0;
+  font-size: 29px;
+  margin-left:45%;
+  margin-top: 20px;
 }
 
-#alerts {
+/* #alerts {
   color: red;
+} */
+
+.notChangeDays{
+  margin-left: 30%;
+  margin-top: 10px;
+  color:rgb(219, 95, 95);
 }
 
 .amazon {
@@ -92,8 +191,46 @@ aside {
 }
 
 .jumbotron {
-  margin-left: -15px;
-  background-color: #d9f2d9;
-  border: 4px dashed green;
-  color: red;
+  
+  margin-top: 30px;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  background-color: rgb(219, 95, 95);
 }
+
+#deets-submit-btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+                  /* Sticky footer styles
+              -------------------------------------------------- */
+              html {
+                position: relative;
+                min-height: 100%;
+                }
+                body {
+                /* Margin bottom by footer height */
+                margin-bottom: 0px;
+                
+                
+                }
+                .footer {
+                position: absolute;
+                bottom: 0;
+                width: 86%;    
+                padding-top: 23px;
+                /* font-weight: bolder; */
+                font-weight: bold;
+                font-size: 15px;
+               
+                /* Set the fixed height of the footer here */
+                height: 65px;
+                background-color: rgb(219, 95, 95);
+                color: rgb(31, 97, 75); 
+                margin-left: 7.3%;
+               
+                }
+              
+
