@@ -76,12 +76,13 @@
       </section>
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
-      <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
+      <section id="deets" class="row col-lg-6 col-md-6 col-sm-6">
         <!-- this is where to enter partyDeets -->
         <form class="partyDeets">
           <header id="deetsHead">
             Tell us about yourself so we can help find you the perfect gift!
           </header>
+
           <div class="nameDeets">
             <span id="nameId">
               Name:
@@ -137,10 +138,13 @@
                 </div>
                 <!-- OPTIONAL we could have users pick 3 party dates from <details> dropdown, most chosen date becomes party date -->
               </div>
+              <!-- this button sends input values to firebase -->
+              <!-- <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input> -->
+              <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button>
             </div>
+           
         </form>
-        <!-- this button sends input values to firebase -->
-        <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input>
+       
       </section>
       <!-- this is where to view santaDeets -->
       <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
@@ -173,12 +177,14 @@
         </aside>
       </section>
 
-      <aside id="sidebar" class="row col-lg-4 col-md-4 col-xs-4">
+      <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
         <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
+            <!-- <div id="trivia" class="row col-lg-6 col-md-6 col-xs-6"> -->
           Random holiday trivia!
           <!-- this is where pics & trivia will go -->
         </div>
         <div id="map" class="row col-lg-12 col-md-12 col-xs-12">
+            <!-- <div id="map" class="row col-lg-6 col-md-6 col-xs-6"> -->
           Party location!
           <!-- this is where the map will go -->
         </div>
@@ -198,7 +204,9 @@
    </footer> 
 
   
-  </div> 
+  <!-- </div>  -->
+</div>
+  
   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

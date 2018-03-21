@@ -33,10 +33,6 @@ body {
 #days {
   text-align: center;
   font-size: 25px;
-  /* margin-top: -20px; */
-  /* font-family: 'Tangerine', 'Aclonica', cursive; */
-  /* font-family: 'Tangerine', cursive; */
-  /* font-weight: bold; */
   color: rgb(31, 97, 75); 
 }
 
@@ -60,7 +56,7 @@ body {
 }
 
 #currency, #budget, #dates, .nameDeets, .giftDeets, .partyDeets {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
  #whereAt {
@@ -136,9 +132,9 @@ aside {
   margin-top: 20px;
 }
 
-#alerts {
+/* #alerts {
   color: red;
-}
+} */
 
 .notChangeDays{
   margin-left: 30%;
@@ -166,6 +162,11 @@ aside {
   background-color: rgb(219, 95, 95);
 }
 
+#deets-submit-btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 
                   /* Sticky footer styles
               -------------------------------------------------- */
@@ -177,21 +178,22 @@ aside {
                 /* Margin bottom by footer height */
                 margin-bottom: 0px;
                 
+                
                 }
                 .footer {
                 position: absolute;
                 bottom: 0;
-                /* width: 94.7%; */
-                width: 87.5%; 
-
-                
-                padding-top: 11px;
-                /* margin-top: 30px; */
+                width: 86%;    
+                padding-top: 23px;
+                /* font-weight: bolder; */
+                font-weight: bold;
+                font-size: 15px;
+               
                 /* Set the fixed height of the footer here */
                 height: 65px;
                 background-color: rgb(219, 95, 95);
                 color: rgb(31, 97, 75); 
-                margin-left: 14px;
+                margin-left: 7.3%;
                
                 }
               
