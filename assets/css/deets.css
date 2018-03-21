@@ -70,9 +70,16 @@ aside {
   margin: 10px 5px 10px 0;
 }
 
+#mssgs {
+  border: 3px solid red;
+  background-color: #ffcccc;
+  margin: 10px 5px 10px 0;
+}
+
 #updates {
   font-size: 20px;
   margin: 5px 0;
+  color: red;
 }
 
 #alerts {
@@ -81,7 +88,6 @@ aside {
 
 .amazon {
   margin: 2px 0;
-
 }
 
 #footer {
