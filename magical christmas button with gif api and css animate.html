@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <meta charset="utf-8">
+</head>
+<body>
+        <h1 class="animated infinite bounce">Happiness!</h1>
+  <button id="Christmas-button">Press Here For Christmas Spirit!!!</button>
+  <div id="images">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    //when you click on the  button
+   
+    $("#Christmas-button").on("click", function() {
+      
+      // define variable for the api url
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=Christmas";
+      // get the random  image make the ajax call to the queery URL using jQuery
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      // stick the image on the screen 
+        .then(function(response) {
+        //
+          var imageUrl = response.data.image_original_url;
+          // make a variable, to get the data back from the api 
+          var christmasImage = $("<img>");
+          // create a new image element
+          christmasImage.attr("src", imageUrl);
+          
+          $("#images").prepend(christmasImage);
+         
+        });
+    });
+  </script>
+</body>
+</html>
