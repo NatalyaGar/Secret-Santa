@@ -1,3 +1,8 @@
+<!--DU Web Dev Bootcamp 2018
+    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
+    Project 1
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,30 +19,96 @@
 <<<<<<< HEAD
 =======
 
+    <!--Your links was on bottom, but it is should be here to work  cowntdown clock, I commented out yor deets.js, because I don't have your deets.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type= "text/javaScript" src="javascript/deets.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+      <!--links for flipclock-->   
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
    
 >>>>>>> 153b8e3831df700d67157d7bd7f01854f31e901e
 
       <!--Fonts link-->
       <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
 
+       <!--CSS Animate-->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
    
   </head>
-  <!-- <body style="background-image: url(images/snow.jpg)"> -->
+ 
   <body> 
+
+     <!--Countdown clock code-->
+
+     <script>
+        $(document).ready(function() {
+
+          var clock;
+        
+          // Grab the current date
+          var currentDate = new Date();
+        
+          // Target future date/24 hour time/Timezone. (currently set to 8:30AM on Christmas)
+          var targetDate = moment.tz("2018-12-25 08:30", "America/Denver");
+        
+          // Calculate the difference in seconds between the future and current date
+          var diff = targetDate / 1000 - currentDate.getTime() / 1000;
+        
+          if (diff <= 0) {
+            // If remaining countdown is 0
+            clock = $(".clock").FlipClock(0, {
+              clockFace: "DailyCounter",
+              countdown: true,
+              autostart: false
+            });
+            console.log("Date has already passed!")
+            
+          } else {
+            // Run countdown timer
+            clock = $(".clock").FlipClock(diff, {
+              clockFace: "DailyCounter",
+              countdown: true,
+              callbacks: {
+                stop: function() {
+                  console.log("Timer has ended!")
+                }
+              }
+            });
+            
+            // Check when timer reaches 0, then stop at 0
+            setTimeout(function() {
+              checktime();
+            }, 1000);
+            
+            function checktime() {
+              t = clock.getTime();
+              if (t <= 0) {
+                clock.setTime(0);
+              }
+              setTimeout(function() {
+                checktime();
+              }, 1000);
+            }
+          }
+        });
+        </script>
+
+    <!--Countdown clock code close-->
+
 
    <div class="container">
 
-   
-
-    <!-- <div class="deetsContainer col-lg-11 col-md-11 col-xs-11">
-      <div class="jumbotron">
-        <div id="countDown" class="row col-lg-12 col-md-12 col-xs-12">
-          <h2 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h2>
-        </div> -->
-
         <div class="jumbotron">
           <div id="countDown">
-              <h1 class="text-center" id= "header">Secret Santa!</h1>
+              <!-- <h1 class="text-center" id= "header">Secret Santa!</h1> -->
+              <h1 class="animated infinite bounce" id= "header">Secret Santa!</h1>
+
              <h3 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h3>
           
              <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
@@ -48,12 +119,22 @@
           </div>
         </div>
 
-        <div class="row col-lg-12 col-md-12 col-xs-12">
-          <section id="calendar">
-            <!-- this is where the calendar should go -->
-          </section>
-        </div>
-      <!-- </div> -->
+     
+ <!--Cowntdown calendar-->
+        <div class="row"> 
+          <div class= " col-lg-12 col-md-8 col-xs-12 ">  
+                <div class="panel panel-success" id="headingTextStart">
+                    <div class="panel-heading">
+                      <p class="daysLeftP"> Untill Christmas</p>
+                         <section id="calendar">
+                             <div class="clock"></div>  
+                         </section>  
+                    </div>
+                </div>  
+            
+            </div>  
+        </div> <!--Cowntdown calendar close-->
+     
      
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
@@ -86,9 +167,7 @@
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
       <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
-          <!-- <section id="deets" class="row col-lg-5 col-md-5 col-sm-5"> -->
         <!-- this is where to enter partyDeets -->
-  
         <form class="partyDeets">
 
          <div class="panel panel-success">
@@ -194,20 +273,57 @@
       </section>
 
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
-        <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
-            <!-- <div id="trivia" class="row col-lg-6 col-md-6 col-xs-6"> -->
-          Random holiday trivia!
+      <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
+           
+          <!-- Random holiday trivia! -->
           <!-- this is where pics & trivia will go -->
-        </div>
-        <div id="map" class="row col-lg-12 col-md-12 col-xs-12">
-            <!-- <div id="map" class="row col-lg-6 col-md-6 col-xs-6"> -->
-          Party location!
-          <!-- this is where the map will go -->
-        </div>
-      </aside>
-    </div>
 
-    <!-- <footer id="footer" >Group Project 1, March 2018</footer> -->
+        
+           <!--Left Colomn-->
+       
+          <!-- Christmas Cheer  -->
+            <div class="panel panel-success">
+  
+                 <div class="panel-heading">
+                  <h4 class="text-center" class="panel-title" ><strong>Press for Christmas Cheer!</strong></h4>
+                 </div>
+  
+                <div class="panel-body" id="imgPanel">
+  
+                    <div id="images"></div>
+  
+                    <div id="buttons">
+                      <button class="btn btn-danger" id="Christmas-button" type="submit">Press me again!</button>
+                      <button class="btn btn-danger" id="musicPlay"> Play music</button> 
+                      <button class="btn btn-danger" id="musicPause"> Pause music</button> 
+                    </div>  
+
+                </div> <!--imgPanel-->        
+           
+            </div> <!--panel panel-success-->
+       
+   
+
+       
+                    <!--Map-->
+                    <div id="map" class="row col-lg-12 col-md-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                              <p class="locationP"> Party location!</p> 
+                              <!-- this is where the map will go -->
+                            </div>
+                        </div>  
+                      
+          
+                    </div> <!--map-->
+      </aside> <!--sidebar-->      
+      </div> <!--trivia-->
+         
+        
+
+
+     
+   
 
     <footer> 
       <div class="footer">
@@ -220,13 +336,11 @@
    </footer> 
 
   
-  <!-- </div>  -->
+ 
 </div>
   
   
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type= "text/javaScript" src="javascript/deets.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   
   </body>
 </html>
