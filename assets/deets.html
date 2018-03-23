@@ -17,10 +17,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet"  href="css/deets.css">
 
-    <!--Your links was on bottom, but it is should be here to work  cowntdown clock, I commented out yor deets.js, because I don't have your deets.js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--Your links was on bottom, but it is should be here to work  cowntdown clock-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script type= "text/javaScript" src="javascript/deets.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+   
 
       <!--links for flipclock-->   
     <script src="https://momentjs.com/downloads/moment.js"></script>
@@ -36,6 +39,14 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
+    <!--Links for map-->
+ <script src="javascript/map.js"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ykdYPnNswf6X7Hd5qHz4RT4WicH5NhE&callback=initMap">
+ </script>
+
+   
+
+   
    
   </head>
  
@@ -239,6 +250,8 @@
        
       </section>
       <!-- this is where to view santaDeets -->
+      <!--deets-container-->
+    <div id="deets-container">
       <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
         <header id="santaHead" class="col-lg-6 col-md-6 col-xs-6">
           <i>You are <span id="userName"></span>'s Secret Santa!</i>
@@ -268,16 +281,13 @@
           <button id="buy3" class="amazon">Take me to Amazon!</button>
         </aside>
       </section>
+    </div>
 
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
       <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
-           
           <!-- Random holiday trivia! -->
           <!-- this is where pics & trivia will go -->
-
-        
-           <!--Left Colomn-->
-       
+           <!--Right Colomn-->
           <!-- Christmas Cheer  -->
             <div class="panel panel-success">
   
@@ -295,33 +305,29 @@
                       <button class="btn btn-danger" id="musicPause"> Pause music</button> 
                     </div>  
 
-                </div> <!--imgPanel-->        
+                </div> <!--panel-body imgPanel-->        
            
             </div> <!--panel panel-success-->
-       
-   
-
-       
+      
                     <!--Map-->
-                    <div id="map" class="row col-lg-12 col-md-12 col-xs-12">
+                    <div id="mapHead" class="row col-lg-12 col-md-12 col-xs-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
                               <p class="locationP"> Party location!</p> 
-                              <!-- this is where the map will go -->
                             </div>
-                        </div>  
+                        
+                              <!-- this is where the map will go -->
+                              <div class="panel-body" id="mapPanel">
+                                <div id="map"></div>  
+                              </div> 
                       
-          
-                    </div> <!--map-->
+                        </div>  <!--panel panel-success-->  
+                    </div> <!-- map row-->   
+
       </aside> <!--sidebar-->      
       </div> <!--trivia-->
          
-        
-
-
-     
-   
-
+<!--Footer-->
     <footer> 
       <div class="footer">
 
@@ -333,11 +339,10 @@
    </footer> 
 
   
- 
-</div>
-  
+  <!-- </div>  -->
+</div> <!--container close-->
   
 
-   
+ 
   </body>
 </html>

@@ -5,7 +5,7 @@
 
 
 $(document).ready(function(){
-
+  $("#deets-container").hide();
      //Christmas Cheer button
      $("#Christmas-button").on("click", function() {
         console.log("Hello");
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
        //Audio Element
        var audioElement = document.createElement("audio");
-       audioElement.setAttribute("src", "assets/music/WhiteChristmas.mp3");
+       audioElement.setAttribute("src", "music/WhiteChristmas.mp3");
       
      // music play button
        $("#musicPlay").on("click", function() {
