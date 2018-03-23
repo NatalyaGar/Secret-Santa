@@ -1,11 +1,24 @@
+/*DU Web Dev Bootcamp 2018
+    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
+    Project 1
+*/
+
 #logOut {
- 
   margin-left: 51%;
   padding: 5px 15px;
   background-color:  rgb(151, 190, 151);
 }
 
+/* .clock {
+  margin-left: 17%;
+  margin-top: 0px;
+ 
+} */
 
+#calendar{
+  margin-left: 17%;
+  margin-top: 0px;
+}
 
 body {
   background-image: url(../images/christmas-colour.png)
@@ -22,9 +35,21 @@ body {
   font-family: 'Tangerine', cursive;
   font-weight: bold;
   font-size: 90px;
- 
+  text-align: center;
   color: rgb(31, 97, 75); 
 }
+
+
+
+.daysLeftP {
+  font-family: Tangerine, cursive;
+  font-weight: bold;
+  font-size: 90px;
+  text-align: center;
+  color: rgb(31, 97, 75);
+}
+
+
 
 #days {
   text-align: center;
@@ -41,6 +66,10 @@ body {
 #daysToGo {
   font-size: 40px;
 }
+
+#buttons{
+  margin-top: 10px;
+  }
 
 #minMax {
   font-size: 18px;
@@ -75,7 +104,6 @@ body {
 
 #max {
   margin-top: 10px;
-  /* margin-bottom: 50px; */
 }
 
 #usd {
@@ -123,22 +151,65 @@ aside {
   font-size: 18px;
 }
 
-#sidebar {
+
+/* #sidebar {
   position: fixed;
   padding: 20px;
+  right: 110px;
+  top: 312px;
+} */
+
+#sidebar {
+  position: absolute;
+  padding: 10px;
   right: 70px;
-  top: 315px;
+  top: 920px; 
+  margin: 20px 20px 20px 10px;
 }
 
-#trivia, #map {
-  margin-top: 10px;
+#sidebar{
+  border: 3px dashed green;
+  background-color: white;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  color:  rgb(31, 97, 75);
+  margin: 20px 20px 50px 10px;
+  font-size: 20px;
 }
+
+#trivia {
+  margin-top: 7px;
+  width: 525px;
+  
+}
+
+#map{
+  height: 372px;
+  width: 525px;
+}
+
+
+.locationP{
+  text-align: center;
+}
+
+/* #imgPanel {
+  padding-bottom: 40px;
+  height: 395px;
+} */
+#images {
+  height: 240px;
+}
+
+#buttons{
+  margin-top: 30px;
+  }
 
 #santaLtr {
   font-size: 22px;
 }
 
- #deets, #sidebar {
+ #deets {
   border: 3px dashed green;
   background-color: white;
   border: 10px solid rgb(151, 190, 151);
