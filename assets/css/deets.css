@@ -35,6 +35,8 @@ body {
 
 
 
+
+
 .daysLeftP {
   font-family: Tangerine, cursive;
   font-weight: bold;
@@ -63,6 +65,7 @@ body {
 
 #buttons{
   margin-top: 10px;
+  margin-left: 18%;
   }
 
 #minMax {
@@ -127,18 +130,23 @@ body {
  
 }
 
-
-
-#sendIt {
-  padding: 15px 0;
-  margin: 10px 0;
+#sendIt{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 52%;
   font-size: 20px;
 }
+
 
 .panel-title {
   font-size: 22px;
   text-align: center;
+  margin-top: 0;
   
+}
+
+h4{
+  font-size: 22px;
 }
 
 aside {
@@ -209,7 +217,28 @@ aside {
   color:  rgb(31, 97, 75);
   margin: 20px 20px 120px 10px;
   font-size: 20px;
+  padding: 0px 10px 10px 10px;
 }
+
+#deetsSecondP {
+  border: 3px dashed green;
+  background-color: white;
+  border: 10px solid rgb(151, 190, 151);
+  border-style: dashed;
+  color:  rgb(31, 97, 75);
+  margin: 20px 20px 280px 10px;
+  font-size: 20px;
+  padding: 18px 10px 10px 10px;
+}
+
+.buttonsAmazon {
+  margin-left: 23%;
+  margin-top: 10px;
+}
+ #buy2,
+ #buy3 {
+   margin-top: 10px;
+ } 
 
 #mssgs {
   border: 3px dashed green;
@@ -230,6 +259,11 @@ aside {
 /* #alerts {
   color: red;
 } */
+
+#santaLtr {
+  font-size: 20px;
+  line-height: 150%;
+}
 
 .notChangeDays{
   margin-left: 30%;
@@ -257,10 +291,7 @@ aside {
   background-color: rgb(219, 95, 95);
 }
 
-#deets-submit-btn{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+
 
 
                   /* Sticky footer styles
@@ -278,7 +309,6 @@ aside {
                 .footer {
                 position: relative;
                 bottom: -45px;
-                /* width: 86%;     */
                 width: 100%;
                 padding-top: 23px;
                 font-weight: bold;
@@ -288,7 +318,5 @@ aside {
                 height: 65px;
                 background-color: rgb(219, 95, 95);
                 color: rgb(31, 97, 75); 
-                /* margin-left: 7.3%; */
-               
                 }
               
