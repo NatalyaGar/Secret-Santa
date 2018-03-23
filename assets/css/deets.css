@@ -9,12 +9,6 @@
   background-color:  rgb(151, 190, 151);
 }
 
-/* .clock {
-  margin-left: 17%;
-  margin-top: 0px;
- 
-} */
-
 #calendar{
   margin-left: 17%;
   margin-top: 0px;
@@ -161,7 +155,7 @@ aside {
 
 #sidebar {
   position: absolute;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   right: 70px;
   top: 920px; 
 }
@@ -173,6 +167,7 @@ aside {
   border-style: dashed;
   color:  rgb(31, 97, 75);
   margin: 20px 20px 50px 10px;
+  /* margin: 35px 20px 50px 10px; */
   font-size: 20px;
 }
 
@@ -184,18 +179,17 @@ aside {
 
 #map{
   height: 372px;
-  width: 525px;
+  width: 465px;
 }
 
+#mapHead{
+  width: 525px;
+}
 
 .locationP{
   text-align: center;
 }
 
-/* #imgPanel {
-  padding-bottom: 40px;
-  height: 395px;
-} */
 #images {
   height: 240px;
 }
@@ -214,7 +208,7 @@ aside {
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   color:  rgb(31, 97, 75);
-  margin: 20px 20px 20px 10px;
+  margin: 20px 20px 120px 10px;
   font-size: 20px;
 }
 
@@ -283,11 +277,11 @@ aside {
                 
                 }
                 .footer {
-                position: absolute;
-                bottom: 0;
-                width: 86%;    
+                position: relative;
+                bottom: -45px;
+                /* width: 86%;     */
+                width: 100%;
                 padding-top: 23px;
-                /* font-weight: bolder; */
                 font-weight: bold;
                 font-size: 15px;
                
@@ -295,7 +289,7 @@ aside {
                 height: 65px;
                 background-color: rgb(219, 95, 95);
                 color: rgb(31, 97, 75); 
-                margin-left: 7.3%;
+                /* margin-left: 7.3%; */
                
                 }
               
