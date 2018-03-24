@@ -78,10 +78,13 @@ $('#sendIt').click(function() {
     if (isNaN(budget[0])) {
       console.log('min number is NOT valid, please enter a number');
       //NOTE need to stop code here if number is not valid
+      $('#minAmt').text('min number is NOT valid, please enter a number');
       return;
-    } else if (isNaN(budget[1])) {
+    }
+    if (isNaN(budget[1])) {
       console.log('max number is NOT valid, please enter a number');
       //NOTE need to stop code here if number is not valid
+      $('#maxAmt').text('max number is NOT valid, please enter a number');;
       return;
     }
     if (budget[0] == '') {
@@ -123,12 +126,12 @@ $('#sendIt').click(function() {
     }
   }
 
-    function avgIt(budget) {
-      console.log('avgIt budget: ', budget);
-        let avg = ((parseInt(budget[0]) + parseInt(budget[1])) / budget.length).toString();
-        console.log('the Guests budget avg is: ', avg);
-        return budget.push(avg);
-    }
+  function avgIt(budget) {
+    console.log('avgIt budget: ', budget);
+      let avg = ((parseInt(budget[0]) + parseInt(budget[1])) / budget.length).toString();
+      console.log('the Guests budget avg is: ', avg);
+      return budget.push(avg);
+  }
 
   function sendIt(name, gifts, budget, date) {
     console.log('sendIt budget: ', budget);
