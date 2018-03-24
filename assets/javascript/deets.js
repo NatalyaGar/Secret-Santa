@@ -1,140 +1,152 @@
-/*DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
-    Project 1
-*/
-
-var config = {
-  apiKey: "AIzaSyCM6gXwrnT1NUttrDF8qw1dAjI6qd0JpXE",
-  authDomain: "secret-santa-efc15.firebaseapp.com",
-  databaseURL: "https://secret-santa-efc15.firebaseio.com",
-  projectId: "secret-santa-efc15",
-  storageBucket: "",
-  messagingSenderId: "451980576303"
-};
-firebase.initializeApp(config);
-
-// Create a variable to reference the database
-var database = firebase.database();
-
-
-
 $(document).ready(function(){
-  $("#deets-container").hide();
-     //Christmas Cheer button
-     $("#Christmas-button").on("click", function() {
-        console.log("Hello");
-          // define variable for the api url
-          var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=Christmas";
-          // get the random  image make the ajax call to the queery URL using jQuery
-                  $.ajax({
-                  url: queryURL,
-                  method: "GET"
-                  })
-          // stick the image on the screen 
-          .then(function(response) {
-              console.log(response);
-              // var imageUrl = response.data.image_original_url;
-              var imageUrl = response.data.images.fixed_height_downsampled.url
-              // make a variable, to get the data back from the api 
-              var christmasImage = $('<img style="width: 460px;">');
-              // create a new image element
-              christmasImage.attr("src", imageUrl);
-              $("#images").empty();
-              $("#images").prepend(christmasImage);
-             
-          }); //response function close
-      }); //on click function close
-  
 
-       //Audio Element
-       var audioElement = document.createElement("audio");
-       audioElement.setAttribute("src", "music/WhiteChristmas.mp3");
-      
-     // music play button
-       $("#musicPlay").on("click", function() {
-        audioElement.play();                                    
-           });
-       //music pause button
-       $("#musicPause").on("click", function() {
-            audioElement.pause();
-            // audioElementV.pause();
-          });
- 
- 
+  //NOTE ajax request for map API & currency API (& calendar?)
+  // $.ajax({
+  //   url: '',
+  //   method: 'GET'
+  // }).then(function(response) {
+  //   console.log(response);
+  // })
 
-    function Guest(name, pw, gifts, budget, date) {
-      this.name = name;
-      // this.pw = pw;
-      this.gifts = gifts;
-      this.budget = budget;
-      this.date = date;
+  var config = {
+    apiKey: "AIzaSyDwUh8oQG_IpoQ5kj6IvxYW8tGNXoZbU7M",
+    authDomain: "testproject-56e43.firebaseapp.com",
+    databaseURL: "https://testproject-56e43.firebaseio.com",
+    projectId: "testproject-56e43",
+    storageBucket: "testproject-56e43.appspot.com",
+    messagingSenderId: "628909235262"
+  };
+
+  firebase.initializeApp(config);
+  var database = firebase.database();
+
+
+    // var newUser ={
+    //     name: userName,
+    //     // passw: password,
+    //     // newPassw: newPassword,
+    //     // varifPassw: varifyPassword,
+    // };
+    //
+    //     //Upload user data to the database
+    //     database.ref().push(newUser);
+
+//NOTE add properties to Guest constructor thru protype?????
+  // function logIt(name, pw) {
+  //
+  // }
+
+  function Guest(name, gifts, budget, date) {
+    this.name = name;
+    this.gifts = gifts;
+    this.budget = budget;
+    this.date = date;
+  }
+
+  $("#dateDeet").keypress(function(e) {
+    if (e.which == 13) {
+      $('#sendIt').trigger('click');
     }
+  });
 
-    
-      $('#sendIt').on("click", function(event) {
-      event.preventDefault();
-   
-      console.log("click sendIt");
-      //Modal message show when click submit button
-      $('#myModal').modal(); 
-      $("#modalContainer").show()
-     
-   
-      var name = $("#name").val();
-      // var pw = $("#password-input").val();
-      var gift1 =$('#gift1').val().trim();
-      var gift2 =$('#gift2').val().trim();
-      var gift3 =$('#gift3').val().trim();
-      var gifts = [gift1, gift2, gift3];
-      var minAmt = $('#min').val().trim();
-      var maxAmt = $('#max').val().trim();
-      var budget = [minAmt, maxAmt];
-      var date = $('#dateDeet').val().trim();
-      console.log('name: ', userName);
-      console.log('gift array: ', gifts);
-      console.log('budget: ', budget);
-      console.log('date chosen: ', date);
-    
+$('#sendIt').click(function() {
+    console.log('button clicked!');
+    var name = $("#name").val().trim();
+    var gift1 =$('#gift1').val().trim();
+    var gift2 =$('#gift2').val().trim();
+    var gift3 =$('#gift3').val().trim();
+    var gifts = [gift1, gift2, gift3];
+    var minAmt = $('#min').val().trim();
+    var maxAmt = $('#max').val().trim();
+    var budget = [minAmt, maxAmt];
+
+    if (isNaN(budget[0]) || isNaN(budget[1])) {
+      $('#minAmt').text('Your number is not valid, please enter a number');
+      return;
+    }
+    if (budget[0] > budget[1]) {
+      console.log('please check that your maximum budget is larger than your minimum budget');
+      return;
+    }
+    console.log('clickIt budget before isValidAmt(): ', budget);
+    isValidAmt(budget);
+    console.log('clickIt budget after isValidAmt(): ', budget);
+
+    var date = $('#dateDeet').val().trim();
+    isValidDate(date);
+
+    if ((name == '') || (gift1 == '') || (date == '')) {
+      console.log('Please enter all of the following info: name, gift, date');
+    } else {
       sendIt(name, gifts, budget, date);
-    
-    })
-    
-    function sendIt(name, gifts, budget, date) {
-      var user = new Guest(name, gifts, budget, date);
-      console.log('is this working???', user);
-      console.log('date: ', date);
     }
+  })
 
-    $('#haveGroupBtn').on("click", function(event) {
-      event.preventDefault();
-         //show deets-container on click submit button
-     $("#deets-container").show();
-
-      //hide deets section on click submit button
-     $("#deetsLeftContainer").hide();
-     $("#haveGroupPanel").hide();
-
-
-     
-    });
-
-    //modal if any of the fields underined show error message, else show next page and thank message
-    // if ((name == undefined) || (gif1 == undefined) || (gif2 == undefined) || (gif3 == undefined) || (minAmt == undefined) || (maxAmt == undefined) || (date == undefined)){
-    //   console.log("if block")
-    //   $("#myModalError").modal();
-    //   $("#modalContainerError").show();
-    //   $("#deetsLeftContainer").show();
-     
+  function isValidAmt(budget) {
+    // if (isNaN(budget[0])) {
+    //   console.log('min number is NOT valid, please enter a number');
+    //   //NOTE need to stop code here if number is not valid
+    //   $('#minAmt').text('min number is NOT valid, please enter a number');
+    //   return;
     // }
-    // else{
-    //   $('#myModal').modal(); 
-    //   $("#modalContainer").show()
-    //   $("#deetsLeftContainer").hide();
-    //   $("#deets-container").show();
+    // if (isNaN(budget[1])) {
+    //   console.log('max number is NOT valid, please enter a number');
+    //   //NOTE need to stop code here if number is not valid
+    //   $('#maxAmt').text('max number is NOT valid, please enter a number');;
+    //   return;
     // }
+    if (budget[0] == '') {
+      console.log('min budget not listed ');
+      return budget[0] += budget[1].toString();
+    } else if (budget[1] == '') {
+      console.log('max budget not listed ');
+      return budget[1] += budget[0].toString();
+    }
+    // if (budget[0] > budget[1]) {
+    //   console.log('please check that your maximum budget is larger than your minimum budget');
+    //   //NOTE need to stop code here if budget is not valid
+    //   return;
+    // }
+  }
 
+  function isValidDate(date) {
+    console.log('validating date in isValidDate(): ', date);
+    let now = new Date();
+    if (moment(date).isValid()) {
+      let pickDate = new Date(date);
+      if (pickDate > now) {
+        $("#name").val('');
+        $("#gift1").val('');
+        $("#gift2").val('');
+        $("#gift3").val('');
+        $("#min").val('');
+        $("#max").val('');
+        $("#dateDeet").val('');
+      } else {
+        console.log('Time travel has not been invented yet. Please enter a future date!');
+        //NOTE need to stop code here if date is not valid
+        return;
+      }
+    } else {
+      console.log('date is NOT valid');
+      //NOTE need to stop code here if date is not valid
+      return;
+    }
+  }
 
-    
-    
-    });
-    
+  function avgIt(budget) {
+    console.log('avgIt budget: ', budget);
+      let avg = ((parseInt(budget[0]) + parseInt(budget[1])) / budget.length).toString();
+      console.log('the Guests budget avg is: ', avg);
+      return budget.push(avg);
+  }
+
+  function sendIt(name, gifts, budget, date) {
+    console.log('sendIt budget: ', budget);
+    avgIt(budget);
+    var user = new Guest(name, gifts, budget, date);
+    console.log('guest profile deets:::', user);
+    database.ref().push(user);
+  }
+
+});

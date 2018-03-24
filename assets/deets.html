@@ -1,5 +1,5 @@
 <!--DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
+    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle,
     Project 1
 -->
 
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet"  href="css/deets.css">
 
@@ -23,14 +24,14 @@
     <script type= "text/javaScript" src="javascript/deets.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-   
 
-      <!--links for flipclock-->   
+
+      <!--links for flipclock-->
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
-   
+
 
       <!--Fonts link-->
       <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
@@ -44,13 +45,13 @@
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ykdYPnNswf6X7Hd5qHz4RT4WicH5NhE&callback=initMap">
  </script>
 
-   
 
-   
-   
+
+
+
   </head>
- 
-  <body> 
+
+  <body>
 
      <!--Countdown clock code-->
 
@@ -58,16 +59,16 @@
         $(document).ready(function() {
 
           var clock;
-        
+
           // Grab the current date
           var currentDate = new Date();
-        
+
           // Target future date/24 hour time/Timezone. (currently set to 8:30AM on Christmas)
           var targetDate = moment.tz("2018-12-25 08:30", "America/Denver");
-        
+
           // Calculate the difference in seconds between the future and current date
           var diff = targetDate / 1000 - currentDate.getTime() / 1000;
-        
+
           if (diff <= 0) {
             // If remaining countdown is 0
             clock = $(".clock").FlipClock(0, {
@@ -76,7 +77,7 @@
               autostart: false
             });
             console.log("Date has already passed!")
-            
+
           } else {
             // Run countdown timer
             clock = $(".clock").FlipClock(diff, {
@@ -88,12 +89,12 @@
                 }
               }
             });
-            
+
             // Check when timer reaches 0, then stop at 0
             setTimeout(function() {
               checktime();
             }, 1000);
-            
+
             function checktime() {
               t = clock.getTime();
               if (t <= 0) {
@@ -118,7 +119,7 @@
               <h1 class="animated infinite bounce" id= "header">Secret Santa!</h1>
 
              <h3 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h3>
-          
+
              <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
 
                <div id="home" class="col-lg-11 col-md-11 col-xs-11">
@@ -127,30 +128,30 @@
           </div>
         </div>
 
-     
+
  <!--Cowntdown calendar-->
-        <div class="row"> 
-          <div class= " col-lg-12 col-md-8 col-xs-12 ">  
+        <div class="row">
+          <div class= " col-lg-12 col-md-8 col-xs-12 ">
                 <div class="panel panel-success" id="headingTextStart">
                     <div class="panel-heading">
                       <p class="daysLeftP"> Until Christmas</p>
                          <section id="calendar">
-                             <div class="clock"></div>  
-                         </section>  
+                             <div class="clock"></div>
+                         </section>
                     </div>
-                </div>  
-            
-            </div>  
+                </div>
+
+            </div>
         </div> <!--Cowntdown calendar close-->
-     
-     
+
+
 
       <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
           <div class="panel panel-success">
               <div class="panel-heading">
                 <p id="updates">Party Updates:</p>
               </div>
-          </div>      
+          </div>
         <p id="alerts">
           <h5 class="notChangeDays">You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
         </p>
@@ -211,8 +212,8 @@
               Tell us about your budget:
             </div>
               <div id="minMax" class="col-lg-4 col-md-4 col-xs-4">
-                <p>Minimum Amount:</p>
-                <p class="maxAm">Maximum Amount:</p>
+                <p id="minAmt">Minimum Amount:</p>
+                <p id="maxAmt">Maximum Amount:</p>
               </div>
               <div id="userBudget" class="col-lg-3 col-md-3 col-xs-3">
                 <input type="text" id="min"></input>
@@ -245,30 +246,31 @@
               <!-- this button sends input values to firebase -->
               <!-- <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input> -->
               <!-- <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button> -->
-              <button class="btn btn-danger btn-lg" id="sendIt" type="submit">Submit</button> 
+              <button class="btn btn-danger btn-lg" id="sendIt" type="submit">Submit</button>
             </div>
           </div>
 
             <div id="optHead" class="row col-lg-12 col-md-12 col-xs-12">
                 <div id="haveGroupPanel" class="panel panel-success">
                     <div class="panel-heading">
-                   <h4> <p class="optionHaveGr"> Have a group?</p> </h4> 
+                   <h4> <p class="optionHaveGr"> Have a group?</p> </h4>
                     </div>
                     <div id="viewPartyDeets">
                       <p> <h5> View my party deets and Secret Santa deets</h5></p>
-                    </div> 
-                    <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Log In</button> 
-            
-                
-           
+                    </div>
+                    <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Log In</button>
+
+
+
         </form>
-       
+        <!-- this button sends input values to firebase -->
+        <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input>
       </section>
 
-      
 
 
-      
+
+
   </div> <!--deetsLeftContainer first page close-->
 
       <!-- this is where to view santaDeets -->
@@ -281,7 +283,7 @@
           </div>
 
       <div class="panel-body"  id="santaLtr">
-  
+
         <!-- <div class="col-lg-6 col-md-6 col-xs-6"> -->
           <p class="letter">Dear Santa,</p>
           <p class="letter">I have been good this year. Please bring me </p>
@@ -301,17 +303,17 @@
         </div>
         <br>
         <br>
-    </div>   
-    </div> 
+    </div>
+    </div>
 
     <div class="panel panel-success">
-  
+
         <div class="panel-heading">
          <h4 id="shopA" class="text-center" class="panel-title" ><strong>Need help building this gifts?</strong></h4>
         </div>
 
        <div class="panel-body" id="amazonPanel">
-         <p class="text-center"> Let Amazon elves help! </p> 
+         <p class="text-center"> Let Amazon elves help! </p>
          <div class="buttonsAmazon">
             <button id="buy1" class="amazon">Take me to Amazon for gitf 1!</button>
             <button id="buy2" class="amazon">Take me to Amazon for gift 2!</button>
@@ -323,20 +325,20 @@
         <div id="yourGroup" class="row col-lg-12 col-md-12 col-xs-12">
             <div class="panel panel-success">
                 <div class="panel-heading">
-               <h4> <p class="locationP"> This is the people in your group</p> </h4> 
+               <h4> <p class="locationP"> This is the people in your group</p> </h4>
                 </div>
-            
+
                   <!-- this is where the peoples names will go -->
                   <div class="panel-body" id="peopleInGr">
-                    <div id="peopleGr"></div>  
-                  </div> 
+                    <div id="peopleGr"></div>
+                  </div>
                 </div>
-            </div>  <!--panel panel-success-->  
-        </div> <!--  row-->   
+            </div>  <!--panel panel-success-->
+        </div> <!--  row-->
     </section> <!--deetsSecondPageLeft colomn-->
      </div> <!--panel-body santaLtr close-->
   </div>  <!--deets-container second page close-->
- 
+
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
       <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
           <!-- Random holiday trivia! -->
@@ -344,63 +346,63 @@
            <!--Right Colomn-->
           <!-- Christmas Cheer  -->
             <div class="panel panel-success">
-  
+
                  <div class="panel-heading">
                   <h4 class="text-center" class="panel-title" ><strong>Press for Christmas Cheer!</strong></h4>
                  </div>
-  
+
                 <div class="panel-body" id="imgPanel">
-  
+
                     <div id="images"></div>
-  
+
                     <div id="buttons">
                       <button class="btn btn-danger" id="Christmas-button" type="submit">Press me again!</button>
-                      <button class="btn btn-danger" id="musicPlay"> Play music</button> 
-                      <button class="btn btn-danger" id="musicPause"> Pause music</button> 
-                    </div>  
+                      <button class="btn btn-danger" id="musicPlay"> Play music</button>
+                      <button class="btn btn-danger" id="musicPause"> Pause music</button>
+                    </div>
 
-                </div> <!--panel-body imgPanel-->        
-           
+                </div> <!--panel-body imgPanel-->
+
             </div> <!--panel panel-success-->
-      
+
                     <!--Map-->
                     <div id="mapHead" class="row col-lg-12 col-md-12 col-xs-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                           <h4> <p class="locationP"> Party location!</p> </h4> 
+                           <h4> <p class="locationP"> Party location!</p> </h4>
                             </div>
-                        
+
                               <!-- this is where the map will go -->
                               <div class="panel-body" id="mapPanel">
-                                <div id="map"></div>  
-                              </div> 
-                      
-                        </div>  <!--panel panel-success-->  
-                    </div> <!-- map row-->   
+                                <div id="map"></div>
+                              </div>
 
-      </aside> <!--sidebar-->      
+                        </div>  <!--panel panel-success-->
+                    </div> <!-- map row-->
+
+      </aside> <!--sidebar-->
       </div> <!--trivia-->
-         
+
 <!--Footer-->
-    <footer> 
+    <footer>
       <div class="footer">
 
         <div class="container-fluid">
-        <h5 class="text-center" > DDS team 2018 </h5> 
-        </div> 
+        <h5 class="text-center" > DDS team 2018 </h5>
+        </div>
 
-      </div>   
-   </footer> 
+      </div>
+   </footer>
 
-  
-  
+
+
 </div> <!--container close-->
 
 <!--Modal popup message for thanking for submiting-->
 <div id="modalContainer">
 
-        <div id="myModal" class="modal fade" tabindex="-1" role="dialog"> 
-          
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -409,11 +411,11 @@
             </div>
             <div class="modal-body">
                 <p id="thanksSabmit">Please log back in one week to find out who's Santa you will be</p>
-                
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-             
+
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -424,8 +426,8 @@
     <!--Modal popup message for filling all the fields when submiting-->
 <div id="modalContainerError">
 
-    <div id="myModalError" class="modal fade" tabindex="-1" role="dialog"> 
-      
+    <div id="myModalError" class="modal fade" tabindex="-1" role="dialog">
+
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -434,19 +436,21 @@
         </div>
         <div class="modal-body">
             <p id="thanksSabmit">Please fill all of the fields</p>
-            
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-         
+
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 </div> <!-- /.modal container -->
 
-  
 
- 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type= "text/javaScript" src="javascript/deets.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>

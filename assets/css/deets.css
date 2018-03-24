@@ -1,5 +1,5 @@
 /*DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
+    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle,
     Project 1
 */
 
@@ -20,7 +20,7 @@ body {
 
 .container{
   border: 15px solid rgb(151, 190, 151);
-  border-style: dashed; 
+  border-style: dashed;
 }
 
 
@@ -30,7 +30,7 @@ body {
   font-weight: bold;
   font-size: 90px;
   text-align: center;
-  color: rgb(31, 97, 75); 
+  color: rgb(31, 97, 75);
 }
 
 
@@ -50,11 +50,11 @@ body {
 #days {
   text-align: center;
   font-size: 25px;
-  color: rgb(31, 97, 75); 
+  color: rgb(31, 97, 75);
 }
 
 #tree {
-  color:  rgb(31, 97, 75); 
+  color:  rgb(31, 97, 75);
   margin-left: 50%;
   margin-top: 5px;
 }
@@ -127,7 +127,7 @@ body {
   margin-top: 20px;
 
   text-align: center;
- 
+
 }
 
 #sendIt{
@@ -142,7 +142,7 @@ body {
   font-size: 22px;
   text-align: center;
   margin-top: 0;
-  
+
 }
 
 h4{
@@ -151,7 +151,7 @@ h4{
 
 .optionHaveGr {
   margin-left: 40%;
- 
+
 }
 
 #viewPartyDeets{
@@ -167,7 +167,7 @@ h4{
 #haveGroupPanel{
   width: 555px;
   margin-left: 5px;
-  color: rgb(31, 97, 75); 
+  color: rgb(31, 97, 75);
   font-size: 20px;
 }
 
@@ -187,7 +187,7 @@ aside {
   position: absolute;
   padding: 10px 10px 5px 10px;
   right: 70px;
-  top: 920px; 
+  top: 920px;
 }
 
 #sidebar{
@@ -204,7 +204,7 @@ aside {
 #trivia {
   margin-top: 7px;
   width: 525px;
-  
+
 }
 
 #map{
@@ -269,7 +269,7 @@ aside {
  #buy2,
  #buy3 {
    margin-top: 10px;
- } 
+ }
 
 #mssgs {
   border: 3px dashed green;
@@ -304,7 +304,6 @@ aside {
 
 .amazon {
   margin: 2px 0;
-
 }
 
 #footer {
@@ -315,7 +314,7 @@ aside {
 }
 
 .jumbotron {
-  
+
   margin-top: 30px;
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
@@ -334,8 +333,8 @@ aside {
                 body {
                 /* Margin bottom by footer height */
                 margin-bottom: 0px;
-                
-                
+
+
                 }
                 .footer {
                 position: relative;
@@ -344,10 +343,9 @@ aside {
                 padding-top: 23px;
                 font-weight: bold;
                 font-size: 15px;
-               
+
                 /* Set the fixed height of the footer here */
                 height: 65px;
                 background-color: rgb(219, 95, 95);
-                color: rgb(31, 97, 75); 
+                color: rgb(31, 97, 75);
                 }
-              
