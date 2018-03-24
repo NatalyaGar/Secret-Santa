@@ -3,6 +3,20 @@
     Project 1
 */
 
+var config = {
+  apiKey: "AIzaSyCM6gXwrnT1NUttrDF8qw1dAjI6qd0JpXE",
+  authDomain: "secret-santa-efc15.firebaseapp.com",
+  databaseURL: "https://secret-santa-efc15.firebaseio.com",
+  projectId: "secret-santa-efc15",
+  storageBucket: "",
+  messagingSenderId: "451980576303"
+};
+firebase.initializeApp(config);
+
+// Create a variable to reference the database
+var database = firebase.database();
+
+
 
 $(document).ready(function(){
   $("#deets-container").hide();
@@ -55,8 +69,8 @@ $(document).ready(function(){
       this.budget = budget;
       this.date = date;
     }
+
     
-   
       $('#sendIt').on("click", function(event) {
       event.preventDefault();
    
@@ -65,14 +79,7 @@ $(document).ready(function(){
       $('#myModal').modal(); 
       $("#modalContainer").show()
      
-      //show deets-container on click submit button
-     $("#deets-container").show();
-
-      //hide deets section on click submit button
-     $("#deetsLeftContainer").hide();
-
-    //  $(".footer").hide();
-
+   
       var name = $("#name").val();
       // var pw = $("#password-input").val();
       var gift1 =$('#gift1').val().trim();
@@ -97,6 +104,36 @@ $(document).ready(function(){
       console.log('is this working???', user);
       console.log('date: ', date);
     }
+
+    $('#haveGroupBtn').on("click", function(event) {
+      event.preventDefault();
+         //show deets-container on click submit button
+     $("#deets-container").show();
+
+      //hide deets section on click submit button
+     $("#deetsLeftContainer").hide();
+     $("#haveGroupPanel").hide();
+
+
+     
+    });
+
+    //modal if any of the fields underined show error message, else show next page and thank message
+    // if ((name == undefined) || (gif1 == undefined) || (gif2 == undefined) || (gif3 == undefined) || (minAmt == undefined) || (maxAmt == undefined) || (date == undefined)){
+    //   console.log("if block")
+    //   $("#myModalError").modal();
+    //   $("#modalContainerError").show();
+    //   $("#deetsLeftContainer").show();
+     
+    // }
+    // else{
+    //   $('#myModal').modal(); 
+    //   $("#modalContainer").show()
+    //   $("#deetsLeftContainer").hide();
+    //   $("#deets-container").show();
+    // }
+
+
     
     
     });

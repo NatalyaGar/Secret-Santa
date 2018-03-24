@@ -133,7 +133,7 @@
           <div class= " col-lg-12 col-md-8 col-xs-12 ">  
                 <div class="panel panel-success" id="headingTextStart">
                     <div class="panel-heading">
-                      <p class="daysLeftP"> Untill Christmas</p>
+                      <p class="daysLeftP"> Until Christmas</p>
                          <section id="calendar">
                              <div class="clock"></div>  
                          </section>  
@@ -247,10 +247,28 @@
               <!-- <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button> -->
               <button class="btn btn-danger btn-lg" id="sendIt" type="submit">Submit</button> 
             </div>
+          </div>
+
+            <div id="optHead" class="row col-lg-12 col-md-12 col-xs-12">
+                <div id="haveGroupPanel" class="panel panel-success">
+                    <div class="panel-heading">
+                   <h4> <p class="optionHaveGr"> Have a group?</p> </h4> 
+                    </div>
+                    <div id="viewPartyDeets">
+                      <p> <h5> View my party deets and Secret Santa deets</h5></p>
+                    </div> 
+                    <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Submit</button> 
+            
+                
            
         </form>
        
       </section>
+
+      
+
+
+      
   </div> <!--deetsLeftContainer first page close-->
 
       <!-- this is where to view santaDeets -->
@@ -363,6 +381,7 @@
   
 </div> <!--container close-->
 
+<!--Modal popup message for thanking for submiting-->
 <div id="modalContainer">
 
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog"> 
@@ -374,7 +393,7 @@
               <h4 class="modal-title">Thank you for submiting</h4>
             </div>
             <div class="modal-body">
-                <p id="thanksSabmit">Please see your assignment deets on the next page </p>
+                <p id="thanksSabmit">Please Log back in one week to find out who's Santa you will be</p>
                 
             </div>
             <div class="modal-footer">
@@ -385,6 +404,32 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
     </div> <!-- /.modal container -->
+
+
+    <!--Modal popup message for filling all the fields when submiting-->
+<div id="modalContainerError">
+
+    <div id="myModalError" class="modal fade" tabindex="-1" role="dialog"> 
+      
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Error message</h4>
+        </div>
+        <div class="modal-body">
+            <p id="thanksSabmit">Please fill all of the fields</p>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div> <!-- /.modal container -->
+
   
 
  
