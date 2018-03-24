@@ -122,7 +122,7 @@
              <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
 
                <div id="home" class="col-lg-11 col-md-11 col-xs-11">
-                <input type="button" id="logOut" onclick="location.href='assets/index.html';" value="Log Out" />
+                <input type="button" id="logOut" onclick="location.href='index.html';" value="Log Out" />
               </div>
           </div>
         </div>
@@ -174,6 +174,7 @@
       </section>
 
       <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
+  <div id="deetsLeftContainer"> <!--first page deetsLeftContainer-->
       <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
         <!-- this is where to enter partyDeets -->
         <form class="partyDeets">
@@ -234,7 +235,7 @@
               <div>
                 <!-- OPTIONAL keep this span to prompt user to select dates off of calendar instead of using input field -->
                 <span id="dateMssg">
-                  Submit a good party date!
+                  Submit what is good party date for you!
                 </span>
                 <div>
                   <input type="text" id="dateDeet" class="pickDate"></input>
@@ -243,21 +244,27 @@
               </div>
               <!-- this button sends input values to firebase -->
               <!-- <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input> -->
-              <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button>
+              <!-- <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button> -->
+              <button class="btn btn-danger btn-lg" id="sendIt" type="submit">Submit</button> 
             </div>
            
         </form>
        
       </section>
+  </div> <!--deetsLeftContainer first page close-->
+
       <!-- this is where to view santaDeets -->
-      <!--deets-container-->
-    <div id="deets-container">
-      <section id="deets" class="row col-lg-7 col-md-7 col-xs-7">
-        <header id="santaHead" class="col-lg-6 col-md-6 col-xs-6">
-          <i>You are <span id="userName"></span>'s Secret Santa!</i>
-        </header>
-        <br>
-        <div id="santaLtr" class="col-lg-6 col-md-6 col-xs-6">
+     <!--Left colomn Second Page-->
+    <div id="deets-container">  <!--deets-container second page open-->
+      <section id="deetsSecondP" class="row col-lg-6 col-md-6 col-xs-6">
+          <div class="panel panel-success">
+          <div id="santaHead" class="panel-heading">
+            <h4 class="text-center" class="panel-title"> <i>You are <span id="userName"></span>'s Secret Santa!</i></h4>
+          </div>
+
+      <div class="panel-body"  id="santaLtr">
+  
+        <!-- <div class="col-lg-6 col-md-6 col-xs-6"> -->
           <p class="letter">Dear Santa,</p>
           <p class="letter">I have been good this year. Please bring me </p>
           <div id="wishes" class="letter">
@@ -267,22 +274,36 @@
             <!-- OPTIONAL if we decide to use 5 possible gifts -->
             <!-- <p>4. <span id="wish4"></span><button id="amazon"></button></p> -->
             <!-- <p>5. <span id="wish5"></span><button id="amazon"></button></p> -->
-          </div>
+          <!-- </div> -->
           <p class="letter">this year for Christmas.</p>
           <p class="letter">Love,</p>
           <p class="letter">
             <span id="userName"></span>
           </p>
         </div>
-        <aside class="col-lg-4 col-md-4 col-xs-4">
-          <p id="shopA">Need help building these toys?<br>(Let Amazon elves help!)</p>
-          <button id="buy1" class="amazon">Take me to Amazon!</button>
-          <button id="buy2" class="amazon">Take me to Amazon!</button>
-          <button id="buy3" class="amazon">Take me to Amazon!</button>
-        </aside>
-      </section>
-    </div>
+        <br>
+        <br>
+    </div>   
+    </div> 
 
+    <div class="panel panel-success">
+  
+        <div class="panel-heading">
+         <h4 id="shopA" class="text-center" class="panel-title" ><strong>Need help building this gifts?</strong></h4>
+        </div>
+
+       <div class="panel-body" id="amazonPanel">
+         <p class="text-center"> Let Amazon elves help! </p> 
+         <div class="buttonsAmazon">
+            <button id="buy1" class="amazon">Take me to Amazon for gitf 1!</button>
+            <button id="buy2" class="amazon">Take me to Amazon for gift 2!</button>
+            <button id="buy3" class="amazon">Take me to Amazon for gift 3!</button>
+        </div>
+      </div>
+    </section> <!--deetsSecondPageLeft colomn-->
+     </div> <!--panel-body santaLtr close-->
+  </div>  <!--deets-container second page close-->
+ 
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
       <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
           <!-- Random holiday trivia! -->
@@ -313,7 +334,7 @@
                     <div id="mapHead" class="row col-lg-12 col-md-12 col-xs-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                              <p class="locationP"> Party location!</p> 
+                           <h4> <p class="locationP"> Party location!</p> </h4> 
                             </div>
                         
                               <!-- this is where the map will go -->
@@ -339,8 +360,31 @@
    </footer> 
 
   
-  <!-- </div>  -->
+  
 </div> <!--container close-->
+
+<div id="modalContainer">
+
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog"> 
+          
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Thank you for submiting</h4>
+            </div>
+            <div class="modal-body">
+                <p id="thanksSabmit">Please see your assignment deets on the next page </p>
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
+             
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div> <!-- /.modal container -->
   
 
  
