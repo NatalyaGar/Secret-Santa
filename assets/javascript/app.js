@@ -153,6 +153,13 @@ $("#new-password").show();
     console.log("Errors handled: " + errorObject.code);
 });
 
+$("#logInBtn").on("click", function(event){
+     $("#start-container").hide();
+
+    $("#options-container").show();
+   
+})
+
 $('#keycode-submit-btn').on("click", function(event) {
     event.preventDefault();
     $("#eventLocator").show();
