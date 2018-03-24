@@ -56,7 +56,23 @@ $(document).ready(function(){
       this.date = date;
     }
     
-    $('#sendIt').click(function() {
+   
+      $('#sendIt').on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("click sendIt");
+      //Modal message show when click submit button
+      $('#myModal').modal(); 
+      $("#modalContainer").show()
+     
+      //show deets-container on click submit button
+     $("#deets-container").show();
+
+      //hide deets section on click submit button
+     $("#deetsLeftContainer").hide();
+
+    //  $(".footer").hide();
+
       var name = $("#name").val();
       // var pw = $("#password-input").val();
       var gift1 =$('#gift1').val().trim();
