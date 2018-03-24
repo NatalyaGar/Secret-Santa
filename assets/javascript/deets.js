@@ -60,6 +60,14 @@ $('#sendIt').click(function() {
     var maxAmt = $('#max').val().trim();
     var budget = [minAmt, maxAmt];
 
+    if (isNaN(budget[0]) || isNaN(budget[1])) {
+      $('#minAmt').text('Your number is not valid, please enter a number');
+      return;
+    }
+    if (budget[0] > budget[1]) {
+      console.log('please check that your maximum budget is larger than your minimum budget');
+      return;
+    }
     console.log('clickIt budget before isValidAmt(): ', budget);
     isValidAmt(budget);
     console.log('clickIt budget after isValidAmt(): ', budget);
@@ -75,18 +83,18 @@ $('#sendIt').click(function() {
   })
 
   function isValidAmt(budget) {
-    if (isNaN(budget[0])) {
-      console.log('min number is NOT valid, please enter a number');
-      //NOTE need to stop code here if number is not valid
-      $('#minAmt').text('min number is NOT valid, please enter a number');
-      return;
-    }
-    if (isNaN(budget[1])) {
-      console.log('max number is NOT valid, please enter a number');
-      //NOTE need to stop code here if number is not valid
-      $('#maxAmt').text('max number is NOT valid, please enter a number');;
-      return;
-    }
+    // if (isNaN(budget[0])) {
+    //   console.log('min number is NOT valid, please enter a number');
+    //   //NOTE need to stop code here if number is not valid
+    //   $('#minAmt').text('min number is NOT valid, please enter a number');
+    //   return;
+    // }
+    // if (isNaN(budget[1])) {
+    //   console.log('max number is NOT valid, please enter a number');
+    //   //NOTE need to stop code here if number is not valid
+    //   $('#maxAmt').text('max number is NOT valid, please enter a number');;
+    //   return;
+    // }
     if (budget[0] == '') {
       console.log('min budget not listed ');
       return budget[0] += budget[1].toString();
@@ -94,11 +102,11 @@ $('#sendIt').click(function() {
       console.log('max budget not listed ');
       return budget[1] += budget[0].toString();
     }
-    if (budget[0] > budget[1]) {
-      console.log('please check that your maximum budget is larger than your minimum budget');
-      //NOTE need to stop code here if budget is not valid
-      return;
-    }
+    // if (budget[0] > budget[1]) {
+    //   console.log('please check that your maximum budget is larger than your minimum budget');
+    //   //NOTE need to stop code here if budget is not valid
+    //   return;
+    // }
   }
 
   function isValidDate(date) {
