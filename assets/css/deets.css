@@ -149,6 +149,26 @@ h4{
   font-size: 22px;
 }
 
+.optionHaveGr {
+  margin-left: 40%;
+ 
+}
+
+#viewPartyDeets{
+  margin:10px;
+  text-align: center;
+}
+
+#haveGroupBtn{
+  margin-left: 40%;
+  margin-bottom: 20px;
+}
+
+#haveGroupPanel{
+  width: 555px;
+  margin-left: 5px;
+}
+
 aside {
   font-size: 18px;
 }
@@ -216,7 +236,7 @@ aside {
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   color:  rgb(31, 97, 75);
-  margin: 20px 20px 120px 10px;
+  margin: 20px 20px 30px 10px;
   font-size: 20px;
   padding: 0px 10px 10px 10px;
 }
