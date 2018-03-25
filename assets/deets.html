@@ -112,23 +112,25 @@
 
    <div class="container">
 
+    <!--Jumbotron heading open-->
         <div class="jumbotron">
           <div id="countDown">
               <!-- <h1 class="text-center" id= "header">Secret Santa!</h1> -->
               <h1 class="animated infinite bounce" id= "header">Secret Santa!</h1>
 
-             <h3 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h3>
+              <h3 id="days">ONLY <span id="daysToGo">x</span> DAYS UNTIL THE GIFT EXCHANGE!</h3>
           
-             <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
+              <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
 
                <div id="home" class="col-lg-11 col-md-11 col-xs-11">
                 <input type="button" id="logOut" onclick="location.href='index.html';" value="Log Out" />
               </div>
-          </div>
-        </div>
 
+          </div>
+        </div>  <!--Jumbotron heading close-->
+    
      
- <!--Cowntdown calendar-->
+     <!--Cowntdown calendar-->
         <div class="row"> 
           <div class= " col-lg-12 col-md-8 col-xs-12 ">  
                 <div class="panel panel-success" id="headingTextStart">
@@ -143,38 +145,9 @@
             </div>  
         </div> <!--Cowntdown calendar close-->
      
-     
 
-      <section id="mssgs" class="row col-lg-12 col-md-12 col-xs-12">
-          <div class="panel panel-success">
-              <div class="panel-heading">
-                <p id="updates">Party Updates:</p>
-              </div>
-          </div>      
-        <p id="alerts">
-          <h5 class="notChangeDays">You have <span id="daysLeft">X</span> days until you cannot change your party details.</h5>
-        </p>
-        <p id="budget">
-          <div>
-            <!-- this x needs to be populated with chosen budget -->
-          <p class="budgetP" >The budget for gift giving is $
-            <span id="budgetAmt"></span> </p>
-          </div>
-          <!-- OPTIONAL -->
-          <!-- this checkbox could be a verification of accepting the averaged budget -->
-            <p class="checkboxAmounVer">
-            <input type="checkbox">Please verify the amount of the chosen gift budget by checking here.</input>
-            </p>
-        </p>
-        <p id="whereAt">
-          The party will be held at <span id="location"></span>!
-          <!-- OPTIONAL -->
-          <!-- we could append a 'this is a business or house' mssg/btn here -->
-        </p>
-      </section>
-
-      <!-- partyDeets or santaDeets need to be hidden when user views other GUI -->
-  <div id="deetsLeftContainer"> <!--first page deetsLeftContainer-->
+   <!--first page deetsLeftContainer open-->  
+  <div id="deetsLeftContainer"> 
       <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
         <!-- this is where to enter partyDeets -->
         <form class="partyDeets">
@@ -182,44 +155,45 @@
          <div class="panel panel-success">
            <div class="panel-heading">
               <header id="deetsHead">
-              <h4 class="panel-title">Tell us about yourself so we can help find you the perfect gift!</h4>
+              <h4 class="panel-title">Sign up for Secret Santa!</h4>
              </header>
           </div>
-         </div>
+        
+         <div class="panel-body" id="signUpPanel">
+            <p>1. Enter your name and three wishlist items, press "Add" button to safe data.</p>
+            <br>
+            <p>2. When your participants all signed up please push "Pair" button to do Secret Santa's elves job.</p>
+            <br>
+            <p>3. When you are ready to view who's Santa you are, press "Log In" button.</p>
+            
+            
+            <form class="secretSantaForm" id="secretSantaForm">
+                <div id="sections">
+                    <div class="section">
+                      <div class="ParticipantField">
+                        <fieldset>
+                            <h4 class="participantHead">Participant</h4>
+                            <input class="nameInput" id="name0" placeholder="Name" />   
+                            <input class="giftInput1" id="first0" placeholder="Wishlist Item1" /> 
+                            <input class="giftInput2" id="second0" placeholder="Wishlist Item2" />  
+                            <input class="giftInput3" id="third0" placeholder="Wishlist Item3" />                            
+                        </fieldset>
+                      </div>
+                    </div>
+                </div>
+            </form>
+            <div class="buttonContainer">
+                <button class="addMe btn btn-danger">Add</button>
+                <button class="btn btn-danger" type="submit" id="submitMe">Pair</button>
+                <hr>
+            </div>
+          </div> 
+        </div>
 
-          <div class="nameDeets">
-            <span id="nameId">
-              Name:
-            </span>
-            <div>
-              <input type="text" id="name"></input>
-            </div>
-          </div>
-          <div class="giftDeets">
-            <span id="desires">
-            <p class= "desiresI">  Gift ideas, please enter three choices: </p>
-            </span>
-            <div class="gifts">
-              <input type="text" id="gift1" class="gifts"></input>
-              <input type="text" id="gift2" class="gifts"></input>
-              <input type="text" id="gift3" class="gifts"></input>
-              <!-- OPTIONAL we could have 2 more input fields but only require 3 inputs, 2 are extra -->
-            </div>
-          </div>
-          <div id="budget" class="row col-lg-12 col-md-12 col-xs-12">
-            <div>
-              Tell us about your budget:
-            </div>
-              <div id="minMax" class="col-lg-4 col-md-4 col-xs-4">
-                <p>Minimum Amount:</p>
-                <p class="maxAm">Maximum Amount:</p>
-              </div>
-              <div id="userBudget" class="col-lg-3 col-md-3 col-xs-3">
-                <input type="text" id="min"></input>
-                <input type="text" id="max"></input>
-              </div>
-              <br>
-              <div id="currency" class="row col-lg-12 col-md-12 col-xs-12">
+         
+           <!--CONVERTER in case if we will use it-->
+              
+              <!--<div id="currency" class="row col-lg-12 col-md-12 col-xs-12">
                   <p id="convert" class="col-lg-4 col-md-4 col-xs-4">
                     Currency Converter:
                     Gift giving to international friends can be stylish (and in budget!) Check current exchange rates here!
@@ -229,81 +203,86 @@
                       <input type="text" id="convert"></input>
                     </span>
                   </div>
-              </div>
-            </div>
-            <div id="dates" class="row col-lg-10 col-md-10 col-xs-10">
-              <div>
-                <!-- OPTIONAL keep this span to prompt user to select dates off of calendar instead of using input field -->
-                <span id="dateMssg">
-                  Submit what is good party date for you!
-                </span>
-                <div>
-                  <input type="text" id="dateDeet" class="pickDate"></input>
-                </div>
-                <!-- OPTIONAL we could have users pick 3 party dates from <details> dropdown, most chosen date becomes party date -->
-              </div>
-              <!-- this button sends input values to firebase -->
-              <!-- <input id="sendIt" class="row col-lg-3 col-md-3 col-xs-3"  value="Submit your Wishlist"></input> -->
-              <!-- <button class="btn btn-danger btn-lg" id="deets-submit-btn" type="submit">Submit</button> -->
-              <button class="btn btn-danger btn-lg" id="sendIt" type="submit">Submit</button> 
-            </div>
-          </div>
+            </div> -->
 
+            
             <div id="optHead" class="row col-lg-12 col-md-12 col-xs-12">
                 <div id="haveGroupPanel" class="panel panel-success">
+
                     <div class="panel-heading">
-                   <h4> <p class="optionHaveGr"> Have a group?</p> </h4> 
+                        <h4> <p class="optionHaveGr"> Are you ready to view who's Santa you are?</p> </h4> 
                     </div>
+
                     <div id="viewPartyDeets">
-                      <p> <h5> View my party deets and Secret Santa deets</h5></p>
+                      <p> <h5> Press Log In button then!</h5></p>
                     </div> 
+                    
                     <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Log In</button> 
-            
+                </div>
+            </div>
                 
-           
-        </form>
-       
-      </section>
-
+            
+        </form> <!--partyDeets close-->
       
-
-
-      
-  </div> <!--deetsLeftContainer first page close-->
-
+      </section> <!--section id="deets" class="row col-lg-6 col-md-6 col-sm-12"> close-->
+  </div> <!--first page deetsLeftContainer close-->
+   
+   
       <!-- this is where to view santaDeets -->
      <!--Left colomn Second Page-->
     <div id="deets-container">  <!--deets-container second page open-->
       <section id="deetsSecondP" class="row col-lg-6 col-md-6 col-xs-6">
           <div class="panel panel-success">
-          <div id="santaHead" class="panel-heading">
-            <h4 class="text-center" class="panel-title"> <i>You are <span id="userName"></span>'s Secret Santa!</i></h4>
-          </div>
+            <div id="santaHead" class="panel-heading">
+              <h4 class="text-center" class="panel-title"> Enter your name to see your recipient's wish list:</h4>
+            </div>
 
       <div class="panel-body"  id="santaLtr">
-  
-        <!-- <div class="col-lg-6 col-md-6 col-xs-6"> -->
-          <p class="letter">Dear Santa,</p>
-          <p class="letter">I have been good this year. Please bring me </p>
-          <div id="wishes" class="letter">
-            <p>1. <span id="wish1"></span></p>
-            <p>2. <span id="wish2"></span></p>
-            <p>3. <span id="wish3"></span></p>
-            <!-- OPTIONAL if we decide to use 5 possible gifts -->
-            <!-- <p>4. <span id="wish4"></span><button id="amazon"></button></p> -->
-            <!-- <p>5. <span id="wish5"></span><button id="amazon"></button></p> -->
-          <!-- </div> -->
-          <p class="letter">this year for Christmas.</p>
-          <p class="letter">Love,</p>
-          <p class="letter">
-            <span id="userName"></span>
-          </p>
-        </div>
-        <br>
-        <br>
-    </div>   
-    </div> 
-
+      
+               <form class="secretSantaForm" id="secretSantaForm">
+                   <div id="sections">
+                       <div class="section">
+                           <fieldset>
+                               <input class="nameInput" id="name" placeholder="Enter Name" />
+                           </fieldset>
+                           <br>
+                       </div>
+                   </div>
+                   <div class="buttonContainer">
+                       <button class="getMe btn btn-danger">Get List</button>
+                       <hr>
+                       <h4 id="giftRecipient"></h4> </br>
+                       <h4 id="describeRecipient"></h4>
+                       <hr>
+                   </div>
+               </form>
+               <div class="panel panel-success">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">
+                           <strong>Wish List Items</strong>
+                       </h3>
+                   </div>
+                   <div class="panel-body">
+                       <table class="table table-hover" id='giftsTbl'>
+                           <thead>
+                               <tr>
+                                   <th>Whish List Item 1</th>
+                                   <th>Whish List Item 2</th>
+                                   <th>Whish List Item 3</th>
+       
+                               </tr>
+                           </thead>
+                           <tbody>
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+       
+       
+           </div>
+         </div>  
+    
+    
     <div class="panel panel-success">
   
         <div class="panel-heading">
@@ -338,6 +317,7 @@
   </div>  <!--deets-container second page close-->
  
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
+          <!-- <aside id="sidebar" class="row col-lg-12 col-md-12 col-xs-12"> -->
       <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
           <!-- Random holiday trivia! -->
           <!-- this is where pics & trivia will go -->
@@ -368,8 +348,21 @@
                         <div class="panel panel-success">
                             <div class="panel-heading">
                            <h4> <p class="locationP"> Party location!</p> </h4> 
+
+                           <div class="form-location" id="locationField">
+
+                              
+                              <input id="location" type="textarea" placeholder="The party will be held at">
+                              <br>
+                              <br>
+                              
+                              <input id="locationSubmitBtn" type="submit" value="Submit">
+                           
                             </div>
-                        
+                
+                            </div>
+
+
                               <!-- this is where the map will go -->
                               <div class="panel-body" id="mapPanel">
                                 <div id="map"></div>  

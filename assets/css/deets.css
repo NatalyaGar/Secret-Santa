@@ -68,19 +68,22 @@ body {
   margin-left: 18%;
   }
 
-#minMax {
-  font-size: 18px;
-  margin-top: 8px ;
+  .ParticipantField{
+    background-color: white;
+    padding:20px 0px 20px 20%;
+  }
+
+  .participantHead{
+    color: rgb(31, 97, 75);
 }
-.maxAm {
-  margin-top: 8px;
+  
+
+.nameInput, .giftInput1, .giftInput2  {
+  margin-right: 10px;
 }
 
-#dollars {
-  font-size: 18px;
-}
 
-#currency, #budget, #dates, .nameDeets, .giftDeets, .partyDeets {
+.partyDeets {
   margin-top: 20px;
 }
 
@@ -95,21 +98,6 @@ body {
   margin-top: 7px;
 }
 
-#min {
-  margin-top: 10px;
-}
-
-#max {
-  margin-top: 10px;
-}
-
-#usd {
-  margin-top: 8px;
-}
-
-#dateDeet{
-  margin-top: 10px;
-}
 
 #convert {
   margin-top: 8px;
@@ -122,13 +110,6 @@ body {
   text-align: center;
 }
 
-.budgetP,
-.checkboxAmounVer {
-  margin-top: 20px;
-
-  text-align: center;
- 
-}
 
 #sendIt{
   margin-top: 20px;
@@ -149,10 +130,7 @@ h4{
   font-size: 22px;
 }
 
-.optionHaveGr {
-  margin-left: 40%;
- 
-}
+
 
 #viewPartyDeets{
   margin:10px;
@@ -165,10 +143,11 @@ h4{
 }
 
 #haveGroupPanel{
-  width: 555px;
-  margin-left: 5px;
+  width: 513px;
+  margin-left: 3px;
   color: rgb(31, 97, 75); 
   font-size: 20px;
+  margin-bottom: 120px;
 }
 
 aside {
@@ -176,18 +155,11 @@ aside {
 }
 
 
-/* # {
-  position: fixed;
-  padding: 20px;
-  right: 110px;
-  top: 312px;
-} */
-
 #sidebar {
   position: absolute;
   padding: 10px 10px 5px 10px;
   right: 70px;
-  top: 920px; 
+  top: 617px; 
 }
 
 #sidebar{
@@ -197,7 +169,6 @@ aside {
   border-style: dashed;
   color:  rgb(31, 97, 75);
   margin: 20px 20px 50px 10px;
-  /* margin: 35px 20px 50px 10px; */
   font-size: 20px;
 }
 
@@ -220,6 +191,16 @@ aside {
   text-align: center;
 }
 
+#location {
+  margin-top: 10px;
+  padding:20px;
+  width: 450px;
+}
+
+#locationSubmitBtn {
+  margin-left: 43%;
+}
+
 #images {
   height: 240px;
 }
@@ -238,7 +219,7 @@ aside {
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   color:  rgb(31, 97, 75);
-  margin: 20px 20px 30px 10px;
+  margin: 20px 20px 230px 10px;
   font-size: 20px;
   padding: 0px 10px 10px 10px;
 }
@@ -252,6 +233,7 @@ aside {
   margin: 20px 20px 220px 10px;
   font-size: 20px;
   padding: 18px 10px 10px 10px;
+  /* position: absolute; */
 }
 
 #yourGroup{
@@ -281,11 +263,11 @@ aside {
   font-size: 20px;
 }
 
-#updates {
+/* #updates {
   font-size: 29px;
   margin-left:45%;
   margin-top: 20px;
-}
+} */
 
 /* #alerts {
   color: red;
@@ -296,11 +278,11 @@ aside {
   line-height: 150%;
 }
 
-.notChangeDays{
+/* .notChangeDays{
   margin-left: 30%;
   margin-top: 10px;
   color:rgb(219, 95, 95);
-}
+} */
 
 .amazon {
   margin: 2px 0;
@@ -339,7 +321,7 @@ aside {
                 }
                 .footer {
                 position: relative;
-                bottom: -45px;
+                bottom: -30px;
                 width: 100%;
                 padding-top: 23px;
                 font-weight: bold;
