@@ -150,7 +150,7 @@ $(document).ready(function(){
     //   $("#deets-container").show();
     // }
 
-    
+
 
 
    //Mark's code for Participant's names and wish list start
@@ -314,7 +314,8 @@ $(document).ready(function(){
 
 //Mark's code Pair the recipients start
 
-    var database = firebase.database();
+   
+
 var fbparticipant = [];
 var count = "";
 
