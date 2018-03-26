@@ -49,7 +49,8 @@ $(document).ready(function(){
               // var imageUrl = response.data.image_original_url;
               var imageUrl = response.data.images.fixed_height_downsampled.url
               // make a variable, to get the data back from the api 
-              var christmasImage = $('<img style="width: 460px;">');
+              // var christmasImage = $('<img style="width: 460px;">');
+              var christmasImage = $('<img style="width:100%;">');
               // create a new image element
               christmasImage.attr("src", imageUrl);
               $("#images").empty();
