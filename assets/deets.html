@@ -1,5 +1,5 @@
 <!--DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
+    Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
     Project 1
 -->
 
@@ -44,10 +44,6 @@
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ykdYPnNswf6X7Hd5qHz4RT4WicH5NhE&callback=initMap">
  </script>
 
-   
-
-   
-   
   </head>
  
   <body> 
@@ -182,7 +178,7 @@
                 </div>
             </form>
             <div class="buttonContainer">
-                <button class="addMe btn btn-danger">Add</button>
+                <button id="addMebtn" class="addMe btn btn-danger">Add</button>
                 <button class="btn btn-danger" type="submit" id="submitMe">Pair</button>
                 <hr>
             </div>
@@ -316,7 +312,6 @@
   </div>  <!--deets-container second page close-->
  
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
-          <!-- <aside id="sidebar" class="row col-lg-12 col-md-12 col-xs-12"> -->
       <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
           <!-- Random holiday trivia! -->
           <!-- this is where pics & trivia will go -->
@@ -388,8 +383,83 @@
   
 </div> <!--container close-->
 
+
+<!--Modal popup message for thanking Adding your info-->
+<div id="modalContainerAdd">
+
+    <div id="myModalAdd" class="modal fade" tabindex="-1" role="dialog"> 
+      
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Thank you for adding your information!</h4>
+        </div>
+        <div class="modal-body">
+            <p id="thanksAdd">When all your group signed up push "Pair" button to do Secret Santa's elves job.</p>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div> <!-- /.modal container -->
+
+<!--Modal popup message for Pair-->
+<div id="modalContainerPair">
+
+    <div id="myModalPair" class="modal fade" tabindex="-1" role="dialog"> 
+      
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Thank you for Pairing your Participants!</h4>
+        </div>
+        <div class="modal-body">
+            <p id="thanksPair">Close me and press "Log In" button to see who's Santa you are.</p>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div> <!-- /.modal container -->
+
+<!--Modal popup message for Log In to view who's Santa you are-->
+<div id="modalContainerLogIn">
+
+    <div id="myModalLogIn" class="modal fade" tabindex="-1" role="dialog"> 
+      
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Ready to see who's Santa you are?</h4>
+        </div>
+        <div class="modal-body">
+            <p id="LogInSanta">Close me and on top of the page enter your name to see your recipient's wish list.</p>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div> <!-- /.modal container -->
+
+
+
 <!--Modal popup message for thanking for submiting-->
-<div id="modalContainer">
+<!-- <div id="modalContainer">
 
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog"> 
           
@@ -406,11 +476,15 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
              
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
-    </div> <!-- /.modal container -->
+            </div> -->
+          <!-- </div> -->
+          <!-- /.modal-content -->
+        <!-- </div> -->
+        <!-- /.modal-dialog -->
+      <!-- </div> -->
+      <!-- /.modal -->
+    <!-- </div> -->
+     <!-- /.modal container -->
 
 
     <!--Modal popup message for filling all the fields when submiting-->
@@ -438,6 +512,7 @@
 </div> <!-- /.modal container -->
 
   
+
 
  
   </body>

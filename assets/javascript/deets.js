@@ -1,6 +1,6 @@
 /*DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
-    Project 1
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova,
+  Project 1
 */
 
 // var config = {
@@ -87,11 +87,11 @@ $(document).ready(function(){
       $('#sendIt').on("click", function(event) {
       event.preventDefault();
    
-      console.log("click sendIt");
+      console.log("click");
       //Modal message show when click submit button
       $('#myModal').modal(); 
       $("#modalContainer").show()
-     
+         
    
       var name = $("#name").val();
       // var pw = $("#password-input").val();
@@ -150,6 +150,34 @@ $(document).ready(function(){
     //   $("#deets-container").show();
     // }
 
+
+    $("#addMebtn").on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("addMe");
+      //Modal message show when click Add button
+      $('#myModalAdd').modal(); 
+      $("#modalContainerAdd").show()
+    });
+
+
+    $("#submitMe").on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("Pair");
+      //Modal message show when click Pair button
+      $('#myModalPair').modal(); 
+      $("#modalContainerPair").show()
+    });
+
+    $("#haveGroupBtn").on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("LogIn");
+      //Modal message show when click Log in to view who's Santa you are button
+      $('#myModalLogIn').modal(); 
+      $("#modalContainerLogIn").show()
+    });
 
 
 
@@ -366,7 +394,7 @@ $('body').on('click', '.getMe', function () {
 
 
 
-    
+
     
     });
     

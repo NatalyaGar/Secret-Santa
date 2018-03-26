@@ -1,14 +1,12 @@
 
   
   /*DU Web Dev Bootcamp 2018 
-    Natalya Garusova, Sarah Gilbert,Mark Rubesyle, Diana Schiele
+    Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
     Project 1*/
 
 
 /* global moment firebase */
 // Initialize Firebase
-
-
     
 $(document).ready(function(){
 
