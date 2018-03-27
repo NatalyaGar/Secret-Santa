@@ -1,6 +1,6 @@
 /*DU Web Dev Bootcamp 2018 
-    Natalya Garusova, Sarah Gilbert,Mark Rubesyle, Diana Schiele
-    Project 1
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
+  Project 1
 */
 
 
@@ -45,7 +45,7 @@ body{
 }
 
 #logInBtn {
-    margin-left: 45%;
+    margin-left: 47%;
     margin-top: 7px;
 }
 
@@ -58,7 +58,7 @@ h4 {
     height: 395px;
 }
 #images {
-    height: 240px;
+    height: 75%;
 }
 
 #buttons{
@@ -87,6 +87,9 @@ margin-top: 40px;
 }
 #text-aboutGame {
     height:361px;
+    overflow-y: scroll;
+    margin-bottom: 30px;
+   
 }
 
 .aboutGame {
@@ -113,7 +116,7 @@ p{
 
 #tree {
     color:  rgb(31, 97, 75); 
-    margin-left: 50%;
+    margin-left: 49.5%;
     margin-top: 20px;
 }
 
@@ -170,6 +173,7 @@ p{
                 background-color: rgb(219, 95, 95);
                 color: rgb(31, 97, 75); 
                 margin-left: 16px;
+                /* margin-top: 50px; */
                
                 }
               
