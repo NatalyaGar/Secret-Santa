@@ -152,14 +152,7 @@ $(document).ready(function(){
     // }
 
 
-    $("#addMebtn").on("click", function(event) {
-      event.preventDefault();
    
-      console.log("addMe");
-      //Modal message show when click Add button
-      $('#myModalAdd').modal(); 
-      $("#modalContainerAdd").show()
-    });
 
 
     $("#submitMe").on("click", function(event) {
