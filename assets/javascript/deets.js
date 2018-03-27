@@ -1,6 +1,6 @@
 /*DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
-    Project 1
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova,
+  Project 1
 */
 
 // var config = {
@@ -49,7 +49,8 @@ $(document).ready(function(){
               // var imageUrl = response.data.image_original_url;
               var imageUrl = response.data.images.fixed_height_downsampled.url
               // make a variable, to get the data back from the api 
-              var christmasImage = $('<img style="width: 460px;">');
+              // var christmasImage = $('<img style="width: 460px;">');
+              var christmasImage = $('<img style="width:100%;">');
               // create a new image element
               christmasImage.attr("src", imageUrl);
               $("#images").empty();
@@ -87,11 +88,11 @@ $(document).ready(function(){
       $('#sendIt').on("click", function(event) {
       event.preventDefault();
    
-      console.log("click sendIt");
+      console.log("click");
       //Modal message show when click submit button
       $('#myModal').modal(); 
       $("#modalContainer").show()
-     
+         
    
       var name = $("#name").val();
       // var pw = $("#password-input").val();
@@ -150,6 +151,34 @@ $(document).ready(function(){
     //   $("#deets-container").show();
     // }
 
+
+    $("#addMebtn").on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("addMe");
+      //Modal message show when click Add button
+      $('#myModalAdd').modal(); 
+      $("#modalContainerAdd").show()
+    });
+
+
+    $("#submitMe").on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("Pair");
+      //Modal message show when click Pair button
+      $('#myModalPair').modal(); 
+      $("#modalContainerPair").show()
+    });
+
+    $("#haveGroupBtn").on("click", function(event) {
+      event.preventDefault();
+   
+      console.log("LogIn");
+      //Modal message show when click Log in to view who's Santa you are button
+      $('#myModalLogIn').modal(); 
+      $("#modalContainerLogIn").show()
+    });
 
 
 
@@ -366,7 +395,7 @@ $('body').on('click', '.getMe', function () {
 
 
 
-    
+
     
     });
     
