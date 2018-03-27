@@ -1,5 +1,5 @@
 <!--DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle, 
+    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle,
     Project 1
 -->
 
@@ -23,14 +23,14 @@
     <script type= "text/javaScript" src="javascript/deets.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-   
 
-      <!--links for flipclock-->   
+
+      <!--links for flipclock-->
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
-   
+
 
       <!--Fonts link-->
       <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
@@ -44,13 +44,13 @@
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ykdYPnNswf6X7Hd5qHz4RT4WicH5NhE&callback=initMap">
  </script>
 
-   
 
-   
-   
+
+
+
   </head>
- 
-  <body> 
+
+  <body>
 
      <!--Countdown clock code-->
 
@@ -58,16 +58,16 @@
         $(document).ready(function() {
 
           var clock;
-        
+
           // Grab the current date
           var currentDate = new Date();
-        
+
           // Target future date/24 hour time/Timezone. (currently set to 8:30AM on Christmas)
           var targetDate = moment.tz("2018-12-25 08:30", "America/Denver");
-        
+
           // Calculate the difference in seconds between the future and current date
           var diff = targetDate / 1000 - currentDate.getTime() / 1000;
-        
+
           if (diff <= 0) {
             // If remaining countdown is 0
             clock = $(".clock").FlipClock(0, {
@@ -76,7 +76,7 @@
               autostart: false
             });
             console.log("Date has already passed!")
-            
+
           } else {
             // Run countdown timer
             clock = $(".clock").FlipClock(diff, {
@@ -88,12 +88,12 @@
                 }
               }
             });
-            
+
             // Check when timer reaches 0, then stop at 0
             setTimeout(function() {
               checktime();
             }, 1000);
-            
+
             function checktime() {
               t = clock.getTime();
               if (t <= 0) {
@@ -126,26 +126,26 @@
 
           </div>
         </div>  <!--Jumbotron heading close-->
-    
-     
+
+
      <!--Cowntdown calendar-->
-        <div class="row"> 
-          <div class= " col-lg-12 col-md-8 col-xs-12 ">  
+        <div class="row">
+          <div class= " col-lg-12 col-md-8 col-xs-12 ">
                 <div class="panel panel-success" id="headingTextStart">
                     <div class="panel-heading">
                       <p class="daysLeftP"> Until Christmas</p>
                          <section id="calendar">
-                             <div class="clock"></div>  
-                         </section>  
+                             <div class="clock"></div>
+                         </section>
                     </div>
-                </div>  
-            
-            </div>  
-        </div> <!--Cowntdown calendar close-->
-     
+                </div>
 
-   <!--first page deetsLeftContainer open-->  
-  <div id="deetsLeftContainer"> 
+            </div>
+        </div> <!--Cowntdown calendar close-->
+
+
+   <!--first page deetsLeftContainer open-->
+  <div id="deetsLeftContainer">
       <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
         <!-- this is where to enter partyDeets -->
         <form class="partyDeets">
@@ -156,7 +156,7 @@
               <h4 class="panel-title">Sign up for Secret Santa!</h4>
              </header>
           </div>
-        
+
          <div class="panel-body" id="signUpPanel">
            <h4 class="budget">The budget for gift is 20$ </h4>
             <p>1. Enter your name and three wishlist items, press "Add" button to safe data.</p>
@@ -164,18 +164,18 @@
             <p>2. When your participants all signed up please push "Pair" button to do Secret Santa's elves job.</p>
             <br>
             <p>3. When you are ready to view who's Santa you are, press "Log In" button.</p>
-            
-            
+
+
             <form class="secretSantaForm" id="secretSantaForm">
                 <div id="sections">
                     <div class="section">
                       <div class="ParticipantField">
                         <fieldset>
                             <h4 class="participantHead">Participant</h4>
-                            <input class="nameInput" id="name0" placeholder="Name" />   
-                            <input class="giftInput1" id="first0" placeholder="Wishlist Item1" /> 
-                            <input class="giftInput2" id="second0" placeholder="Wishlist Item2" />  
-                            <input class="giftInput3" id="third0" placeholder="Wishlist Item3" />                            
+                            <input class="nameInput" id="name0" placeholder="Name" />
+                            <input class="giftInput1" id="first0" placeholder="Wishlist Item1" />
+                            <input class="giftInput2" id="second0" placeholder="Wishlist Item2" />
+                            <input class="giftInput3" id="third0" placeholder="Wishlist Item3" />
                         </fieldset>
                       </div>
                     </div>
@@ -186,12 +186,12 @@
                 <button class="btn btn-danger" type="submit" id="submitMe">Pair</button>
                 <hr>
             </div>
-          </div> 
+          </div>
         </div>
 
-         
+
            <!--CONVERTER in case if we will use it-->
-              
+
               <!--<div id="currency" class="row col-lg-12 col-md-12 col-xs-12">
                   <p id="convert" class="col-lg-4 col-md-4 col-xs-4">
                     Currency Converter:
@@ -204,29 +204,29 @@
                   </div>
             </div> -->
 
-            
+
             <div id="optHead" class="row col-lg-12 col-md-12 col-xs-12">
                 <div id="haveGroupPanel" class="panel panel-success">
 
                     <div class="panel-heading">
-                        <h4> <p class="optionHaveGr"> Are you ready to view who's Santa you are?</p> </h4> 
+                        <h4> <p class="optionHaveGr"> Are you ready to view who's Santa you are?</p> </h4>
                     </div>
 
                     <div id="viewPartyDeets">
                       <p> <h5> Press Log In button then!</h5></p>
-                    </div> 
-                    
-                    <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Log In</button> 
+                    </div>
+
+                    <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Log In</button>
                 </div>
             </div>
-                
-            
+
+
         </form> <!--partyDeets close-->
-      
+
       </section> <!--section id="deets" class="row col-lg-6 col-md-6 col-sm-12"> close-->
   </div> <!--first page deetsLeftContainer close-->
-   
-   
+
+
       <!-- this is where to view santaDeets -->
      <!--Left colomn Second Page-->
     <div id="deets-container">  <!--deets-container second page open-->
@@ -237,7 +237,7 @@
             </div>
 
       <div class="panel-body"  id="santaLtr">
-      
+
                <form class="secretSantaForm" id="secretSantaForm">
                    <div id="sections">
                        <div class="section">
@@ -265,10 +265,9 @@
                        <table class="table table-hover" id='giftsTbl'>
                            <thead>
                                <tr>
-                                   <th>Whish List Item 1</th>
-                                   <th>Whish List Item 2</th>
-                                   <th>Whish List Item 3</th>
-       
+                                   <th>Wish List Item #1</th>
+                                   <th>Wish List Item #2</th>
+                                   <th>Wish List Item #3</th>
                                </tr>
                            </thead>
                            <tbody>
@@ -276,20 +275,20 @@
                        </table>
                    </div>
                </div>
-       
-       
+
+
            </div>
-         </div>  
-    
-    
+         </div>
+
+
     <div class="panel panel-success">
-  
+
         <div class="panel-heading">
          <h4 id="shopA" class="text-center" class="panel-title" ><strong>Need help building this gifts?</strong></h4>
         </div>
 
        <div class="panel-body" id="amazonPanel">
-         <p class="text-center"> Let Amazon elves help! </p> 
+         <p class="text-center"> Let Amazon elves help! </p>
          <div class="buttonsAmazon">
             <button id="buy1" class="amazon">Take me to Amazon for gift 1!</button>
             <button id="buy2" class="amazon">Take me to Amazon for gift 2!</button>
@@ -301,20 +300,20 @@
         <div id="yourGroup" class="row col-lg-12 col-md-12 col-xs-12">
             <div class="panel panel-success">
                 <div class="panel-heading">
-               <h4> <p class="locationP"> This is the people in your group</p> </h4> 
+               <h4> <p class="locationP"> This is the people in your group</p> </h4>
                 </div>
-            
+
                   <!-- this is where the peoples names will go -->
                   <div class="panel-body" id="peopleInGr">
-                    <div id="peopleGr"></div>  
-                  </div> 
+                    <div id="peopleGr"></div>
+                  </div>
                 </div>
-            </div>  <!--panel panel-success-->  
-        </div> <!--  row-->   
+            </div>  <!--panel panel-success-->
+        </div> <!--  row-->
     </section> <!--deetsSecondPageLeft colomn-->
      </div> <!--panel-body santaLtr close-->
   </div>  <!--deets-container second page close-->
- 
+
       <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
           <!-- <aside id="sidebar" class="row col-lg-12 col-md-12 col-xs-12"> -->
       <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
@@ -323,76 +322,76 @@
            <!--Right Colomn-->
           <!-- Christmas Cheer  -->
             <div class="panel panel-success">
-  
+
                  <div class="panel-heading">
                   <h4 class="text-center" class="panel-title" ><strong>Press for Christmas Cheer!</strong></h4>
                  </div>
-  
+
                 <div class="panel-body" id="imgPanel">
-  
+
                     <div id="images"></div>
-  
+
                     <div id="buttons">
                       <button class="btn btn-danger" id="Christmas-button" type="submit">Press me again!</button>
-                      <button class="btn btn-danger" id="musicPlay"> Play music</button> 
-                      <button class="btn btn-danger" id="musicPause"> Pause music</button> 
-                    </div>  
+                      <button class="btn btn-danger" id="musicPlay"> Play music</button>
+                      <button class="btn btn-danger" id="musicPause"> Pause music</button>
+                    </div>
 
-                </div> <!--panel-body imgPanel-->        
-           
+                </div> <!--panel-body imgPanel-->
+
             </div> <!--panel panel-success-->
-      
+
                     <!--Map-->
                     <div id="mapHead" class="row col-lg-12 col-md-12 col-xs-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                           <h4> <p class="locationP"> Party location!</p> </h4> 
+                           <h4> <p class="locationP"> Party location!</p> </h4>
 
                            <div class="form-location" id="locationField">
 
-                              
+
                               <input id="location" type="textarea" placeholder="The party will be held at">
                               <br>
                               <br>
-                              
+
                               <input id="locationSubmitBtn" type="submit" value="Submit">
-                           
+
                             </div>
-                
+
                             </div>
 
 
                               <!-- this is where the map will go -->
                               <div class="panel-body" id="mapPanel">
-                                <div id="map"></div>  
-                              </div> 
-                      
-                        </div>  <!--panel panel-success-->  
-                    </div> <!-- map row-->   
+                                <div id="map"></div>
+                              </div>
 
-      </aside> <!--sidebar-->      
+                        </div>  <!--panel panel-success-->
+                    </div> <!-- map row-->
+
+      </aside> <!--sidebar-->
       </div> <!--trivia-->
-         
+
 <!--Footer-->
-    <footer> 
+    <footer>
       <div class="footer">
 
         <div class="container-fluid">
-        <h5 class="text-center" > DDS team 2018 </h5> 
-        </div> 
+        <h5 class="text-center" > DDS team 2018 </h5>
+        </div>
 
-      </div>   
-   </footer> 
+      </div>
+   </footer>
 
-  
-  
+
+
 </div> <!--container close-->
 
 <!--Modal popup message for thanking for submiting-->
 <div id="modalContainer">
 
-        <div id="myModal" class="modal fade" tabindex="-1" role="dialog"> 
-          
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -401,11 +400,11 @@
             </div>
             <div class="modal-body">
                 <p id="thanksSabmit">Please log back in one week to find out who's Santa you will be</p>
-                
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-             
+
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -416,8 +415,8 @@
     <!--Modal popup message for filling all the fields when submiting-->
 <div id="modalContainerError">
 
-    <div id="myModalError" class="modal fade" tabindex="-1" role="dialog"> 
-      
+    <div id="myModalError" class="modal fade" tabindex="-1" role="dialog">
+
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -426,19 +425,19 @@
         </div>
         <div class="modal-body">
             <p id="thanksSabmit">Please fill all of the fields</p>
-            
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-         
+
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 </div> <!-- /.modal container -->
 
-  
 
- 
+
+
   </body>
 </html>
