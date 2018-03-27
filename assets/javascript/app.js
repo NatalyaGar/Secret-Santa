@@ -90,6 +90,12 @@ $(document).ready(function(){
         $("#options-container").show();
     })
 
+    $("#logInBtnTop").on("click", function(event){
+        $("#start-container").hide();
+        $("#options-container").show();
+    })
+
+
     $('#keycode-submit-btn').on("click", function(event) {
         event.preventDefault();
         $("#eventLocator").show();
