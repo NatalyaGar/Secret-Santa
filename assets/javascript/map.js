@@ -12,8 +12,8 @@ $(document).ready(function () {
   var database = firebase.database();
   getMap();
 
-  $('#submitMe').on('click', function () {
-    var newAddress = $('#pac-input').val().trim();
+  $('#locationSubmitBtn').on('click', function () {
+    var newAddress = $('#location').val().trim();
     database.ref().set(newAddress);
     getMap();
   })
