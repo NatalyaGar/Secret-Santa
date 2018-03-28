@@ -1,27 +1,27 @@
 /*DU Web Dev Bootcamp 2018
-  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova,
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova 
   Project 1
 */
 
+
+
+// Template variable clones the div to dynamically add new participants
 // var config = {
-//   apiKey: "AIzaSyCM6gXwrnT1NUttrDF8qw1dAjI6qd0JpXE",
-//   authDomain: "secret-santa-efc15.firebaseapp.com",
-//   databaseURL: "https://secret-santa-efc15.firebaseio.com",
-//   projectId: "secret-santa-efc15",
-//   storageBucket: "",
-//   messagingSenderId: "451980576303"
+// 	apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
+// 	authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
+// 	databaseURL: "https://secretsantaprototype-1ea82.firebaseio.com",
+// 	projectId: "secretsantaprototype-1ea82",
+// 	storageBucket: "secretsantaprototype-1ea82.appspot.com",
+// 	messagingSenderId: "462928145575"
 // };
-// firebase.initializeApp(config);
 
-
-//Template variable clones the div to dynamically add new participants
 var config = {
-	apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
-	authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
-	databaseURL: "https://secretsantaprototype-1ea82.firebaseio.com",
-	projectId: "secretsantaprototype-1ea82",
-	storageBucket: "secretsantaprototype-1ea82.appspot.com",
-	messagingSenderId: "462928145575"
+  apiKey: "AIzaSyDLN3xvbcjFVqcg9yDl2-0sBaR_CNt0SvY",
+  authDomain: "mapapi-f40ea.firebaseapp.com",
+  databaseURL: "https://mapapi-f40ea.firebaseio.com",
+  projectId: "mapapi-f40ea",
+  storageBucket: "mapapi-f40ea.appspot.com",
+  messagingSenderId: "890218358654"
 };
 firebase.initializeApp(config);
 
@@ -152,14 +152,7 @@ $(document).ready(function(){
     // }
 
 
-    $("#addMebtn").on("click", function(event) {
-      event.preventDefault();
    
-      console.log("addMe");
-      //Modal message show when click Add button
-      $('#myModalAdd').modal(); 
-      $("#modalContainerAdd").show()
-    });
 
 
     $("#submitMe").on("click", function(event) {
