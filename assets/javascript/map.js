@@ -1,26 +1,26 @@
 $(document).ready(function () {
 
-  var config = {
-    apiKey: "AIzaSyDLN3xvbcjFVqcg9yDl2-0sBaR_CNt0SvY",
-    authDomain: "mapapi-f40ea.firebaseapp.com",
-    databaseURL: "https://mapapi-f40ea.firebaseio.com",
-    projectId: "mapapi-f40ea",
-    storageBucket: "mapapi-f40ea.appspot.com",
-    messagingSenderId: "890218358654"
-  };
-  firebase.initializeApp(config);
-  var database = firebase.database();
+  // var config = {
+  //   apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
+  //   authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
+  //   databaseURL: "https://secretsantaprototype-1ea82.firebaseio.com",
+  //   projectId: "secretsantaprototype-1ea82",
+  //   storageBucket: "secretsantaprototype-1ea82.appspot.com",
+  //   messagingSenderId: "462928145575"
+  // };
+  // firebase.initializeApp(config);
+  // var database = firebase.database();
   getMap();
 
   $('#locationSubmitBtn').on('click', function () {
     var newAddress = $('#location').val().trim();
-    database.ref().set(newAddress);
+    database.ref('/location').set(newAddress);
     getMap();
   })
 
    function getMap() {
     var partyAddress;
-    database.ref().once('value', function(snapshot) {
+    database.ref('/location').once('value', function(snapshot) {
     // database.ref().limitToLast(1).on("value", function (snapshot) {
       console.log(snapshot.val());
       partyAddress = snapshot.val().replace(/ /g, "+");      

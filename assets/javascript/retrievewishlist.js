@@ -1,16 +1,16 @@
 
 // Initialize Firebase
-var config = {
-    apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
-    authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
-    databaseURL: "https://secretsantaprototype-1ea82.firebaseio.com",
-    projectId: "secretsantaprototype-1ea82",
-    storageBucket: "secretsantaprototype-1ea82.appspot.com",
-    messagingSenderId: "462928145575"
-};
+// var config = {
+//     apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
+//     authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
+//     databaseURL: "https://secretsantaprototype-1ea82.firebaseio.com",
+//     projectId: "secretsantaprototype-1ea82",
+//     storageBucket: "secretsantaprototype-1ea82.appspot.com",
+//     messagingSenderId: "462928145575"
+// };
 
-firebase.initializeApp(config);
-var database = firebase.database();
+// firebase.initializeApp(config);
+// var database = firebase.database();
 var fbparticipant = [];
 var count = "";
 

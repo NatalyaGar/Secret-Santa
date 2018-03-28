@@ -8,21 +8,17 @@ var config = {
 	messagingSenderId: "462928145575"
 };
 
+
 firebase.initializeApp(config);
 // Create a variable to reference the database.
 var database = firebase.database();
-
 var template = $('#sections').clone();
-
 var sectionsCount = 0;
-
 var userName = [];
-
 var indexID = -1;
 
-
 // When user clicks .addMe button, adds new participant
-$('body').on('click', '.addMe', function () {
+$('.addMe').on('click', function () {
 	sectionsCount++;
 
 	// Loop through each input
