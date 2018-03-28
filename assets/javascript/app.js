@@ -1,14 +1,12 @@
 
   
   /*DU Web Dev Bootcamp 2018 
-    Natalya Garusova, Sarah Gilbert,Mark Rubesyle, Diana Schiele
+    Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
     Project 1*/
 
 
 /* global moment firebase */
 // Initialize Firebase
-
-
     
 $(document).ready(function(){
 
@@ -34,7 +32,8 @@ $(document).ready(function(){
             // var imageUrl = response.data.image_original_url;
             var imageUrl = response.data.images.fixed_height_downsampled.url
             // make a variable, to get the data back from the api 
-            var christmasImage = $('<img style="width: 473px;">');
+            // var christmasImage = $('<img style="width: 473px;">');
+            var christmasImage = $('<img style="width: 100%">');
             // create a new image element
             christmasImage.attr("src", imageUrl);
             $("#images").empty();
@@ -90,6 +89,12 @@ $(document).ready(function(){
         $("#start-container").hide();
         $("#options-container").show();
     })
+
+    $("#logInBtnTop").on("click", function(event){
+        $("#start-container").hide();
+        $("#options-container").show();
+    })
+
 
     $('#keycode-submit-btn').on("click", function(event) {
         event.preventDefault();

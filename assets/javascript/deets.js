@@ -1,28 +1,11 @@
 /*DU Web Dev Bootcamp 2018
-    Diana Schiele, Natalya Garusova, Sarah Gilbert,Mark Rubesyle,
-    Project 1
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
+  Project 1
 */
 
-// var config = {
-//   apiKey: "AIzaSyCM6gXwrnT1NUttrDF8qw1dAjI6qd0JpXE",
-//   authDomain: "secret-santa-efc15.firebaseapp.com",
-//   databaseURL: "https://secret-santa-efc15.firebaseio.com",
-//   projectId: "secret-santa-efc15",
-//   storageBucket: "",
-//   messagingSenderId: "451980576303"
-// };
-// firebase.initializeApp(config);
 
 
-//Template variable clones the div to dynamically add new participants
-var config = {
-    apiKey: "AIzaSyDwUh8oQG_IpoQ5kj6IvxYW8tGNXoZbU7M",
-    authDomain: "testproject-56e43.firebaseapp.com",
-    databaseURL: "https://testproject-56e43.firebaseio.com",
-    projectId: "testproject-56e43",
-    storageBucket: "testproject-56e43.appspot.com",
-    messagingSenderId: "628909235262"
-  };
+// Template variable clones the div to dynamically add new participants
 // var config = {
 // 	apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
 // 	authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
@@ -31,6 +14,15 @@ var config = {
 // 	storageBucket: "secretsantaprototype-1ea82.appspot.com",
 // 	messagingSenderId: "462928145575"
 // };
+
+var config = {
+  apiKey: "AIzaSyDLN3xvbcjFVqcg9yDl2-0sBaR_CNt0SvY",
+  authDomain: "mapapi-f40ea.firebaseapp.com",
+  databaseURL: "https://mapapi-f40ea.firebaseio.com",
+  projectId: "mapapi-f40ea",
+  storageBucket: "mapapi-f40ea.appspot.com",
+  messagingSenderId: "890218358654"
+};
 firebase.initializeApp(config);
 
 // Create a variable to reference the database
@@ -57,7 +49,8 @@ $(document).ready(function(){
               // var imageUrl = response.data.image_original_url;
               var imageUrl = response.data.images.fixed_height_downsampled.url
               // make a variable, to get the data back from the api
-              var christmasImage = $('<img style="width: 460px;">');
+              // var christmasImage = $('<img style="width: 460px;">');
+              var christmasImage = $('<img style="width:100%;">');
               // create a new image element
               christmasImage.attr("src", imageUrl);
               $("#images").empty();
@@ -81,51 +74,40 @@ $(document).ready(function(){
             // audioElementV.pause();
           });
 
-// .................this block not necessary...............
 
-    // function Guest(name, pw, gifts, budget, date) {
-    //   this.name = name;
-    //   // this.pw = pw;
-    //   this.gifts = gifts;
-    //   this.budget = budget;
-    //   this.date = date;
-    // }
-		//
-		//
-    //   $('#sendIt').on("click", function(event) {
-    //   event.preventDefault();
-		//
-    //   console.log("click sendIt");
-    //   //Modal message show when click submit button
-    //   $('#myModal').modal();
-    //   $("#modalContainer").show()
-		//
-		//
-    //   var name = $("#name").val();
-    //   // var pw = $("#password-input").val();
-    //   var gift1 =$('#gift1').val().trim();
-    //   var gift2 =$('#gift2').val().trim();
-    //   var gift3 =$('#gift3').val().trim();
-    //   var gifts = [gift1, gift2, gift3];
-    //   var minAmt = $('#min').val().trim();
-    //   var maxAmt = $('#max').val().trim();
-    //   var budget = [minAmt, maxAmt];
-    //   var date = $('#dateDeet').val().trim();
-    //   console.log('name: ', userName);
-    //   console.log('gift array: ', gifts);
-    //   console.log('budget: ', budget);
-    //   console.log('date chosen: ', date);
-		//
-    //   sendIt(name, gifts, budget, date);
-		//
-    // })
-		//
-    // function sendIt(name, gifts, budget, date) {
-    //   var user = new Guest(name, gifts, budget, date);
-    //   console.log('is this working???', user);
-    //   console.log('date: ', date);
-    // }
-// ................delete to here .........................
+      $('#sendIt').on("click", function(event) {
+      event.preventDefault();
+
+      console.log("click");
+      //Modal message show when click submit button
+      $('#myModal').modal();
+      $("#modalContainer").show()
+
+
+      var name = $("#name").val();
+      // var pw = $("#password-input").val();
+      var gift1 =$('#gift1').val().trim();
+      var gift2 =$('#gift2').val().trim();
+      var gift3 =$('#gift3').val().trim();
+      var gifts = [gift1, gift2, gift3];
+      var minAmt = $('#min').val().trim();
+      var maxAmt = $('#max').val().trim();
+      var budget = [minAmt, maxAmt];
+      var date = $('#dateDeet').val().trim();
+      console.log('name: ', userName);
+      console.log('gift array: ', gifts);
+      console.log('budget: ', budget);
+      console.log('date chosen: ', date);
+
+      sendIt(name, gifts, budget, date);
+
+    })
+
+    function sendIt(name, gifts, budget, date) {
+      var user = new Guest(name, gifts, budget, date);
+      console.log('is this working???', user);
+      console.log('date: ', date);
+    }
 
     $('#haveGroupBtn').on("click", function(event) {
       event.preventDefault();
@@ -153,6 +135,27 @@ $(document).ready(function(){
     //   $("#deets-container").show();
     // }
 
+
+
+
+
+    $("#submitMe").on("click", function(event) {
+      event.preventDefault();
+
+      console.log("Pair");
+      //Modal message show when click Pair button
+      $('#myModalPair').modal();
+      $("#modalContainerPair").show()
+    });
+
+    $("#haveGroupBtn").on("click", function(event) {
+      event.preventDefault();
+
+      console.log("LogIn");
+      //Modal message show when click Log in to view who's Santa you are button
+      $('#myModalLogIn').modal();
+      $("#modalContainerLogIn").show()
+    });
 
 
 
