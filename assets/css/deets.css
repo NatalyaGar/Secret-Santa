@@ -121,6 +121,9 @@ body {
   text-align: center;
 }
 
+/* #deetsHead{
+  margin-top: 10px;
+} */
 
 #sendIt{
   margin-top: 20px;
@@ -216,7 +219,7 @@ aside {
   color:  rgb(31, 97, 75);
   margin: 20px 20px 20px 0px;
   font-size: 20px;
-  padding: 0px 10px 10px 10px;
+  padding: 18px 10px 10px 10px;
 }
 
 
@@ -247,7 +250,8 @@ aside {
  
 }
  #buy1,
- #buy2 {
+ #buy2, 
+ #buy3{
    margin-right: 10px;
  } 
 
