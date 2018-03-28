@@ -32,8 +32,8 @@ body{
 
 
 .clock {
-    margin-left: 17%;
-    margin-top: 0px;
+    padding-left: 17%;
+     
 }
 
 #header{
@@ -167,13 +167,11 @@ p{
                 width: 94.7%;
                 
                 padding-top: 11px;
-                /* margin-top: 30px; */
                 /* Set the fixed height of the footer here */
                 height: 65px;
                 background-color: rgb(219, 95, 95);
                 color: rgb(31, 97, 75); 
                 margin-left: 16px;
-                /* margin-top: 50px; */
                
                 }
               
