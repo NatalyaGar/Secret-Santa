@@ -1,5 +1,5 @@
 /*DU Web Dev Bootcamp 2018
-  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova 
   Project 1
 */
 

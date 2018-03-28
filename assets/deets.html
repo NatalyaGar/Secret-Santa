@@ -11,35 +11,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shhhh..it's a secret!</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet"  href="css/deets.css">
 
-    <!--Your links was on bottom, but it is should be here to work  cowntdown clock-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <script type= "text/javaScript" src="javascript/deets.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-   
+ <!-- Viewport-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-      <!--links for flipclock-->   
-    <script src="https://momentjs.com/downloads/moment.js"></script>
-    <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
-   
+<!--Moments JS--> 
+ <script src="https://momentjs.com/downloads/moment.js"></script>
+ <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
 
-      <!--Fonts link-->
-      <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
 
-       <!--CSS Animate-->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!--Jquery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!--Links for map-->
+<!--Flipclock-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
+ 
+
+<title>Secret Santa!</title>
+
+<!--CSS Animate-->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ <!-- Firebase Reference -->
+ <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+
+ <!--Fonts link-->
+ <link href="https://fonts.googleapis.com/css?family=Tangerine:700" rel="stylesheet">
+
+  <!--Linking CSS-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet"  href="css/deets.css">
+
+  <!--Your links was on bottom, but it is should be here to work  cowntdown clock-->
+    
+  <!--Java Script-->
+  <script type= "text/javaScript" src="javascript/deets.js"></script>
+    
+  <!--Links for map-->
  <script src="javascript/map.js"></script>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ykdYPnNswf6X7Hd5qHz4RT4WicH5NhE"
     async defer></script> 
@@ -111,57 +128,44 @@
 
     <!--Jumbotron heading open-->
         <div class="jumbotron">
-          <div id="countDown">
-              <!-- <h1 class="text-center" id= "header">Secret Santa!</h1> -->
+         
               <h1 class="animated infinite bounce" id= "header">Secret Santa!</h1>
-
+              <input type="button" id="logOut" onclick="location.href='../index.html';" value="Log Out" />
               <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
-
-               <div id="home" class="col-lg-11 col-md-11 col-xs-11">
-                <input type="button" id="logOut" onclick="location.href='../index.html';" value="Log Out" />
-              </div>
-
-          </div>
         </div>  <!--Jumbotron heading close-->
     
      
      <!--Cowntdown calendar-->
         <div class="row"> 
-          <div class= " col-lg-12 col-md-8 col-xs-12 ">  
+          <div class= " col-lg-12 col-md-12 col-xs-12 ">  
                 <div class="panel panel-success" id="headingTextStart">
                     <div class="panel-heading">
                       <p class="daysLeftP"> Until Christmas</p>
-                         <section id="calendar">
                              <div class="clock"></div>  
-                         </section>  
                     </div>
-                </div>  
-            
-            </div>  
-        </div> <!--Cowntdown calendar close-->
-     
+                </div>
+             
 
    <!--first page deetsLeftContainer open-->  
   <div id="deetsLeftContainer"> 
-      <section id="deets" class="row col-lg-6 col-md-6 col-sm-12">
+      <div id="deets" class= "col-sm-12 col-md-12 col-lg-12">
         <!-- this is where to enter partyDeets -->
-        <form class="partyDeets">
-
          <div class="panel panel-success">
            <div class="panel-heading">
-              <header id="deetsHead">
-              <h4 class="panel-title">Sign up for Secret Santa!</h4>
-             </header>
-          </div>
+              <h4  id="deetsHead"class="panel-title">Sign up for Secret Santa!</h4> 
+           </div>
         
-         <div class="panel-body" id="signUpPanel">
-           <h4 class="budget">The budget for gift is 20$ </h4>
-            <p>1. Enter your name and three wishlist items, press "Add" button to save data.</p>
-            <br>
-            <p>2. When your participants have all signed up, please push the "Pair" button and the elves will do their job.</p>
-            <br>
-            <p>3. When you are ready to view whose Santa you are, press "Log In" button.</p>
-            
+          <div class="panel-body" id="signUpPanel">
+              <h4 class="budget">The budget for gift is 20$ </h4>
+              <br>
+                <div class="instructions">
+                    <p>1. Enter your name and three wishlist items, press "Add" button to save data.</p>
+                    <br>
+                    <p>2. When your participants have all signed up, please push the "Pair" button and the elves will do their job.</p>
+                    <br>
+                    <p>3. When you are ready to view whose Santa you are, press "Log In" button.</p>
+                </div>
+              <br>
             
             <form class="secretSantaForm" id="secretSantaForm">
                 <div id="sections">
@@ -178,11 +182,15 @@
                     </div>
                 </div>
             </form>
+            <br>
             <div class="buttonContainer">
-                <button id="addMebtn" class="addMe btn btn-danger">Add</button>
-                <button class="btn btn-danger" type="submit" id="submitMe">Pair</button>
+                <button id="addMebtn" class="addMe btn-lg btn-danger">Add</button>
+                <button class="btn-lg btn-danger" type="submit" id="submitMe">Pair</button>
+                <br>
+                <button class="btn-lg btn-danger " id="haveGroupBtn" type="submit">Log In</button> 
                 <hr>
             </div>
+
           </div> 
         </div>
 
@@ -199,41 +207,25 @@
                       <input type="text" id="convert"></input>
                     </span>
                   </div>
-            </div> -->
-
-            
-            <div id="optHead" class="row col-lg-12 col-md-12 col-xs-12">
-                <div id="haveGroupPanel" class="panel panel-success">
-
-                    <div class="panel-heading">
-                        <h4> <p class="optionHaveGr"> Are you ready to view whose Santa you are?</p> </h4> 
-                    </div>
-
-                    <div id="viewPartyDeets">
-                      <p> <h5> Press Log In button then!</h5></p>
-                    </div> 
-                    
-                    <button class="btn btn-danger btn-lg" id="haveGroupBtn" type="submit">Log In</button> 
-                </div>
-            </div>
-                
-            
-        </form> <!--partyDeets close-->
+            </div> -->  
+       
+      </div>
       
-      </section> <!--section id="deets" class="row col-lg-6 col-md-6 col-sm-12"> close-->
-  </div> <!--first page deetsLeftContainer close-->
-   
+  </div>
+     
+  <!--first page deetsLeftContainer close-->
+  
    
       <!-- this is where to view santaDeets -->
      <!--Left colomn Second Page-->
     <div id="deets-container">  <!--deets-container second page open-->
-      <section id="deetsSecondP" class="row col-lg-6 col-md-6 col-xs-6">
+      <section id="deetsSecondP" class="row col-lg-12 col-md-12 col-xs-12">
           <div class="panel panel-success">
             <div id="santaHead" class="panel-heading">
               <h4 class="text-center" class="panel-title"> Enter your name to see your recipient's wish list:</h4>
             </div>
 
-      <div class="panel-body"  id="santaLtr">
+        <div class="panel-body"  id="santaLtr">
       
                <form class="secretSantaForm" id="secretSantaForm">
                    <div id="sections">
@@ -274,101 +266,86 @@
                    </div>
                </div>
        
-       
-           </div>
-         </div>  
-    
-    
-    <div class="panel panel-success">
-  
-        <div class="panel-heading">
-         <h4 id="shopA" class="text-center" class="panel-title" ><strong>Need help building this gifts?</strong></h4>
-        </div>
+        
+          <div class="panel panel-success">
+        
+            <div class="panel-heading">
+              <h4 id="shopA" class="text-center" class="panel-title" ><strong>Need help building this gifts?</strong></h4>
+            </div>
 
-       <div class="panel-body" id="amazonPanel">
-         <p class="text-center"> Let Amazon elves help! </p> 
-         <div class="buttonsAmazon">
-            <button id="buy1" class="amazon">Take me to Amazon for gift 1!</button>
-            <button id="buy2" class="amazon">Take me to Amazon for gift 2!</button>
-            <button id="buy3" class="amazon">Take me to Amazon for gift 3!</button>
-        </div>
-      </div>
+              <div class="panel-body" id="amazonPanel">
+                <p class="text-center"> Let Amazon elves help! </p> 
+                  <div class="buttonsAmazon">
+                    <button id="buy1" class="amazon">Take me to Amazon for gift 1!</button>
+                    <button id="buy2" class="amazon">Take me to Amazon for gift 2!</button>
+                    <button id="buy3" class="amazon">Take me to Amazon for gift 3!</button>
+                  </div>
+              </div>
 
-        <!--People in your group-->
-        <div id="yourGroup" class="row col-lg-12 col-md-12 col-xs-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-               <h4> <p class="locationP"> These are the people in your group</p> </h4> 
-                </div>
-            
-                  <!-- this is where the peoples names will go -->
-                  <div class="panel-body" id="peopleInGr">
-                    <div id="peopleGr"></div>  
-                  </div> 
-                </div>
-            </div>  <!--panel panel-success-->  
-        </div> <!--  row-->   
-    </section> <!--deetsSecondPageLeft colomn-->
-     </div> <!--panel-body santaLtr close-->
-  </div>  <!--deets-container second page close-->
- 
-      <aside id="sidebar" class="row col-lg-5 col-md-5 col-sm-5">
-      <div id="trivia" class="row col-lg-12 col-md-12 col-xs-12">
-          <!-- Random holiday trivia! -->
-          <!-- this is where pics & trivia will go -->
-           <!--Right Colomn-->
-          <!-- Christmas Cheer  -->
-            <div class="panel panel-success">
-  
-                 <div class="panel-heading">
-                  <h4 class="text-center" class="panel-title" ><strong>Press for Christmas Cheer!</strong></h4>
-                 </div>
-  
-                <div class="panel-body" id="imgPanel">
-  
-                    <div id="images"></div>
-  
-                    <div id="buttons">
-                      <button class="btn btn-danger" id="Christmas-button" type="submit">Press me again!</button>
-                      <button class="btn btn-danger" id="musicPlay"> Play music</button> 
-                      <button class="btn btn-danger" id="musicPause"> Pause music</button> 
-                    </div>  
+            <!--People in your group-->
+            <div id="yourGroup" class="row col-lg-12 col-md-12 col-xs-12">
+                <!-- <div id="yourGroup" class="row col-lg-6 col-md-6 col-xs-6"> -->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                  <h4> <p class="locationP"> These are the people in your group</p> </h4> 
+                    </div>
+                      <!-- this is where the peoples names will go -->
+                      <div class="panel-body" id="peopleInGr">
+                        <div id="peopleGr"></div>  
+                      </div> 
+                    </div>
+          </div>  <!--panel panel-success-->  
+            </div> <!--  row-->   
+        </div> <!--deetsSecondPageLeft colomn-->
+       </div>  <!--panel-body santaLtr close-->
+      </section> <!--deetsSecondP-->
+    </div>
+  </div>
+</div>  
+<!--deets-container second page close-->
 
-                </div> <!--panel-body imgPanel-->        
-           
-            </div> <!--panel panel-success-->
+        <!-- Random holiday trivia! -->
+        <div id="sidebar" class="col-lg-6 col-md-6 col-sm-12">
+              <!-- this is where pics & trivia will go -->
+              <!--Right Colomn-->
+              <!-- Christmas Cheer  -->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h4 class="text-center" class="panel-title" ><strong>Press for Christmas Cheer!</strong></h4>
+                    </div>
       
-                    <!--Map-->
-                    <div id="mapHead" class="row col-lg-12 col-md-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                           <h4> <p class="locationP"> Party location!</p> </h4> 
-
-                           <div class="form-location" id="locationField">
-
-                              
-                              <input id="location" type="textarea" placeholder="The party will be held at">
-                              <br>
-                              <br>
-                              
-                              <input id="locationSubmitBtn" type="submit" value="Submit">
-                           
-                            </div>
-                
-                            </div>
-
-
-                              <!-- this is where the map will go -->
-                              <div class="panel-body" id="mapPanel">
-                                <div id="map"></div>  
+                    <div class="panel-body" id="imgPanel">
+                        <div id="images"></div>
+                        <div id="buttons">
+                          <button class="btn btn-danger" id="Christmas-button" type="submit">Press me again!</button>
+                          <button class="btn btn-danger" id="musicPlay"> Play music</button> 
+                          <button class="btn btn-danger" id="musicPause"> Pause music</button> 
+                        </div>  
+                    </div> <!--panel-body imgPanel-->        
+              
+                </div> <!--panel panel-success-->     
+          </div> <!--sidebar close-->
+   
+              <!--Map-->
+              <div id="mapHead" class="col-lg-6 col-md-6 col-sm-12">
+                <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h4> <p class="locationP"> Party location!</p> </h4> 
+                              <div class="form-location" id="locationField">
+                                  <input id="location" type="textarea" placeholder="The party will be held at ">
+                                    <br>
+                                    <br>
+                                  <input id="locationSubmitBtn" type="submit" value="Submit">
                               </div> 
-                      
-                        </div>  <!--panel panel-success-->  
-                    </div> <!-- map row-->   
-
-      </aside> <!--sidebar-->      
-      </div> <!--trivia-->
-         
+                      </div>
+                       <!-- this is where the map will go -->
+                       <div class="panel-body" id="mapPanel">
+                          <div id="map"></div>  
+                       </div>      
+                </div>  <!--panel panel-success-->  
+             </div> <!-- map row-->   
+    </div> 
+ 
 <!--Footer-->
     <footer> 
       <div class="footer">
@@ -379,10 +356,9 @@
 
       </div>   
    </footer> 
+  
+</div> <!-- container close -->
 
-  
-  
-</div> <!--container close-->
 
 
 
@@ -489,9 +465,6 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 </div> <!-- /.modal container -->
-
-  
-
 
  
   </body>

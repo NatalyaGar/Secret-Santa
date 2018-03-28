@@ -4,7 +4,7 @@
 */
 
 #logOut {
-  margin-left: 51%;
+  margin-left: 45%;
   padding: 5px 15px;
   background-color:  rgb(151, 190, 151);
 }
@@ -46,18 +46,24 @@ body {
 }
 
 
-
-#days {
-  text-align: center;
-  font-size: 25px;
-  color: rgb(31, 97, 75); 
-}
-
 #tree {
   color:  rgb(31, 97, 75); 
-  margin-left: 50%;
-  margin-top: 5px;
+  margin-left: 48.5%;
+  margin-top: 20px;
 }
+
+.clock {
+  padding-left: 17%;
+}
+
+#flip{
+  font-size: 10px;
+}
+.panel-heading {
+  border-top: 10px solid rgb(163, 218, 163);
+  border-style: dashed;
+}
+
 
 #daysToGo {
   font-size: 40px;
@@ -70,16 +76,21 @@ body {
 
   .ParticipantField{
     background-color: white;
-    padding:20px 0px 20px 20%;
+    padding:20px ;
   }
 
-  .participantHead{
+  .participantHead {
     color: rgb(31, 97, 75);
 }
-  
+
 
 .nameInput, .giftInput1, .giftInput2  {
-  margin-right: 10px;
+  margin-right: 20px;
+}
+
+#addMebtn{
+  margin-left: 42%;
+
 }
 
 
@@ -142,8 +153,8 @@ h4{
 }
 
 #haveGroupBtn{
-  margin-left: 40%;
-  margin-bottom: 20px;
+  margin-left: 45%;
+  margin-top: 20px;
 }
 
 #haveGroupPanel{
@@ -151,44 +162,21 @@ h4{
   margin-left: 3px;
   color: rgb(31, 97, 75); 
   font-size: 20px;
-  margin-bottom: 120px;
+  margin-bottom: 20px;
+  margin-left: 50%;
 }
 
 aside {
   font-size: 18px;
 }
 
-
-#sidebar {
-  position: absolute;
-  padding: 10px 10px 5px 10px;
-  right: 70px;
-  top: 577px; 
-}
-
-#sidebar{
-  border: 3px dashed green;
-  background-color: white;
-  border: 10px solid rgb(151, 190, 151);
-  border-style: dashed;
-  color:  rgb(31, 97, 75);
-  margin: 20px 20px 50px 10px;
-  font-size: 20px;
-}
-
-#trivia {
-  margin-top: 7px;
-  width: 525px;
-  
-}
-
 #map{
   height: 372px;
-  width: 465px;
+  width: 50%px;
 }
 
 #mapHead{
-  width: 525px;
+  width: 50%px;
 }
 
 .locationP{
@@ -197,17 +185,15 @@ aside {
 
 #location {
   margin-top: 10px;
+  margin-left: 5%;
   padding:20px;
-  width: 450px;
+  width:90%;
 }
 
 #locationSubmitBtn {
   margin-left: 43%;
 }
 
-/* #images {
-  height: 240px;
-} */
 
 #images {
   height:75%;
@@ -228,10 +214,11 @@ aside {
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   color:  rgb(31, 97, 75);
-  margin: 20px 20px 230px 10px;
+  margin: 20px 20px 20px 0px;
   font-size: 20px;
   padding: 0px 10px 10px 10px;
 }
+
 
 #deetsSecondP {
   border: 3px dashed green;
@@ -239,27 +226,29 @@ aside {
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   color:  rgb(31, 97, 75);
-  margin: 20px 20px 220px 10px;
+  margin: 20px 10px 20px 0px;
   font-size: 20px;
   padding: 18px 10px 10px 10px;
-  /* position: absolute; */
+  
 }
 
 #yourGroup{
   margin-top:30px;
-  width: 530px;
+  width: 100%;
   border-top: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   color:  rgb(31, 97, 75);
+  margin-left: 0.3%;
 }
 
 .buttonsAmazon {
-  margin-left: 23%;
+  margin-left: 10%;
   margin-top: 10px;
+ 
 }
- #buy2,
- #buy3 {
-   margin-top: 10px;
+ #buy1,
+ #buy2 {
+   margin-right: 10px;
  } 
 
 #mssgs {
@@ -272,26 +261,12 @@ aside {
   font-size: 20px;
 }
 
-/* #updates {
-  font-size: 29px;
-  margin-left:45%;
-  margin-top: 20px;
-} */
-
-/* #alerts {
-  color: red;
-} */
 
 #santaLtr {
   font-size: 20px;
   line-height: 150%;
 }
 
-/* .notChangeDays{
-  margin-left: 30%;
-  margin-top: 10px;
-  color:rgb(219, 95, 95);
-} */
 
 .amazon {
   margin: 2px 0;
@@ -318,23 +293,23 @@ aside {
 
                   /* Sticky footer styles
               -------------------------------------------------- */
-              html {
+               html {
                 position: relative;
                 min-height: 100%;
-                }
-                body {
+                } 
+                body { 
                 /* Margin bottom by footer height */
                 margin-bottom: 0px;
                 
                 
-                }
+                 } 
                 .footer {
                 position: relative;
                 bottom: -30px;
                 width: 100%;
                 padding-top: 23px;
                 font-weight: bold;
-                font-size: 15px;
+                font-size: 15px; 
                
                 /* Set the fixed height of the footer here */
                 height: 65px;

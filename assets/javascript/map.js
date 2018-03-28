@@ -1,14 +1,14 @@
 
 $(document).ready(function () {
 
-    var config = {
-      apiKey: "AIzaSyDLN3xvbcjFVqcg9yDl2-0sBaR_CNt0SvY",
-      authDomain: "mapapi-f40ea.firebaseapp.com",
-      databaseURL: "https://mapapi-f40ea.firebaseio.com",
-      projectId: "mapapi-f40ea",
-      storageBucket: "mapapi-f40ea.appspot.com",
-      messagingSenderId: "890218358654"
-    };
+    // var config = {
+    //   apiKey: "AIzaSyDLN3xvbcjFVqcg9yDl2-0sBaR_CNt0SvY",
+    //   authDomain: "mapapi-f40ea.firebaseapp.com",
+    //   databaseURL: "https://mapapi-f40ea.firebaseio.com",
+    //   projectId: "mapapi-f40ea",
+    //   storageBucket: "mapapi-f40ea.appspot.com",
+    //   messagingSenderId: "890218358654"
+    // };
 
     // var config = {
     //     apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
