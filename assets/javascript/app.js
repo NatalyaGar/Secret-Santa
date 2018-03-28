@@ -9,7 +9,7 @@
 // Initialize Firebase
     
 $(document).ready(function(){
-
+    $("#ChristmasTwo-button").hide();
     $("#eventLocator").hide();
     $("#options-container").hide();
     $("#data-container").hide();
@@ -18,6 +18,34 @@ $(document).ready(function(){
      
    //Christmas Cheer button
     $("#Christmas-button").on("click", function() {
+        $("#Christmas-button").hide();
+        $("#ChristmasTwo-button").show();
+      console.log("Hello");
+        // define variable for the api url
+        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=Christmas";
+        // get the random  image make the ajax call to the queery URL using jQuery
+                $.ajax({
+                url: queryURL,
+                method: "GET"
+                })
+        // stick the image on the screen 
+        .then(function(response) {
+            console.log(response);
+            // var imageUrl = response.data.image_original_url;
+            var imageUrl = response.data.images.fixed_height_downsampled.url
+            // make a variable, to get the data back from the api 
+            // var christmasImage = $('<img style="width: 473px;">');
+            var christmasImage = $('<img style="width: 100%">');
+            // create a new image element
+            christmasImage.attr("src", imageUrl);
+            $("#images").empty();
+            $("#images").prepend(christmasImage);
+           
+        }); //response function close
+    }); //on click function close
+
+    //Christmas Cheer button
+    $("#ChristmasTwo-button").on("click", function() {
       console.log("Hello");
         // define variable for the api url
         var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=Christmas";
