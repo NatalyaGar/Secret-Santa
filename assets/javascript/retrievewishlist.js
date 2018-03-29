@@ -31,23 +31,41 @@ $('body').on('click', '.getMe', function () {
     })
 
     function getGifts(recipient) {
-        database.ref().orderByChild("name").equalTo(recipient).on("child_added", function (childSnapshot) {
-            // database.ref().on("child_added", function (childSnapshot) {
-            //set snapshot variable to hold participant names from firebase
-            var sv1 = childSnapshot.val().recipientGifts.item1;
-            var sv2 = childSnapshot.val().recipientGifts.item2;
-            var sv3 = childSnapshot.val().recipientGifts.item3;
-            var l = "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords="
-            var link ="<a href="+l+sv1+ "</a>";
-            $('#giftsTbl tbody').empty();
-            $('#giftsTbl > tbody')
-            .append(`<tr>
-                            <td>${sv1}</td>
-                            <td>${sv2}</td>
-                            <td>${sv3}</td>
-                    </tr>`)
-        })
-    }
+
+       database.ref().orderByChild("name").equalTo(recipient).on("child_added", function (childSnapshot) {
+           // database.ref().on(“child_added”, function (childSnapshot) {
+           //set snapshot variable to hold participant names from firebase
+           var sv1 = childSnapshot.val().recipientGifts.item1;
+           var sv2 = childSnapshot.val().recipientGifts.item2;
+           var sv3 = childSnapshot.val().recipientGifts.item3;
+
+                        $("#buy1").data("gift", sv1);
+                        $("#buy2").data("gift", sv2);
+                        $("#buy3").data("gift", sv3);
+
+                        var l = "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=";
+
+                        $("#amazonPanel").on("click", "#buy1", function() {
+                            let getName = $("#buy1").data("gift");
+                            window.open(l + getName);
+                        })
+                        $("#amazonPanel").on("click", "#buy2", function() {
+                            let getName = $("#buy2").data("gift");
+                            window.open(l + getName);
+                        })
+                        $("#amazonPanel").on("click", "#buy3", function() {
+                            let getName = $("#buy3").data("gift");
+                            window.open(l + getName);
+                        })
+           $("#giftsTbl > tbody").empty();
+           $("#giftsTbl > tbody")
+           .append(`<tr>
+                           <td>${sv1}</td>
+                           <td>${sv2}</td>
+                           <td>${sv3}</td>
+                   </tr>`)
+       })
+   }
 
 
     function getCount() {
