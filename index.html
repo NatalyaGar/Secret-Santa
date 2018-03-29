@@ -13,41 +13,41 @@
   <head>
 
       <meta charset="UTF-8">
-
+      
      <!-- Viewport-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-     <!--Moments JS-->
+     <!--Moments JS--> 
       <script src="https://momentjs.com/downloads/moment.js"></script>
       <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
-
-
+  
+  
      <!--Jquery-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
      <!--Flipclock-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
      <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
-
-
+      
+     
     <title>Secret Santa!</title>
-
+    
     <!--CSS Animate-->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
+    
      <!--Bootstrap-->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    
       <!-- Firebase Reference -->
       <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
       <!--Linking CSS-->
       <link rel="stylesheet"  href="assets/css/style.css">
 
-
+     
       <!--Java Script-->
       <script type= "text/javascript" src="assets/javascript/app.js"></script>
 
@@ -57,22 +57,22 @@
   </head>
 
 <body>
-
+   
     <!--Countdown clock code-->
 
     <script>
         $(document).ready(function() {
           var clock;
-
+        
           // Grab the current date
           var currentDate = new Date();
-
+        
           // Target future date/24 hour time/Timezone. (currently set to 8:30AM on Christmas)
           var targetDate = moment.tz("2018-12-25 08:30", "America/Denver");
-
+        
           // Calculate the difference in seconds between the future and current date
           var diff = targetDate / 1000 - currentDate.getTime() / 1000;
-
+        
           if (diff <= 0) {
             // If remaining countdown is 0
             clock = $(".clock").FlipClock(0, {
@@ -81,7 +81,7 @@
               autostart: false
             });
             console.log("Date has already passed!")
-
+            
           } else {
             // Run countdown timer
             clock = $(".clock").FlipClock(diff, {
@@ -93,12 +93,12 @@
                 }
               }
             });
-
+            
             // Check when timer reaches 0, then stop at 0
             setTimeout(function() {
               checktime();
             }, 1000);
-
+            
             function checktime() {
               t = clock.getTime();
               if (t <= 0) {
@@ -127,17 +127,17 @@
         </div>
 
         <!--Body rows-->
-        <div class="row">
+        <div class="row"> 
             <!--Head Row-->
             <div class= " col-lg-12 col-md-12 col-xs-12 ">
                 <div class="panel panel-success" id="headingTextStart">
                     <div class="panel-heading">
                       <p class="daysLeftP"> Until Christmas</p>
-                      <div class="clock"></div>
+                      <div class="clock"></div>  
                     </div>
-                </div>
+                </div>    
                 <br>
-
+              
     <div id = "start-container">
 
             <!--Left Colomn-->
@@ -154,83 +154,78 @@
                       <div id="images"></div>
 
                       <div id="buttons">
-
-                          <button class="btn btn-danger" id="Christmas-button" type="submit">Press me!</button>
+                        <button class="btn btn-danger" id="Christmas-button" type="submit">Press me!</button>
                         <button class="btn btn-danger" id="ChristmasTwo-button" type="submit">Press me again!</button>
                         <button class="btn btn-danger" id="musicPlay"> Play music</button> 
                         <button class="btn btn-danger" id="musicPause"> Pause music</button> 
                       </div>   
                   
-
-                      
-
-
                 </div> <!--imgPanel-->
               </div> <!--panel-success-->
           </div> <!--Left Colomn-->
 
           <!--Right Colomn-->
           <div class="col-sm-12 col-md-6 col-lg-6" id="text-aboutGame-container">
-
+            
             <!--Body Panel Right-->
             <div class="panel panel-success">
-
+            
 
               <div class="panel-heading">
                   <h4 class="text-center" class="panel-title"><strong>About Secret  Santa Game </strong></h4>
                 </div>
-
+              
                 <div class="panel-body" id="text-aboutGame">
-                  <p class="aboutGame">
-                    Secret Santa is a fun way to exchange gifts. Sign up and enter a wish list of items that you would like to receive as gifts. The Magical Christmas Cheer Processor will then randomly assign gift givers (Santas) and receivers. When you sign in again, you’ll see who you have been assigned to play Santa for, and what items are on his or her wish list. Someone else, another Santa, will have been assigned your name and wish list and will be shopping as well! You can either hand-craft your gifts in your workshop at the North Pole, or, if you don’t have one of those, you can follow our convenient link to Amazon to simplify things. When gift-giving day arrives, follow the Secret Santa Map to the party! Gifts will be exchanged, and secret Santas revealed! Have fun, and spread Christmas Cheer!
+                  <p class="aboutGame"> 
+                    Secret Santa is a fun way to exchange gifts. Sign up and enter a wish list of items that you would like to receive as gifts. The Magical Christmas Cheer Processor will then randomly assign gift givers (Santas) and receivers. When you sign in again, you’ll see who you have been assigned to play Santa for, and what items are on his or her wish list. Someone else, another Santa, will have been assigned your name and wish list and will be shopping as well! You can either hand-craft your gifts in your workshop at the North Pole, or, if you don’t have one of those, you can follow our convenient link to Amazon to simplify things. When gift-giving day arrives, follow the Secret Santa Map to the party! Gifts will be exchanged, and secret Santas revealed! Have fun, and spread Christmas Cheer! 
                   </p>
                   <button class="btn btn-danger" id="logInBtn" type="button">Log In</button>
                   <!-- <input class="btn btn-danger" type="button" id="logInBtn" onclick="location.href='assets/deets.html';" value="Log In" /> -->
-
-
+                  
+              
                 </div> <!--text-aboutGame" close-->
             </div> <!--panel panel-success close-->
           </div> <!--text-aboutGame-container close-->
     </div> <!--start-container close-->
 
       <div id="options-container">
-
-            <h4> <input type="radio" name="findGroup" value="new" class="newGrRadio"> I have a code to join a group exchange</h4><br>
-
+ 
+            <h4> <input type="radio" name="newGroup" value="new" class="newGrRadio"> I have a code to join a group exchange</h4><br>
+        
             <div class="form-group" id="keycode">
               <label for="password-input">Keycode</label>
               <input class="form-control" id="keycode-input" type="text">
             </div>
-
-            <input class="btn btn-danger" type="button" id="submitInBtnOption" onclick="location.href='assets/deets.html';" value="Submit" />
+          
+            <input class="btn btn-danger" type="button" id="submitInBtnOption" onclick="location.href='assets/deets.html';" value="Submit" /> 
             <br>
             <br>
             <br>
-
+            
             <div id="viewPartyDeets">
-              <h4><input type="radio"  name="findGroup" value="haveGroup" class="newGrRadio" > I am a first time user</h4><br>
+              <h4><input type="radio"  name="haveGroup" value="haveGroup" > I am a first time user</h4><br>
             </div>
 
-            <input class="btn btn-danger" type="button" id="logInBtnOption" onclick="location.href='assets/deets.html';" value="Log In" />
+            <input class="btn btn-danger" type="button" id="logInBtnOption" onclick="location.href='assets/deets.html';" value="Log In" /> 
 
       </div>  <!--options-container close-->
-
+ 
 
 
         <!-- Sticky Footer -->
-
-        <footer>
+                   
+        <footer> 
             <div class="footer">
 
               <div class="container-fluid">
-              <h5 class="text-center" > DDS team 2018 </h5>
-              </div>
+              <h5 class="text-center" > DDS team 2018 </h5> 
+              </div> 
 
-            </div>
-         </footer>
+            </div>   
+         </footer> 
 
 
 </div> <!--container close-->
 
-</body>
+</body> 
 </html>
