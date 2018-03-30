@@ -4,17 +4,11 @@
     Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
     Project 1*/
 
-
-/* global moment firebase */
-// Initialize Firebase
     
 $(document).ready(function(){
     $("#ChristmasTwo-button").hide();
-    $("#eventLocator").hide();
     $("#options-container").hide();
-    $("#data-container").hide();
-    $("#verifyP").hide();
-    $("#new-password").hide();
+   
      
    //Christmas Cheer button
     $("#Christmas-button").on("click", function() {
@@ -86,30 +80,15 @@ $(document).ready(function(){
        });
      //Audio Element close
 
- 
-   
-
-    $(".linkNotUser").on ("click",function(event){
-        $(".linkNotUser").hide();
-        $("#password").hide();
-        $("#verifyP").show();
-        $("#new-password").show();
-
-    })
-
+    
 //On click function
     $('#submit-user-btn').on("click", function(event) {
         event.preventDefault();
-    
         //Hide start container
         $("#start-container").hide();
-
         //Show options container
         $("#options-container").show();
-        $("#viewPartyDeets").hide();
-        $("#viewSecretSantaDeets").hide();
-
-            console.log("button");
+        console.log("button");
     }); //on click function close
 
 
@@ -126,22 +105,14 @@ $(document).ready(function(){
 
     $('#keycode-submit-btn').on("click", function(event) {
         event.preventDefault();
-        $("#eventLocator").show();
         //Hide start container
         $("#start-container").hide();
 
         //Hide options containers
         $("#options-container").hide();
-        $("#data-container").show();
         $("#headingTextStart").hide();
-        // $(".container").hide();
+        
     });
-
-
-    $('#wishListSubmit-btn').on("click", function(event) {
-        console.log("button");
-        event.preventDefault();
-    }); //on click function close
 
 });  //Document ready function close
 
