@@ -1,4 +1,4 @@
-//Template variable clones the div to dynamically add new participants
+//Firbase config block
 var config = {
 	apiKey: "AIzaSyDv2FsrJadHox9lm9ccXWDfqKtAipU4u_M",
 	authDomain: "secretsantaprototype-1ea82.firebaseapp.com",
@@ -7,15 +7,20 @@ var config = {
 	storageBucket: "secretsantaprototype-1ea82.appspot.com",
 	messagingSenderId: "462928145575"
 };
-
-
 firebase.initializeApp(config);
-// Create a variable to reference the database.
+
+//set up variables used throughout the script
 var database = firebase.database();
+//Template variable clones the div in the form to dynamically add new participants
 var template = $('#sections').clone();
 var sectionsCount = 0;
 var userName = [];
 var indexID = -1;
+// For demo purposes, use time in milliseconds as a unique identifier for each group submission
+var d = new Date();
+var groupID = d.getTime();
+console.log(groupID);
+
 
 // When user clicks .addMe button, adds new participant
 $('.addMe').on('click', function () {
@@ -34,8 +39,7 @@ $('.addMe').on('click', function () {
 	return false;
 });
 
-//Main function for Secret Santa web app/////////////////////////////////////////////////////
-// Stores data from form in array and uses that data to pair participants
+// Store data from form in array and use that data to pair participants
 $('#submitMe').on('click', function () {
 	event.preventDefault();
 	var participants = [];
@@ -44,9 +48,7 @@ $('#submitMe').on('click', function () {
 	var gifts2 = [];
 	var gifts3 = [];
 
-
-
-	// Create an array for each participant within the participants array
+	// grab each participant and gifts from the form and put their values into respective arrays
 	$('#secretSantaForm').find(".section").each(function () {
 		indexID++;
 		var participant = [
@@ -86,6 +88,10 @@ $('#submitMe').on('click', function () {
 	console.log(participants);
 
 
+	//get the results from matched participants array 
+	//return 1st participant in matched group and pair that participant with their gift list
+	//package those values up & push into Firebase 
+	//use global groupID for group identifier
 	for (i = 0; i < participants.length; i++) {
 		var name = participants[i][0];
 		var matched = participants[i];
@@ -105,16 +111,13 @@ $('#submitMe').on('click', function () {
 		database.ref().push({
 			name: name,
 			recipientPair: matched,
-			recipientGifts: gifts
-
+			recipientGifts: gifts,
+			groupId: groupID
 		});
 	}
 })
 
-
-/**
- * Function that will randomly shuffle an array. 
- */
+// Function that will randomly shuffle an array. 
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -133,9 +136,11 @@ function shuffle(array) {
 	return array;
 };
 
-// Function to match participants with recipients 
-// Matches current participant in array with the next participant in array
-// Unless they are the last, in which case matches them with the first participant in array
+/*
+--Function to match participants with recipients 
+--Matches current participant in shuffled array with the next participant in suffled array
+--unless they are in the last position, in which case matches them with the first participant in array
+*/
 function matchParticipants(participant, index, array) {
 	//IF block handles ALL index items excluding the last index item
 	if (index === array.length - 1) {
@@ -149,7 +154,8 @@ function matchParticipants(participant, index, array) {
 	}
 };
 
-
+//This function is used self explanatory by the name of the function
+//It is excuted/used to get participant from 2 dimension array in order to match up that participant with their gift list
 function functiontofindIndexByKeyValue(arraytosearch, valuetosearch) {
 
 	for (var i = 0; i < arraytosearch.length; i++) {
@@ -160,4 +166,3 @@ function functiontofindIndexByKeyValue(arraytosearch, valuetosearch) {
 	}
 	return null;
 };
-
