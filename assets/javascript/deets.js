@@ -5,10 +5,20 @@
 
 
 $(document).ready(function(){
-  $("#deets-container").hide();
-  $("#containerSeeRecipient").hide();
-   $("#ChristmasTwo-button").hide();
-  
+  var userCode = sessionStorage.getItem("userKey");
+  console.log(userCode);
+  console.log('userCode: ', userCode);
+  if (userCode === 'xmas') {
+    $("#deetsSecondP").show();
+    $("#deets").hide();
+    $("#ChristmasTwo-button").hide();
+  } else if (userCode === "") {
+    $("#deets").show();
+    $("#deetsSecondP").hide();
+    // $("#deets-container").hide();
+    // $("#containerSeeRecipient").hide();
+  }
+
      //Christmas Cheer button
      $("#Christmas-button").on("click", function() {
        $("#Christmas-button").hide();
@@ -21,19 +31,19 @@ $(document).ready(function(){
                   url: queryURL,
                   method: "GET"
                   })
-          // stick the image on the screen 
+          // stick the image on the screen
           .then(function(response) {
               console.log(response);
               // var imageUrl = response.data.image_original_url;
               var imageUrl = response.data.images.fixed_height_downsampled.url
-              // make a variable, to get the data back from the api 
+              // make a variable, to get the data back from the api
               // var christmasImage = $('<img style="width: 460px;">');
               var christmasImage = $('<img style="width:100%;">');
               // create a new image element
               christmasImage.attr("src", imageUrl);
               $("#images").empty();
               $("#images").prepend(christmasImage);
-             
+
           }); //response function close
       }); //on click function close
 
@@ -47,38 +57,38 @@ $(document).ready(function(){
                 url: queryURL,
                 method: "GET"
                 })
-        // stick the image on the screen 
+        // stick the image on the screen
         .then(function(response) {
             console.log(response);
             // var imageUrl = response.data.image_original_url;
             var imageUrl = response.data.images.fixed_height_downsampled.url
-            // make a variable, to get the data back from the api 
+            // make a variable, to get the data back from the api
             // var christmasImage = $('<img style="width: 460px;">');
             var christmasImage = $('<img style="width:100%;">');
             // create a new image element
             christmasImage.attr("src", imageUrl);
             $("#images").empty();
             $("#images").prepend(christmasImage);
-           
+
         }); //response function close
     }); //on click function close
-  
+
 
        //Audio Element
        var audioElement = document.createElement("audio");
        audioElement.setAttribute("src", "music/WhiteChristmas.mp3");
-      
+
      // music play button
        $("#musicPlay").on("click", function() {
-        audioElement.play();                                    
+        audioElement.play();
            });
        //music pause button
        $("#musicPause").on("click", function() {
             audioElement.pause();
             // audioElementV.pause();
           });
- 
- 
+
+
 
     function Guest(name, pw, gifts, budget, date) {
       this.name = name;
@@ -88,16 +98,16 @@ $(document).ready(function(){
       this.date = date;
     }
 
-    
+
       $('#sendIt').on("click", function(event) {
       event.preventDefault();
-   
+
       console.log("click");
       //Modal message show when click submit button
-      $('#myModal').modal(); 
+      $('#myModal').modal();
       $("#modalContainer").show()
-         
-   
+
+
       var name = $("#name").val();
       // var pw = $("#password-input").val();
       var gift1 =$('#gift1').val().trim();
@@ -112,11 +122,11 @@ $(document).ready(function(){
       console.log('gift array: ', gifts);
       console.log('budget: ', budget);
       console.log('date chosen: ', date);
-    
+
       sendIt(name, gifts, budget, date);
-    
+
     })
-    
+
     function sendIt(name, gifts, budget, date) {
       var user = new Guest(name, gifts, budget, date);
       console.log('is this working???', user);
@@ -129,7 +139,7 @@ $(document).ready(function(){
     //  $("#deets-container").hide();
     $("#deets-container").show()
     //  $("#containerSeeRecipient").show();
-     
+
 
 
       //hide deets section on click submit button
@@ -146,45 +156,45 @@ $(document).ready(function(){
     //   $("#myModalError").modal();
     //   $("#modalContainerError").show();
     //   $("#deetsLeftContainer").show();
-     
+
     // }
     // else{
-    //   $('#myModal').modal(); 
+    //   $('#myModal').modal();
     //   $("#modalContainer").show()
     //   $("#deetsLeftContainer").hide();
     //   $("#deets-container").show();
     // }
 
 
-   
+
 
 
     $("#submitMe").on("click", function(event) {
       event.preventDefault();
-   
+
       console.log("Pair");
       //Modal message show when click Pair button
-      $('#myModalPair').modal(); 
+      $('#myModalPair').modal();
       $("#modalContainerPair").show()
     });
 
     $("#haveGroupBtn").on("click", function(event) {
       event.preventDefault();
-   
+
       console.log("LogIn");
       //Modal message show when click Log in to view who's Santa you are button
-      $('#myModalLogIn').modal(); 
+      $('#myModalLogIn').modal();
       $("#modalContainerLogIn").show()
     });
 
 
-    
 
 
 
-    
 
 
 
-    
+
+
+
     });

@@ -1,13 +1,13 @@
 
-  
-  /*DU Web Dev Bootcamp 2018 
+
+  /*DU Web Dev Bootcamp 2018
     Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
     Project 1*/
 
 
 /* global moment firebase */
 // Initialize Firebase
-    
+
 $(document).ready(function(){
     $("#ChristmasTwo-button").hide();
     $("#eventLocator").hide();
@@ -15,7 +15,8 @@ $(document).ready(function(){
     $("#data-container").hide();
     $("#verifyP").hide();
     $("#new-password").hide();
-     
+    // $("#form").hide();
+
    //Christmas Cheer button
     $("#Christmas-button").on("click", function() {
         $("#Christmas-button").hide();
@@ -28,19 +29,19 @@ $(document).ready(function(){
                 url: queryURL,
                 method: "GET"
                 })
-        // stick the image on the screen 
+        // stick the image on the screen
         .then(function(response) {
             console.log(response);
             // var imageUrl = response.data.image_original_url;
             var imageUrl = response.data.images.fixed_height_downsampled.url
-            // make a variable, to get the data back from the api 
+            // make a variable, to get the data back from the api
             // var christmasImage = $('<img style="width: 473px;">');
             var christmasImage = $('<img style="width: 100%">');
             // create a new image element
             christmasImage.attr("src", imageUrl);
             $("#images").empty();
             $("#images").prepend(christmasImage);
-           
+
         }); //response function close
     }); //on click function close
 
@@ -54,19 +55,19 @@ $(document).ready(function(){
                 url: queryURL,
                 method: "GET"
                 })
-        // stick the image on the screen 
+        // stick the image on the screen
         .then(function(response) {
             console.log(response);
             // var imageUrl = response.data.image_original_url;
             var imageUrl = response.data.images.fixed_height_downsampled.url
-            // make a variable, to get the data back from the api 
+            // make a variable, to get the data back from the api
             // var christmasImage = $('<img style="width: 473px;">');
             var christmasImage = $('<img style="width: 100%">');
             // create a new image element
             christmasImage.attr("src", imageUrl);
             $("#images").empty();
             $("#images").prepend(christmasImage);
-           
+
         }); //response function close
     }); //on click function close
 
@@ -74,10 +75,10 @@ $(document).ready(function(){
    //Audio Element open
       var audioElement = document.createElement("audio");
       audioElement.setAttribute("src", "assets/music/WhiteChristmas.mp3");
-     
+
     // music play button
       $("#musicPlay").on("click", function() {
-         audioElement.play();                                    
+         audioElement.play();
       });
       //music pause button
       $("#musicPause").on("click", function() {
@@ -86,8 +87,8 @@ $(document).ready(function(){
        });
      //Audio Element close
 
- 
-   
+
+
 
     $(".linkNotUser").on ("click",function(event){
         $(".linkNotUser").hide();
@@ -100,7 +101,7 @@ $(document).ready(function(){
 //On click function
     $('#submit-user-btn').on("click", function(event) {
         event.preventDefault();
-    
+
         //Hide start container
         $("#start-container").hide();
 
@@ -110,12 +111,12 @@ $(document).ready(function(){
         $("#viewSecretSantaDeets").hide();
 
             console.log("button");
-    }); //on click function close
-
+    }); //on click function close;
 
     $("#logInBtn").on("click", function(event){
         $("#start-container").hide();
         $("#options-container").show();
+        $("#keycode").hide();
     })
 
     $("#logInBtnTop").on("click", function(event){
@@ -134,9 +135,35 @@ $(document).ready(function(){
         $("#options-container").hide();
         $("#data-container").show();
         $("#headingTextStart").hide();
-        // $(".container").hide();
     });
 
+    $('input[name="Group"]').on("click", function(event) {
+      let radioVal = $('input[name="Group"]:checked').val();
+      if (radioVal === "new") {
+        $("#keycode").hide();
+      }
+      if (radioVal === "haveGroup") {
+        $("#keycode").show();
+      }
+    })
+
+    var userKey = "xmas";
+
+    $("#submitInBtnOption").on("click", function(event) {
+      var keyInput = $("#keycode-input").val();
+      if (keyInput === userKey) {
+        sessionStorage.setItem('userKey', userKey);
+        location.href='assets/deets.html';
+      } else if (keyInput == ""){
+        $("#keycode-input")[0].placeholder = "Please enter a keycode"
+      } else if (keyInput !== userKey) {
+        $("#keycode-input").val('');
+        $("#keycode-input")[0].placeholder = "Keycode incorrect. Please try again"
+      }
+      if (!keyInput) {
+        location.href='assets/deets.html';
+      }
+    })
 
     $('#wishListSubmit-btn').on("click", function(event) {
         console.log("button");
@@ -144,10 +171,3 @@ $(document).ready(function(){
     }); //on click function close
 
 });  //Document ready function close
-
-
-
-
-
-
-

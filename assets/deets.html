@@ -17,7 +17,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!--Moments JS--> 
+<!--Moments JS-->
  <script src="https://momentjs.com/downloads/moment.js"></script>
  <script src="https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
 
@@ -28,7 +28,7 @@
 <!--Flipclock-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet">
- 
+
 
 <title>Secret Santa!</title>
 
@@ -52,12 +52,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet"  href="css/deets.css">
 
   <!--Your links was on bottom, but it is should be here to work  cowntdown clock-->
-    
- 
-    
-  
 
- 
+
+
+
+
+
 
 
 
@@ -65,25 +65,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 
   </head>
- 
-  <body> 
+
+  <body>
 
           <!--Countdown clock code-->
-     
+
           <script>
              $(document).ready(function() {
-     
+
                var clock;
-             
+
                // Grab the current date
                var currentDate = new Date();
-             
+
                // Target future date/24 hour time/Timezone. (currently set to 8:30AM on Christmas)
                var targetDate = moment.tz("2018-12-25 08:30", "America/Denver");
-             
+
                // Calculate the difference in seconds between the future and current date
                var diff = targetDate / 1000 - currentDate.getTime() / 1000;
-             
+
                if (diff <= 0) {
                  // If remaining countdown is 0
                  clock = $(".clock").FlipClock(0, {
@@ -92,7 +92,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                    autostart: false
                  });
                  console.log("Date has already passed!")
-                 
+
                } else {
                  // Run countdown timer
                  clock = $(".clock").FlipClock(diff, {
@@ -104,12 +104,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                      }
                    }
                  });
-                 
+
                  // Check when timer reaches 0, then stop at 0
                  setTimeout(function() {
                    checktime();
                  }, 1000);
-                 
+
                  function checktime() {
                    t = clock.getTime();
                    if (t <= 0) {
@@ -122,41 +122,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                }
              });
              </script>
-     
+
          <!--Countdown clock code close-->
-     
-     
+
+
         <div class="container">
-     
+
          <!--Jumbotron heading open-->
              <div class="jumbotron">
-              
+
                    <h1 class="animated infinite bounce" id= "header">Secret Santa!</h1>
                    <input type="button" id="logOut" onclick="location.href='../index.html';" value="Log Out" />
                    <p class="glyphicon glyphicon-tree-conifer" id="tree">  </p>
              </div>  <!--Jumbotron heading close-->
-         
-          
+
+
           <!--Cowntdown calendar-->
-             <div class="row"> 
-               <div class= " col-lg-12 col-md-12 col-xs-12 ">  
+             <div class="row">
+               <div class= " col-lg-12 col-md-12 col-xs-12 ">
                      <div class="panel panel-success" id="headingTextStart">
                          <div class="panel-heading">
                            <p class="daysLeftP"> Until Christmas</p>
-                                  <div class="clock"></div>  
+                                  <div class="clock"></div>
                          </div>
                      </div>
-                  
-     
-        <!--first page deetsLeftContainer open-->  
-       <div id="deetsLeftContainer"> 
+
+
+        <!--first page deetsLeftContainer open-->
+       <div id="deetsLeftContainer">
            <div id="deets" class= "col-sm-12 col-md-12 col-lg-12">
              <!-- this is where to enter partyDeets -->
               <div class="panel panel-success">
                 <div class="panel-heading">
-                   <h4  id="deetsHead"class="panel-title">Sign up for Secret Santa!</h4> 
+                   <h4  id="deetsHead"class="panel-title">Sign up for Secret Santa!</h4>
                 </div>
-             
+
                <div class="panel-body" id="signUpPanel">
                    <h4 class="budget">The budget for gift is 20$ </h4>
                    <br>
@@ -168,17 +168,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                          <p>3. When you are ready to view whose Santa you are, press "Log In" button.</p>
                      </div>
                    <br>
-                 
+
                  <form class="secretSantaForm" id="secretSantaForm">
                      <div id="sections">
                          <div class="section">
                            <div class="ParticipantField">
                              <fieldset>
                                  <h4 class="participantHead">Participant</h4>
-                                 <input class="nameInput" id="name0" placeholder="Name" />   
-                                 <input class="giftInput1" id="first0" placeholder="Wishlist Item1" /> 
-                                 <input class="giftInput2" id="second0" placeholder="Wishlist Item2" />  
-                                 <input class="giftInput3" id="third0" placeholder="Wishlist Item3" />                            
+                                 <input class="nameInput" id="name0" placeholder="Name" />
+                                 <input class="giftInput1" id="first0" placeholder="Wishlist Item1" />
+                                 <input class="giftInput2" id="second0" placeholder="Wishlist Item2" />
+                                 <input class="giftInput3" id="third0" placeholder="Wishlist Item3" />
                              </fieldset>
                            </div>
                          </div>
@@ -189,16 +189,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                      <button id="addMebtn" class="addMe btn-lg btn-danger">Add</button>
                      <button class="btn-lg btn-danger" type="submit" id="submitMe">Pair</button>
                      <br>
-                     <button class="btn-lg btn-danger " id="haveGroupBtn" type="submit">Log In</button> 
+                     <button class="btn-lg btn-danger" id="haveGroupBtn" type="submit">Log In</button>
                      <hr>
                  </div>
-     
-               </div> 
+
+               </div>
              </div>
-     
-              
+
+
                 <!--CONVERTER in case if we will use it-->
-                   
+
                    <!--<div id="currency" class="row col-lg-12 col-md-12 col-xs-12">
                        <p id="convert" class="col-lg-4 col-md-4 col-xs-4">
                          Currency Converter:
@@ -209,15 +209,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                            <input type="text" id="convert"></input>
                          </span>
                        </div>
-                 </div> -->  
-            
+                 </div> -->
+
            </div>
-           
+
        </div>
-          
+
        <!--first page deetsLeftContainer close-->
-       
-        
+
+
            <!-- this is where to view santaDeets -->
           <!--Left colomn Second Page-->
          <div id="deets-container">  <!--deets-container second page open-->
@@ -226,9 +226,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                  <div id="santaHead" class="panel-heading">
                    <h4 class="text-center" class="panel-title"> Enter your name to see your recipient's wish list:</h4>
                  </div>
-     
+
              <div class="panel-body"  id="santaLtr">
-           
+
                     <form class="secretSantaForm" id="secretSantaForm">
                         <div id="sections">
                             <div class="section">
@@ -259,7 +259,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                                         <th>Wish  List Item: 1</th>
                                         <th>Wish  List Item: 2</th>
                                         <th>Wish  List Item: 3</th>
-            
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -267,45 +267,45 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                             </table>
                         </div>
                     </div>
-            
-             
+
+
                <div class="panel panel-success">
-             
+
                  <div class="panel-heading">
                    <h4 id="shopA" class="text-center" class="panel-title" ><strong>Need help building this gifts?</strong></h4>
                  </div>
-     
+
                    <div class="panel-body" id="amazonPanel">
-                     <p class="text-center"> Let Amazon elves help! </p> 
+                     <p class="text-center"> Let Amazon elves help! </p>
                        <div class="buttonsAmazon">
                          <button id="buy1" class="amazon">Take me to Amazon for gift 1!</button>
                          <button id="buy2" class="amazon">Take me to Amazon for gift 2!</button>
                          <button id="buy3" class="amazon">Take me to Amazon for gift 3!</button>
                        </div>
                    </div>
-     
+
                  <!--People in your group-->
                  <div id="yourGroup" class="row col-lg-12 col-md-12 col-xs-12">
                      <!-- <div id="yourGroup" class="row col-lg-6 col-md-6 col-xs-6"> -->
                      <div class="panel panel-success">
                          <div class="panel-heading">
-                       <h4> <p class="locationP"> These are the people in your group</p> </h4> 
+                       <h4> <p class="locationP"> These are the people in your group</p> </h4>
                          </div>
                            <!-- this is where the peoples names will go -->
                            <div class="panel-body" id="peopleInGr">
-                             <div id="peopleGr"></div>  
-                           </div> 
+                             <div id="peopleGr"></div>
+                           </div>
                          </div>
-               </div>  <!--panel panel-success-->  
-                 </div> <!--  row-->   
+               </div>  <!--panel panel-success-->
+                 </div> <!--  row-->
              </div> <!--deetsSecondPageLeft colomn-->
             </div>  <!--panel-body santaLtr close-->
            </section> <!--deetsSecondP-->
          </div>
        </div>
-     </div>  
+     </div>
      <!--deets-container second page close-->
-     
+
              <!-- Random holiday trivia! -->
              <div id="sidebar" class="col-lg-6 col-md-6 col-sm-12">
                    <!-- this is where pics & trivia will go -->
@@ -315,62 +315,62 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                          <div class="panel-heading">
                            <h4 class="text-center" class="panel-title" ><strong>Press for Christmas Cheer!</strong></h4>
                          </div>
-           
+
                          <div class="panel-body" id="imgPanel">
                              <div id="images"></div>
                              <div id="buttons">
                                <button class="btn btn-danger" id="Christmas-button" type="submit">Press me!</button>
                                <button class="btn btn-danger" id="ChristmasTwo-button" type="submit">Press me again!</button>
-                               <button class="btn btn-danger" id="musicPlay"> Play music</button> 
-                               <button class="btn btn-danger" id="musicPause"> Pause music</button> 
-                             </div>  
-                         </div> <!--panel-body imgPanel-->        
-                   
-                     </div> <!--panel panel-success-->     
+                               <button class="btn btn-danger" id="musicPlay"> Play music</button>
+                               <button class="btn btn-danger" id="musicPause"> Pause music</button>
+                             </div>
+                         </div> <!--panel-body imgPanel-->
+
+                     </div> <!--panel panel-success-->
                </div> <!--sidebar close-->
-        
+
                    <!--Map-->
                    <div id="mapHead" class="col-lg-6 col-md-6 col-sm-12">
                      <div class="panel panel-success">
                            <div class="panel-heading">
-                             <h4> <p class="locationP"> Party location!</p> </h4> 
+                             <h4> <p class="locationP"> Party location!</p> </h4>
                                    <div class="form-location" id="locationField">
                                        <input id="location" type="textarea" placeholder="The party will be held at ">
                                          <br>
                                          <br>
                                        <input id="locationSubmitBtn" type="submit" value="Submit">
-                                   </div> 
+                                   </div>
                            </div>
                             <!-- this is where the map will go -->
                             <div class="panel-body" id="mapPanel">
-                               <div id="map"></div>  
-                            </div>      
-                     </div>  <!--panel panel-success-->  
-                  </div> <!-- map row-->   
-         </div> 
-      
+                               <div id="map"></div>
+                            </div>
+                     </div>  <!--panel panel-success-->
+                  </div> <!-- map row-->
+         </div>
+
      <!--Footer-->
-         <footer> 
+         <footer>
            <div class="footer">
-     
+
              <div class="container-fluid">
-             <h5 class="text-center" > DDS team 2018 </h5> 
-             </div> 
-     
-           </div>   
-        </footer> 
-       
+             <h5 class="text-center" > DDS team 2018 </h5>
+             </div>
+
+           </div>
+        </footer>
+
      </div> <!-- container close -->
-     
-     
-     
-     
-     
+
+
+
+
+
      <!--Modal popup message for Pair-->
      <div id="modalContainerPair">
-     
-         <div id="myModalPair" class="modal fade" tabindex="-1" role="dialog"> 
-           
+
+         <div id="myModalPair" class="modal fade" tabindex="-1" role="dialog">
+
          <div class="modal-dialog" role="document">
            <div class="modal-content">
              <div class="modal-header">
@@ -379,22 +379,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
              </div>
              <div class="modal-body">
                  <p id="thanksPair">Close me and press "Log In" button to see whose Santa you are.</p>
-                 
+
              </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-              
+
              </div>
            </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
        </div><!-- /.modal -->
      </div> <!-- /.modal container -->
-     
+
      <!--Modal popup message for Log In to view who's Santa you are-->
      <div id="modalContainerLogIn">
-     
-         <div id="myModalLogIn" class="modal fade" tabindex="-1" role="dialog"> 
-           
+
+         <div id="myModalLogIn" class="modal fade" tabindex="-1" role="dialog">
+
          <div class="modal-dialog" role="document">
            <div class="modal-content">
              <div class="modal-header">
@@ -403,24 +403,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
              </div>
              <div class="modal-body">
                  <p id="LogInSanta">Close me, and on top of the page enter your name to see your recipient's wish list.</p>
-                 
+
              </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-              
+
              </div>
            </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
        </div><!-- /.modal -->
      </div> <!-- /.modal container -->
-     
-     
-     
+
+
+
      <!--Modal popup message for thanking for submiting-->
      <!-- <div id="modalContainer">
-     
-             <div id="myModal" class="modal fade" tabindex="-1" role="dialog"> 
-               
+
+             <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+
              <div class="modal-dialog" role="document">
                <div class="modal-content">
                  <div class="modal-header">
@@ -429,11 +429,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
                  </div>
                  <div class="modal-body">
                      <p id="thanksSabmit">Please log back in one week to find out who's Santa you will be</p>
-                     
+
                  </div>
                  <div class="modal-footer">
                    <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-                  
+
                  </div> -->
                <!-- </div> -->
                <!-- /.modal-content -->
@@ -443,13 +443,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
            <!-- /.modal -->
          <!-- </div> -->
           <!-- /.modal container -->
-     
-     
+
+
          <!--Modal popup message for filling all the fields when submiting-->
      <div id="modalContainerError">
-     
-         <div id="myModalError" class="modal fade" tabindex="-1" role="dialog"> 
-           
+
+         <div id="myModalError" class="modal fade" tabindex="-1" role="dialog">
+
          <div class="modal-dialog" role="document">
            <div class="modal-content">
              <div class="modal-header">
@@ -458,17 +458,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
              </div>
              <div class="modal-body">
                  <p id="thanksSabmit">Please fill all of the fields</p>
-                 
+
              </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-danger" id="#modalBtn" data-dismiss="modal">Close</button>
-              
+
              </div>
            </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
        </div><!-- /.modal -->
      </div> <!-- /.modal container -->
-     
+
 
      <!-- Link for pairing participants -->
  <script src="javascript/secret-santa-engine.v2.js"></script>
@@ -479,7 +479,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ykdYPnNswf6X7Hd5qHz4RT4WicH5NhE" async defer></script>
 <!-- Link for reteiving participants -->
 <script src="javascript/retrievewishlist.js"></script>
-      
+
        </body>
      </html>
-     
