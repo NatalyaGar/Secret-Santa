@@ -11,7 +11,6 @@ $(document).ready(function(){
     $("#data-container").hide();
     $("#verifyP").hide();
     $("#new-password").hide();
-    $("#logInBtnTop").hide();
 
    //Christmas Cheer button
     $("#Christmas-button").on("click", function() {
