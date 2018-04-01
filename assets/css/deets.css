@@ -1,5 +1,5 @@
 /*DU Web Dev Bootcamp 2018
-  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova 
+  Diana Schiele, Sarah Gilbert, Mark Rubesyle, Natalya Garusova
   Project 1
 */
 
@@ -20,22 +20,16 @@ body {
 
 .container{
   border: 15px solid rgb(151, 190, 151);
-  border-style: dashed; 
+  border-style: dashed;
 }
-
-
 
 #header{
   font-family: 'Tangerine', cursive;
   font-weight: bold;
   font-size: 90px;
   text-align: center;
-  color: rgb(31, 97, 75); 
+  color: rgb(31, 97, 75);
 }
-
-
-
-
 
 .daysLeftP {
   font-family: Tangerine, cursive;
@@ -45,9 +39,8 @@ body {
   color: rgb(31, 97, 75);
 }
 
-
 #tree {
-  color:  rgb(31, 97, 75); 
+  color:  rgb(31, 97, 75);
   margin-left: 48.5%;
   margin-top: 20px;
 }
@@ -64,7 +57,6 @@ body {
   border-style: dashed;
 }
 
-
 #daysToGo {
   font-size: 40px;
 }
@@ -72,17 +64,20 @@ body {
 #buttons{
   margin-top: 10px;
   margin-left: 18%;
-  }
-
-  .ParticipantField{
-    background-color: white;
-    padding:20px ;
-  }
-
-  .participantHead {
-    color: rgb(31, 97, 75);
 }
 
+.ParticipantField{
+  background-color: white;
+  padding:20px ;
+}
+
+.participantHead {
+  color: rgb(31, 97, 75);
+}
+
+.budgetHead {
+  padding-top: 18px;
+}
 
 .nameInput, .giftInput1, .giftInput2  {
   margin-right: 20px;
@@ -90,9 +85,7 @@ body {
 
 #addMebtn{
   margin-left: 42%;
-
 }
-
 
 .partyDeets {
   margin-top: 20px;
@@ -105,22 +98,20 @@ body {
 .desiresI {
   margin-bottom: 8px;
 }
+
 #gift3 {
   margin-top: 7px;
 }
 
-
 #convert {
   margin-top: 8px;
 }
-
 
  #whereAt {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
-
 
 #sendIt{
   margin-top: 20px;
@@ -129,57 +120,51 @@ body {
   font-size: 20px;
 }
 
-
 .panel-title {
   font-size: 22px;
   text-align: center;
   margin-top: 0;
-  
 }
 
-h4{
+h4 {
   font-size: 22px;
 }
 
-.budget{
+.budget {
   text-align: center;
   margin-bottom: 10px;
 }
 
 
-#viewPartyDeets{
+#viewPartyDeets {
   margin:10px;
   text-align: center;
 }
 
-#haveGroupBtn{
+#haveGroupBtn {
   margin-left: 45%;
   margin-top: 20px;
 }
 
-#haveGroupPanel{
+#haveGroupPanel {
   width: 513px;
   margin-left: 3px;
-  color: rgb(31, 97, 75); 
+  color: rgb(31, 97, 75);
   font-size: 20px;
   margin-bottom: 20px;
   margin-left: 50%;
 }
 
-aside {
-  font-size: 18px;
-}
-
-#map{
+#map {
   height: 372px;
   width: 50%px;
 }
 
-#mapHead{
+#mapHead {
   width: 50%px;
 }
 
-.locationP{
+.locationP {
   text-align: center;
 }
 
@@ -194,15 +179,13 @@ aside {
   margin-left: 43%;
 }
 
-
 #images {
   height:75%;
 }
 
-
 #buttons{
   margin-top: 30px;
-  }
+}
 
 #santaLtr {
   font-size: 22px;
@@ -219,7 +202,6 @@ aside {
   padding: 18px 10px 10px 10px;
 }
 
-
 #deetsSecondP {
   border: 3px dashed green;
   background-color: white;
@@ -229,11 +211,10 @@ aside {
   margin: 20px 10px 20px 0px;
   font-size: 20px;
   padding: 18px 10px 10px 10px;
-  
 }
 
 #yourGroup{
-  margin-top:30px;
+  margin-top: 30px;
   width: 100%;
   border-top: 10px solid rgb(151, 190, 151);
   border-style: dashed;
@@ -244,13 +225,11 @@ aside {
 .buttonsAmazon {
   margin-left: 10%;
   margin-top: 10px;
- 
 }
- #buy1,
- #buy2,
- #buy3 {
-   margin-right: 10px;
- } 
+
+#buy1, #buy2, #buy3 {
+ margin-right: 10px;
+}
 
 #mssgs {
   border: 3px dashed green;
@@ -262,16 +241,13 @@ aside {
   font-size: 20px;
 }
 
-
 #santaLtr {
   font-size: 20px;
   line-height: 150%;
 }
 
-
 .amazon {
   margin: 2px 0;
-
 }
 
 #footer {
@@ -282,39 +258,31 @@ aside {
 }
 
 .jumbotron {
-  
   margin-top: 30px;
   border: 10px solid rgb(151, 190, 151);
   border-style: dashed;
   background-color: rgb(219, 95, 95);
 }
 
+    /* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
 
+body {
+  margin-bottom: 0px;
+}
 
-
-                  /* Sticky footer styles
-              -------------------------------------------------- */
-               html {
-                position: relative;
-                min-height: 100%;
-                } 
-                body { 
-                /* Margin bottom by footer height */
-                margin-bottom: 0px;
-                
-                
-                 } 
-                .footer {
-                position: relative;
-                bottom: -30px;
-                width: 100%;
-                padding-top: 23px;
-                font-weight: bold;
-                font-size: 15px; 
-               
-                /* Set the fixed height of the footer here */
-                height: 65px;
-                background-color: rgb(219, 95, 95);
-                color: rgb(31, 97, 75); 
-                }
-              
+.footer {
+  position: relative;
+  bottom: -30px;
+  width: 100%;
+  padding-top: 23px;
+  font-weight: bold;
+  font-size: 15px;
+  height: 65px;
+  background-color: rgb(219, 95, 95);
+  color: rgb(31, 97, 75);
+}

@@ -5,17 +5,13 @@
     Project 1*/
 
 
-/* global moment firebase */
-// Initialize Firebase
-
 $(document).ready(function(){
     $("#ChristmasTwo-button").hide();
-    $("#eventLocator").hide();
     $("#options-container").hide();
     $("#data-container").hide();
     $("#verifyP").hide();
     $("#new-password").hide();
-    // $("#form").hide();
+    $("#logInBtnTop").hide();
 
    //Christmas Cheer button
     $("#Christmas-button").on("click", function() {
@@ -104,7 +100,6 @@ $(document).ready(function(){
 
         //Hide start container
         $("#start-container").hide();
-
         //Show options container
         $("#options-container").show();
         $("#viewPartyDeets").hide();
@@ -127,13 +122,11 @@ $(document).ready(function(){
 
     $('#keycode-submit-btn').on("click", function(event) {
         event.preventDefault();
-        $("#eventLocator").show();
         //Hide start container
         $("#start-container").hide();
 
         //Hide options containers
         $("#options-container").hide();
-        $("#data-container").show();
         $("#headingTextStart").hide();
     });
 
@@ -148,10 +141,16 @@ $(document).ready(function(){
     })
 
     var userKey = "xmas";
+    $("#keycode-input").keyup(function(event) {
+      if (event.keyCode === 13) {
+          $("#submitInBtnOption").click();
+      }
+    });
 
     $("#submitInBtnOption").on("click", function(event) {
       var keyInput = $("#keycode-input").val();
       if (keyInput === userKey) {
+        console.log(keyInput);
         sessionStorage.setItem('userKey', userKey);
         location.href='assets/deets.html';
       } else if (keyInput == ""){
@@ -159,6 +158,8 @@ $(document).ready(function(){
       } else if (keyInput !== userKey) {
         $("#keycode-input").val('');
         $("#keycode-input")[0].placeholder = "Keycode incorrect. Please try again"
+      } else if (keyInput == null) {
+        event.preventDefault();
       }
       if (!keyInput) {
         location.href='assets/deets.html';
