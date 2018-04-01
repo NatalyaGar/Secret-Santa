@@ -93,10 +93,6 @@ $(document).ready(function(){
       $("#haveGroupPanel").hide();
     });
 
-    function scrollIt() {
-      window.scrollTo(0, 0);
-    };
-
     $("#submitMe").on("click", function(event) {
       event.preventDefault();
       //Modal message show when click Pair button
@@ -106,9 +102,10 @@ $(document).ready(function(){
 
     $("#haveGroupBtn").on("click", function(event) {
       event.preventDefault();
-      //Modal message show when click Log in to view who's Santa you are button
+      //Modal message to view who's Santa you are
       $('#myModalLogIn').modal();
       $("#modalContainerLogIn").show()
+      window.scrollTo(0, 350);
     });
 
   });
