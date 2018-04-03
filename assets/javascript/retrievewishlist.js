@@ -64,13 +64,6 @@ $('body').on('click', '.getMe', function () {
             header.text(ssd);
             $('#peopleInGr').append(header);
         })
-
-    }
-
-
-    function getCount() {
-        console.log("Here's the current count:" + count);
-
     }
 
 });

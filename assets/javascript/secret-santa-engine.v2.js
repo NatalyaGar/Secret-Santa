@@ -19,8 +19,7 @@ var indexID = -1;
 // For demo purposes, use time in milliseconds as a unique identifier for each group submission
 var d = new Date();
 var groupID = d.getTime();
-console.log(groupID);
-
+console.log('groupID ', groupID);
 
 // When user clicks .addMe button, adds new participant
 $('.addMe').on('click', function () {
@@ -29,7 +28,9 @@ $('.addMe').on('click', function () {
 	// Loop through each input
 	var section = template.clone().find(':input').each(function () {
 		var newId = this.id.slice(0, -1) + sectionsCount;
+		console.log(this.id);
 		this.id = newId;
+		console.log(newId);
 		$(this).attr('name', newId);
 		$(this).attr('first', newId);
 		$(this).attr('second', newId);
@@ -88,9 +89,9 @@ $('#submitMe').on('click', function () {
 	console.log(participants);
 
 
-	//get the results from matched participants array 
+	//get the results from matched participants array
 	//return 1st participant in matched group and pair that participant with their gift list
-	//package those values up & push into Firebase 
+	//package those values up & push into Firebase
 	//use global groupID for group identifier
 	for (i = 0; i < participants.length; i++) {
 		var name = participants[i][0];
@@ -117,7 +118,7 @@ $('#submitMe').on('click', function () {
 	}
 })
 
-// Function that will randomly shuffle an array. 
+// Function that will randomly shuffle an array.
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -137,7 +138,7 @@ function shuffle(array) {
 };
 
 /*
---Function to match participants with recipients 
+--Function to match participants with recipients
 --Matches current participant in shuffled array with the next participant in suffled array
 --unless they are in the last position, in which case matches them with the first participant in array
 */
