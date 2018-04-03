@@ -3,6 +3,7 @@
 */
 
 $(document).ready(function(){
+  $("#ChristmasTwo-button").hide();
   var userCode = sessionStorage.getItem("userKey");
   console.log('userCode: ', userCode);
   if (userCode === 'xmas') {
