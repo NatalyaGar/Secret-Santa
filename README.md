@@ -2,4 +2,4 @@ Secret Santa is a fun way to exchange gifts. Sign up and enter a wish list of it
 
 Please check out the app at https://natalyagar.github.io/Secret-Santa/
 
-<img src="assets/images/secretSanta.png" alt="Progect Picture" width="300" height="200" />
+<img src="assets/images/secretSanta.png" alt="Project Picture" width="300" height="200" />
